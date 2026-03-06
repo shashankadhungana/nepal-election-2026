@@ -264,29 +264,25 @@ def load_election_data():
     except Exception:
         pass
 
-    official_urls = [
-        "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
-        
-    ]
+    official_url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
 
-    for url in official_urls:
-        try:
-            r = requests.get(
-                url,
-                headers={
-                    **headers,
-                    "Referer": "https://result.election.gov.np/",
-                    "Origin": "https://result.election.gov.np",
-                },
-                timeout=30,
-            )
-            if r.status_code == 200:
-                raw = pd.DataFrame(r.json())
-                df = normalize_raw_results(raw)
-                if not df.empty:
-                    return df
-        except Exception:
-            pass
+    try:
+        r = requests.get(
+            official_url,
+            headers={
+                **headers,
+                "Referer": "https://result.election.gov.np/",
+                "Origin": "https://result.election.gov.np",
+            },
+            timeout=30,
+        )
+        if r.status_code == 200:
+            raw = pd.DataFrame(r.json())
+            df = normalize_raw_results(raw)
+            if not df.empty:
+                return df
+    except Exception:
+        pass
 
     return pd.DataFrame(columns=EMPTY_COLUMNS)
 
@@ -571,4 +567,5 @@ details = st.Page(render_details_page, title="Details", icon="📍")
 
 pg = st.navigation([home, details])
 pg.run()
+
 
