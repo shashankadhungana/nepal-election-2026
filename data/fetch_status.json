@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-06T05:59:57.022299+00:00",
-  "success": false,
-  "row_count": 0,
-  "source_url": null,
-  "error": "404 Client Error: Not Found for url: https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
+  "last_attempt_utc": "2026-03-06T07:07:36.516057+00:00",
+  "success": true,
+  "row_count": 165,
+  "source_url": "https://pub-4173e04d0b78426caa8cfa525f827daa.r2.dev/constituencies.json",
+  "error": null
 }
