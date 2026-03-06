@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-06T05:41:10.948257+00:00",
+  "last_attempt_utc": "2026-03-06T05:59:57.022299+00:00",
   "success": false,
   "row_count": 0,
   "source_url": null,
-  "error": "HTTPSConnectionPool(host='result.election.gov.np', port=443): Max retries exceeded with url: /JSONFiles/ElectionResultCentral.txt (Caused by ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
+  "error": "404 Client Error: Not Found for url: https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
 }
