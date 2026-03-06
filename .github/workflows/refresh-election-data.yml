@@ -1,1 +1,149 @@
+name: Refresh election data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch and normalize data
+        run: |
+          python <<'PY'
+          import requests
+          import pandas as pd
+          from pathlib import Path
+
+          urls = [
+              "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
+              "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
+          ]
+
+          headers = {
+              "User-Agent": (
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/122.0.0.0 Safari/537.36"
+              ),
+              "Accept": "application/json,text/plain,*/*",
+              "Referer": "https://result.election.gov.np/",
+              "Origin": "https://result.election.gov.np",
+          }
+
+          province_map = {
+              1: "Koshi",
+              2: "Madhesh",
+              3: "Bagmati",
+              4: "Gandaki",
+              5: "Lumbini",
+              6: "Karnali",
+              7: "Sudurpashchim",
+          }
+
+          def normalize(raw):
+              required = [
+                  "CandidateName",
+                  "PoliticalPartyName",
+                  "DistrictName",
+                  "State",
+                  "SCConstID",
+                  "TotalVoteReceived",
+                  "Rank",
+                  "Remarks",
+              ]
+
+              for col in required:
+                  if col not in raw.columns:
+                      raw[col] = None
+
+              raw["candidate"] = raw["CandidateName"].fillna("").astype(str).str.strip()
+              raw["party"] = raw["PoliticalPartyName"].fillna("Independent").astype(str).str.strip()
+              raw["district"] = raw["DistrictName"].fillna("Unknown").astype(str).str.strip()
+              raw["sc_const_id"] = raw["SCConstID"].fillna("").astype(str).str.strip()
+              raw["votes"] = pd.to_numeric(raw["TotalVoteReceived"], errors="coerce").fillna(0).astype(int)
+              raw["rank_num"] = pd.to_numeric(raw["Rank"], errors="coerce")
+              raw["remarks"] = raw["Remarks"].fillna("").astype(str).str.strip()
+              raw["state_code"] = pd.to_numeric(raw["State"], errors="coerce").fillna(0).astype(int)
+              raw["province"] = raw["state_code"].map(province_map).fillna("Unknown")
+
+              raw = raw[(raw["district"] != "") & (raw["sc_const_id"] != "")]
+              if raw.empty:
+                  return pd.DataFrame()
+
+              raw["constituency"] = raw["district"] + "-" + raw["sc_const_id"]
+
+              rows = []
+
+              for constituency, group in raw.groupby("constituency", sort=True):
+                  group = group.sort_values(["votes", "rank_num"], ascending=[False, True]).reset_index(drop=True)
+
+                  top = group.iloc[0]
+                  runner = group.iloc[1] if len(group) > 1 else None
+
+                  top_votes = int(top["votes"])
+                  runner_votes = int(runner["votes"]) if runner is not None else 0
+
+                  rows.append({
+                      "constituency": constituency,
+                      "province": top["province"],
+                      "district": top["district"],
+                      "candidate": top["candidate"] if top["candidate"] else "Unknown Candidate",
+                      "party": top["party"] if top["party"] else "Independent",
+                      "votes": top_votes,
+                      "runner_up": runner["candidate"] if runner is not None else "",
+                      "runner_up_party": runner["party"] if runner is not None else "",
+                      "runner_up_votes": runner_votes,
+                      "margin": top_votes - runner_votes,
+                      "status": "Won" if str(top["remarks"]).lower() == "elected" else "Leading",
+                      "count_pct": 100 if str(top["remarks"]).lower() == "elected" else 0,
+                  })
+
+              return pd.DataFrame(rows).sort_values(
+                  ["province", "district", "constituency"]
+              ).reset_index(drop=True)
+
+          df = None
+
+          for url in urls:
+              try:
+                  r = requests.get(url, headers=headers, timeout=30)
+                  r.raise_for_status()
+                  raw = pd.DataFrame(r.json())
+                  df = normalize(raw)
+                  if df is not None and not df.empty:
+                      break
+              except Exception:
+                  continue
+
+          if df is None or df.empty:
+              raise SystemExit("No usable election data fetched.")
+
+          Path("data").mkdir(exist_ok=True)
+          df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
+          PY
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/election_data.json
+          git diff --staged --quiet || git commit -m "Update election data"
+          git push
 
