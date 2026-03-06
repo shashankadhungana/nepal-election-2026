@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -22,32 +24,22 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pandas
+        run: pip install requests pandas urllib3
 
       - name: Fetch and normalize data
         run: |
           python <<'PY'
           import json
-          import requests
           import pandas as pd
+          import requests
           from pathlib import Path
           from datetime import datetime, timezone
+          from requests.adapters import HTTPAdapter
+          from urllib3.util.retry import Retry
 
-          urls = [
-              "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
-              
-          ]
+          Path("data").mkdir(exist_ok=True)
 
-          headers = {
-              "User-Agent": (
-                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) "
-                  "Chrome/122.0.0.0 Safari/537.36"
-              ),
-              "Accept": "application/json,text/plain,*/*",
-              "Referer": "https://result.election.gov.np/",
-              "Origin": "https://result.election.gov.np",
-          }
+          url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
 
           province_map = {
               1: "Koshi",
@@ -58,6 +50,32 @@ jobs:
               6: "Karnali",
               7: "Sudurpashchim",
           }
+
+          def make_session():
+              session = requests.Session()
+              retry = Retry(
+                  total=5,
+                  connect=5,
+                  read=5,
+                  backoff_factor=2,
+                  status_forcelist=[429, 500, 502, 503, 504],
+                  allowed_methods=["GET", "HEAD"],
+              )
+              adapter = HTTPAdapter(max_retries=retry)
+              session.mount("https://", adapter)
+              session.mount("http://", adapter)
+              session.headers.update({
+                  "User-Agent": (
+                      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/122.0.0.0 Safari/537.36"
+                  ),
+                  "Accept": "application/json,text/plain,*/*",
+                  "Referer": "https://result.election.gov.np/",
+                  "Origin": "https://result.election.gov.np",
+                  "Connection": "keep-alive",
+              })
+              return session
 
           def normalize(raw):
               required = [
@@ -120,34 +138,34 @@ jobs:
                   ["province", "district", "constituency"]
               ).reset_index(drop=True)
 
-          Path("data").mkdir(exist_ok=True)
-
           success = False
-          error_message = None
           row_count = 0
-          used_url = None
+          source_url = None
+          error_message = None
 
-          for url in urls:
-              try:
-                  r = requests.get(url, headers=headers, timeout=30)
-                  r.raise_for_status()
-                  raw = pd.DataFrame(r.json())
-                  df = normalize(raw)
+          try:
+              session = make_session()
+              response = session.get(url, timeout=45)
+              response.raise_for_status()
 
-                  if df is not None and not df.empty:
-                      df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
-                      success = True
-                      row_count = len(df)
-                      used_url = url
-                      break
-              except Exception as e:
-                  error_message = str(e)
+              raw = pd.DataFrame(response.json())
+              df = normalize(raw)
+
+              if df is not None and not df.empty:
+                  df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
+                  success = True
+                  row_count = len(df)
+                  source_url = url
+              else:
+                  error_message = "Fetched data was empty after normalization."
+          except Exception as e:
+              error_message = str(e)
 
           metadata = {
               "last_attempt_utc": datetime.now(timezone.utc).isoformat(),
               "success": success,
               "row_count": row_count,
-              "source_url": used_url,
+              "source_url": source_url,
               "error": error_message,
           }
 
@@ -164,5 +182,9 @@ jobs:
           git add data/election_data.json data/fetch_status.json
           if ! git diff --cached --quiet; then
             git commit -m "Update election data"
-            git push
           fi
+
+      - name: Rebase and push
+        run: |
+          git pull --rebase origin main || true
+          git push origin main
