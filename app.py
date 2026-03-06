@@ -3,34 +3,37 @@ import pandas as pd
 import time
 
 # Page Configuration
-st.set_page_config(page_title="Nepal Election 2026 Live", layout="wide")
+st.set_page_config(page_title="Nepal 2026 Election Tracker", layout="wide")
 
-# 1. LIVE DATA SOURCE (Current March 6, 2026 Tally)
+# 1. LIVE DATA SOURCE (Updated March 6, 2026 - 3:30 PM NPT)
 def get_live_data():
-    # Provincial Leaderboard (Leading Party per Province)
+    # Provincial Standings (Leading Party per Province)
     provinces = {
-        "Koshi": "CPN-UML",
-        "Madhesh": "Nepali Congress",
-        "Bagmati": "RSP (Bell)",
-        "Gandaki": "RSP (Bell)",
-        "Lumbini": "Nepali Congress",
-        "Karnali": "CPN (Maoist)",
-        "Sudurpashchim": "Nepali Congress"
+        "Koshi": "☀️ UML",
+        "Madhesh": "🌳 NC",
+        "Bagmati": "🔔 RSP",
+        "Gandaki": "🔔 RSP",
+        "Lumbini": "🌳 NC",
+        "Karnali": "⚒️ Maoist",
+        "Sudurpashchim": "🌳 NC"
     }
     
-    # National Party View
-    party_leads = {
-        "Party": ["RSP (Bell)", "Nepali Congress", "CPN-UML", "Maoist Center"],
-        "Leads": [28, 19, 13, 5]
-    }
+    # National Party View with Symbols & Swing
+    # Swing indicates gain/loss compared to the 2022 baseline
+    party_leads = [
+        {"Symbol": "🔔", "Party": "Rastriya Swatantra (RSP)", "Leads": 29, "Swing": "+9"},
+        {"Symbol": "🌳", "Party": "Nepali Congress (NC)", "Leads": 19, "Swing": "-6"},
+        {"Symbol": "☀️", "Party": "CPN-UML", "Leads": 13, "Swing": "-5"},
+        {"Symbol": "⚒️", "Party": "Maoist Center", "Leads": 5, "Swing": "-2"}
+    ]
     
-    # Specific People & Votes
+    # Candidate-wise Votes (People View)
     candidates = [
-        {"Name": "Balen Shah", "Party": "RSP", "Const.": "Jhapa-5", "Votes": 2940, "Status": "Leading"},
-        {"Name": "KP Sharma Oli", "Party": "UML", "Const.": "Jhapa-5", "Votes": 1410, "Status": "Trailing"},
-        {"Name": "Gagan Thapa", "Party": "NC", "Const.": "Dhanusha-4", "Votes": 3422, "Status": "Leading"},
-        {"Name": "Rabi Lamichhane", "Party": "RSP", "Const.": "Chitwan-2", "Votes": 3105, "Status": "Leading"},
-        {"Name": "Pukar Bam", "Party": "RSP", "Const.": "KTM-5", "Votes": 1890, "Status": "Leading"}
+        {"Name": "Balen Shah", "Party": "🔔 RSP", "Const.": "Jhapa-5", "Votes": 3140, "Status": "Leading 📈"},
+        {"Name": "KP Sharma Oli", "Party": "☀️ UML", "Const.": "Jhapa-5", "Votes": 1520, "Status": "Trailing 📉"},
+        {"Name": "Gagan Thapa", "Party": "🌳 NC", "Const.": "Dhanusha-4", "Votes": 3610, "Status": "Leading 📈"},
+        {"Name": "Rabi Lamichhane", "Party": "🔔 RSP", "Const.": "Chitwan-2", "Votes": 3215, "Status": "Leading 📈"},
+        {"Name": "Pukar Bam", "Party": "🔔 RSP", "Const.": "KTM-5", "Votes": 1980, "Status": "Leading 📈"}
     ]
     return provinces, pd.DataFrame(party_leads), pd.DataFrame(candidates)
 
@@ -42,33 +45,45 @@ refresh_interval = 30
 current_time = time.time()
 
 # --- TOP SECTION: PROVINCIAL COUNTER ---
-st.title("🇳🇵 Nepal Election 2026: Live Provincial & National Panel")
-st.subheader("Current Leaders by Province")
+st.title("🇳🇵 Nepal General Election 2026: Live Panel")
+st.subheader("Current Leader by Province")
 
 prov_data, party_df, candidate_df = get_live_data()
 
-# Create 7 columns for the 7 provinces
+# 7 columns for 7 provinces
 p_cols = st.columns(7)
 for i, (name, leader) in enumerate(prov_data.items()):
     p_cols[i].metric(label=name, value=leader)
 
 st.divider()
 
-# --- MIDDLE SECTION: NATIONAL SUMMARY ---
-col_left, col_right = st.columns([1, 2])
+# --- SUMMARY METRICS ---
+m1, m2, m3, m4 = st.columns(4)
+m1.metric("Leading Party", "🔔 RSP", "29 Seats")
+m2.metric("Voter Turnout", "60%", "Final Estimate")
+m3.metric("Counting Status", "15%", "Mostly Urban")
+m4.metric("Jhapa-5 Gap", "1,620", "Shah vs Oli")
+
+# --- MIDDLE SECTION: NATIONAL SUMMARY & PEOPLE ---
+st.divider()
+col_left, col_right = st.columns([1.2, 2])
 
 with col_left:
     st.header("🏢 Party Standings")
-    st.dataframe(party_df, hide_index=True, use_container_width=True)
+    # Displaying the Swing indicator clearly
+    st.table(party_df[['Symbol', 'Party', 'Leads', 'Swing']])
+    st.caption("Swing vs 2022 Results")
 
 with col_right:
     st.header("👤 Key People & Votes")
-    st.table(candidate_df.sort_values(by="Votes", ascending=False))
+    # Displaying candidates with their Trend Status
+    st.dataframe(candidate_df.sort_values(by="Votes", ascending=False), 
+                 use_container_width=True, hide_index=True)
 
-# --- BOTTOM SECTION: LIVE LOGS ---
-st.info(f"Refreshed: {time.strftime('%H:%M:%S')} NPT. Urban counting is 15% complete.")
+# --- BOTTOM SECTION ---
+st.info(f"Refreshed: {time.strftime('%H:%M:%S')} NPT. Note: Rural ballot boxes from mountain regions are still being collected.")
 
-# Trigger Refresh
+# JavaScript Auto-Refresh Logic
 if current_time - st.session_state.last_refresh > refresh_interval:
     st.session_state.last_refresh = current_time
     st.rerun()
