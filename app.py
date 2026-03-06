@@ -12,7 +12,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
 EMPTY_COLUMNS = [
     "constituency",
     "province",
@@ -163,7 +162,7 @@ def plotly_dark_layout(fig):
             yanchor="bottom",
             y=1.02,
             xanchor="right",
-            x=1
+            x=1,
         ),
         margin=dict(l=20, r=20, t=60, b=20),
     )
@@ -185,37 +184,7 @@ def province_name_from_code(code):
     return province_map.get(code, "Unknown")
 
 
-@st.cache_data(ttl=30)
-def load_election_data():
-    urls = [
-        "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
-        "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
-    ]
-
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/122.0.0.0 Safari/537.36"
-        ),
-        "Accept": "application/json,text/plain,*/*",
-        "Referer": "https://result.election.gov.np/",
-        "Origin": "https://result.election.gov.np",
-    }
-
-    raw = None
-
-    for url in urls:
-        try:
-            response = requests.get(url, headers=headers, timeout=30)
-            if response.status_code == 200:
-                json_data = response.json()
-                raw = pd.DataFrame(json_data)
-                if not raw.empty:
-                    break
-        except Exception:
-            continue
-
+def normalize_raw_results(raw):
     if raw is None or raw.empty:
         return pd.DataFrame(columns=EMPTY_COLUMNS)
 
@@ -261,39 +230,78 @@ def load_election_data():
         top_votes = int(top["votes"])
         runner_votes = int(runner["votes"]) if runner is not None else 0
 
-        top_candidate = top["candidate"] if top["candidate"] else "Unknown Candidate"
-        top_party = top["party"] if top["party"] else "Independent"
-
-        runner_candidate = ""
-        runner_party = ""
-        if runner is not None:
-            runner_candidate = runner["candidate"] if runner["candidate"] else ""
-            runner_party = runner["party"] if runner["party"] else ""
-
-        status = "Won" if top["remarks"].lower() == "elected" else "Leading"
-
         rows.append(
             {
                 "constituency": constituency,
                 "province": top["province"],
                 "district": top["district"],
-                "candidate": top_candidate,
-                "party": top_party,
+                "candidate": top["candidate"] if top["candidate"] else "Unknown Candidate",
+                "party": top["party"] if top["party"] else "Independent",
                 "votes": top_votes,
-                "runner_up": runner_candidate,
-                "runner_up_party": runner_party,
+                "runner_up": runner["candidate"] if runner is not None else "",
+                "runner_up_party": runner["party"] if runner is not None else "",
                 "runner_up_votes": runner_votes,
                 "margin": top_votes - runner_votes,
-                "status": status,
-                "count_pct": 100 if status == "Won" else 0,
+                "status": "Won" if str(top["remarks"]).lower() == "elected" else "Leading",
+                "count_pct": 100 if str(top["remarks"]).lower() == "elected" else 0,
             }
         )
 
     if not rows:
         return pd.DataFrame(columns=EMPTY_COLUMNS)
 
-    df = pd.DataFrame(rows)
-    return df.sort_values(["province", "district", "constituency"]).reset_index(drop=True)
+    return pd.DataFrame(rows).sort_values(
+        ["province", "district", "constituency"]
+    ).reset_index(drop=True)
+
+
+@st.cache_data(ttl=30)
+def load_election_data():
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/json,text/plain,*/*",
+    }
+
+    github_raw_url = "https://raw.githubusercontent.com/shashankadhungana/nepal-election-2026/main/data/election_data.json"
+
+    try:
+        r = requests.get(github_raw_url, headers=headers, timeout=20)
+        if r.status_code == 200:
+            data = r.json()
+            if isinstance(data, list) and len(data) > 0:
+                return pd.DataFrame(data)
+    except Exception:
+        pass
+
+    official_urls = [
+        "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
+        "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
+    ]
+
+    for url in official_urls:
+        try:
+            r = requests.get(
+                url,
+                headers={
+                    **headers,
+                    "Referer": "https://result.election.gov.np/",
+                    "Origin": "https://result.election.gov.np",
+                },
+                timeout=30,
+            )
+            if r.status_code == 200:
+                raw = pd.DataFrame(r.json())
+                df = normalize_raw_results(raw)
+                if not df.empty:
+                    return df
+        except Exception:
+            pass
+
+    return pd.DataFrame(columns=EMPTY_COLUMNS)
 
 
 def render_empty_state(title_text):
@@ -303,7 +311,7 @@ def render_empty_state(title_text):
     )
     st.info("The Election Commission source did not return usable data right now.")
     st.markdown(
-        '<div class="small-note">Tip: this often works locally but may be blocked on Streamlit Cloud. A proxy, scheduled fetcher, or mirrored JSON source may be needed.</div>',
+        '<div class="small-note">Tip: this often works locally but may be blocked on Streamlit Cloud. The GitHub mirror will solve that once the workflow writes data/election_data.json.</div>',
         unsafe_allow_html=True,
     )
 
@@ -362,13 +370,13 @@ def render_home_page():
 
     render_hero(
         "Nepal Election Live Dashboard",
-        "Live dashboard connected to the official Election Commission result feed and refreshed every 30 seconds.",
+        "Live dashboard using mirrored official election data with auto-refresh every 30 seconds.",
     )
 
     st.markdown(
         """
-        <span class="pill">Official source</span>
-        <span class="pill">30s refresh</span>
+        <span class="pill">Official-source mirror</span>
+        <span class="pill">30s app refresh</span>
         <span class="pill">Constituency drilldown</span>
         """,
         unsafe_allow_html=True,
@@ -501,7 +509,7 @@ def render_home_page():
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown(
-        '<div class="small-note">Source: result.election.gov.np official central result file. Count progress is estimated as 100 for elected seats and 0 otherwise because the central file does not expose a direct count percentage field.</div>',
+        '<div class="small-note">Source: mirrored data from the official Election Commission result files. Count progress is estimated as 100 for elected seats and 0 otherwise because the central result feed does not expose a direct count percentage field in the normalized output.</div>',
         unsafe_allow_html=True,
     )
 
