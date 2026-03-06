@@ -1,6 +1,7 @@
-import streamlit as st
+import requests
 import pandas as pd
 import plotly.express as px
+import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 
 
@@ -124,123 +125,16 @@ def inject_css():
     )
 
 
-@st.cache_data(ttl=30)
-def load_election_data():
-    df = pd.DataFrame([
-        {
-            "constituency": "Kathmandu-1",
-            "province": "Bagmati",
-            "district": "Kathmandu",
-            "candidate": "Candidate A",
-            "party": "NC",
-            "votes": 24567,
-            "runner_up": "Candidate B",
-            "runner_up_party": "UML",
-            "runner_up_votes": 21950,
-            "status": "Leading",
-            "count_pct": 82,
-        },
-        {
-            "constituency": "Kathmandu-2",
-            "province": "Bagmati",
-            "district": "Kathmandu",
-            "candidate": "Candidate C",
-            "party": "UML",
-            "votes": 30110,
-            "runner_up": "Candidate D",
-            "runner_up_party": "NC",
-            "runner_up_votes": 28775,
-            "status": "Won",
-            "count_pct": 100,
-        },
-        {
-            "constituency": "Lalitpur-1",
-            "province": "Bagmati",
-            "district": "Lalitpur",
-            "candidate": "Candidate E",
-            "party": "Maoist",
-            "votes": 18670,
-            "runner_up": "Candidate F",
-            "runner_up_party": "NC",
-            "runner_up_votes": 18011,
-            "status": "Leading",
-            "count_pct": 74,
-        },
-        {
-            "constituency": "Kaski-1",
-            "province": "Gandaki",
-            "district": "Kaski",
-            "candidate": "Candidate G",
-            "party": "NC",
-            "votes": 27890,
-            "runner_up": "Candidate H",
-            "runner_up_party": "Maoist",
-            "runner_up_votes": 25100,
-            "status": "Won",
-            "count_pct": 100,
-        },
-        {
-            "constituency": "Morang-3",
-            "province": "Koshi",
-            "district": "Morang",
-            "candidate": "Candidate I",
-            "party": "UML",
-            "votes": 19880,
-            "runner_up": "Candidate J",
-            "runner_up_party": "NC",
-            "runner_up_votes": 19320,
-            "status": "Leading",
-            "count_pct": 68,
-        },
-        {
-            "constituency": "Rupandehi-2",
-            "province": "Lumbini",
-            "district": "Rupandehi",
-            "candidate": "Candidate K",
-            "party": "NC",
-            "votes": 22440,
-            "runner_up": "Candidate L",
-            "runner_up_party": "UML",
-            "runner_up_votes": 22010,
-            "status": "Leading",
-            "count_pct": 77,
-        },
-        {
-            "constituency": "Dhanusha-1",
-            "province": "Madhesh",
-            "district": "Dhanusha",
-            "candidate": "Candidate M",
-            "party": "Maoist",
-            "votes": 26440,
-            "runner_up": "Candidate N",
-            "runner_up_party": "UML",
-            "runner_up_votes": 24490,
-            "status": "Won",
-            "count_pct": 100,
-        },
-        {
-            "constituency": "Banke-1",
-            "province": "Lumbini",
-            "district": "Banke",
-            "candidate": "Candidate O",
-            "party": "UML",
-            "votes": 17420,
-            "runner_up": "Candidate P",
-            "runner_up_party": "Maoist",
-            "runner_up_votes": 17100,
-            "status": "Leading",
-            "count_pct": 59,
-        },
-    ])
-    df["margin"] = df["votes"] - df["runner_up_votes"]
-    return df
-
-
-PARTY_COLORS = {
-    "NC": "#2563eb",
-    "UML": "#ef4444",
-    "Maoist": "#f59e0b",
-}
+def render_hero(title, subtitle):
+    st.markdown(
+        f"""
+        <div class="hero-wrap">
+            <div class="hero-title">{title}</div>
+            <div class="hero-subtitle">{subtitle}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def plotly_dark_layout(fig):
@@ -262,16 +156,113 @@ def plotly_dark_layout(fig):
     return fig
 
 
-def render_hero(title, subtitle):
-    st.markdown(
-        f"""
-        <div class="hero-wrap">
-            <div class="hero-title">{title}</div>
-            <div class="hero-subtitle">{subtitle}</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+def province_name_from_code(code):
+    province_map = {
+        1: "Koshi",
+        2: "Madhesh",
+        3: "Bagmati",
+        4: "Gandaki",
+        5: "Lumbini",
+        6: "Karnali",
+        7: "Sudurpashchim",
+    }
+    return province_map.get(code, "Unknown")
+
+
+@st.cache_data(ttl=30)
+def load_election_data():
+    url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
+
+    response = requests.get(url, timeout=30)
+    response.raise_for_status()
+
+    raw = pd.DataFrame(response.json())
+
+    required_columns = [
+        "CandidateName",
+        "PoliticalPartyName",
+        "DistrictName",
+        "State",
+        "SCConstID",
+        "TotalVoteReceived",
+        "Rank",
+        "Remarks",
+    ]
+
+    for col in required_columns:
+        if col not in raw.columns:
+            raw[col] = None
+
+    if raw.empty:
+        return pd.DataFrame(columns=[
+            "constituency",
+            "province",
+            "district",
+            "candidate",
+            "party",
+            "votes",
+            "runner_up",
+            "runner_up_party",
+            "runner_up_votes",
+            "margin",
+            "status",
+            "count_pct",
+        ])
+
+    raw["candidate"] = raw["CandidateName"].fillna("").astype(str).str.strip()
+    raw["party"] = raw["PoliticalPartyName"].fillna("Independent").astype(str).str.strip()
+    raw["district"] = raw["DistrictName"].fillna("Unknown").astype(str).str.strip()
+    raw["sc_const_id"] = raw["SCConstID"].fillna("").astype(str).str.strip()
+    raw["votes"] = pd.to_numeric(raw["TotalVoteReceived"], errors="coerce").fillna(0).astype(int)
+    raw["rank_num"] = pd.to_numeric(raw["Rank"], errors="coerce")
+    raw["remarks"] = raw["Remarks"].fillna("").astype(str).str.strip()
+    raw["state_code"] = pd.to_numeric(raw["State"], errors="coerce").fillna(0).astype(int)
+    raw["province"] = raw["state_code"].apply(province_name_from_code)
+
+    raw = raw[(raw["district"] != "") & (raw["sc_const_id"] != "")]
+    raw["constituency"] = raw["district"] + "-" + raw["sc_const_id"]
+
+    rows = []
+
+    for constituency, group in raw.groupby("constituency", sort=True):
+        group = group.sort_values(["votes", "rank_num"], ascending=[False, True]).reset_index(drop=True)
+
+        top = group.iloc[0]
+        runner = group.iloc[1] if len(group) > 1 else None
+
+        top_votes = int(top["votes"])
+        runner_votes = int(runner["votes"]) if runner is not None else 0
+
+        top_candidate = top["candidate"] if top["candidate"] else "Unknown Candidate"
+        top_party = top["party"] if top["party"] else "Independent"
+
+        runner_candidate = ""
+        runner_party = ""
+        if runner is not None:
+            runner_candidate = runner["candidate"] if runner["candidate"] else ""
+            runner_party = runner["party"] if runner["party"] else ""
+
+        status = "Won" if top["remarks"].lower() == "elected" else "Leading"
+
+        rows.append(
+            {
+                "constituency": constituency,
+                "province": top["province"],
+                "district": top["district"],
+                "candidate": top_candidate,
+                "party": top_party,
+                "votes": top_votes,
+                "runner_up": runner_candidate,
+                "runner_up_party": runner_party,
+                "runner_up_votes": runner_votes,
+                "margin": top_votes - runner_votes,
+                "status": status,
+                "count_pct": 100 if status == "Won" else 0,
+            }
+        )
+
+    df = pd.DataFrame(rows)
+    return df.sort_values(["province", "district", "constituency"]).reset_index(drop=True)
 
 
 def render_home_page():
@@ -279,9 +270,10 @@ def render_home_page():
     df = load_election_data()
 
     st.sidebar.title("Dashboard Filters")
-    province_options = ["All"] + sorted(df["province"].unique().tolist())
-    party_options = ["All"] + sorted(df["party"].unique().tolist())
-    status_options = ["All"] + sorted(df["status"].unique().tolist())
+
+    province_options = ["All"] + sorted(df["province"].dropna().unique().tolist())
+    party_options = ["All"] + sorted(df["party"].dropna().unique().tolist())
+    status_options = ["All"] + sorted(df["status"].dropna().unique().tolist())
 
     selected_province = st.sidebar.selectbox("Province", province_options)
     selected_party = st.sidebar.selectbox("Party", party_options)
@@ -302,9 +294,9 @@ def render_home_page():
     if search_text:
         q = search_text.strip().lower()
         filtered_df = filtered_df[
-            filtered_df["constituency"].str.lower().str.contains(q)
-            | filtered_df["district"].str.lower().str.contains(q)
-            | filtered_df["candidate"].str.lower().str.contains(q)
+            filtered_df["constituency"].str.lower().str.contains(q, na=False)
+            | filtered_df["district"].str.lower().str.contains(q, na=False)
+            | filtered_df["candidate"].str.lower().str.contains(q, na=False)
         ]
 
     total_seats = len(filtered_df)
@@ -315,14 +307,14 @@ def render_home_page():
 
     render_hero(
         "Nepal Election Live Dashboard",
-        "Real-time style election tracker built in Streamlit. Currently powered by mock data, ready for official endpoint integration.",
+        "Live dashboard connected to the official Election Commission result feed and refreshed every 30 seconds.",
     )
 
     st.markdown(
         """
-        <span class="pill">Live-style updates</span>
-        <span class="pill">Dark dashboard UI</span>
-        <span class="pill">Ready for official data</span>
+        <span class="pill">Official source</span>
+        <span class="pill">30s refresh</span>
+        <span class="pill">Constituency drilldown</span>
         """,
         unsafe_allow_html=True,
     )
@@ -358,36 +350,41 @@ def render_home_page():
         ].sort_values(["status", "votes"], ascending=[True, False])
 
         st.dataframe(display_df, use_container_width=True, hide_index=True, height=430)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Party Standings</div>', unsafe_allow_html=True)
 
-        party_summary = (
-            filtered_df.groupby("party", as_index=False)
-            .agg(
-                seats_leading=("status", lambda x: int((x == "Leading").sum())),
-                seats_won=("status", lambda x: int((x == "Won").sum())),
-                total_votes=("votes", "sum"),
+        if filtered_df.empty:
+            st.info("No data for selected filters.")
+        else:
+            party_summary = (
+                filtered_df.groupby("party", as_index=False)
+                .agg(
+                    seats_leading=("status", lambda x: int((x == "Leading").sum())),
+                    seats_won=("status", lambda x: int((x == "Won").sum())),
+                    total_votes=("votes", "sum"),
+                )
+                .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
+                .head(12)
             )
-            .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
-        )
 
-        fig_party = px.bar(
-            party_summary,
-            x="party",
-            y=["seats_won", "seats_leading"],
-            barmode="group",
-            color_discrete_sequence=["#22c55e", "#38bdf8"],
-            text_auto=True,
-        )
-        fig_party = plotly_dark_layout(fig_party)
-        fig_party.update_layout(height=360, showlegend=True)
-        st.plotly_chart(fig_party, use_container_width=True)
+            fig_party = px.bar(
+                party_summary,
+                x="party",
+                y=["seats_won", "seats_leading"],
+                barmode="group",
+                color_discrete_sequence=["#22c55e", "#38bdf8"],
+                text_auto=True,
+            )
+            fig_party = plotly_dark_layout(fig_party)
+            fig_party.update_layout(height=360, showlegend=True)
+            st.plotly_chart(fig_party, use_container_width=True)
 
-        st.dataframe(party_summary, use_container_width=True, hide_index=True, height=180)
-        st.markdown('</div>', unsafe_allow_html=True)
+            st.dataframe(party_summary, use_container_width=True, hide_index=True, height=180)
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
     bottom_left, bottom_mid, bottom_right = st.columns([1, 1, 1])
 
@@ -395,64 +392,75 @@ def render_home_page():
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Province Progress</div>', unsafe_allow_html=True)
 
-        province_summary = (
-            filtered_df.groupby("province", as_index=False)
-            .agg(
-                constituencies=("constituency", "count"),
-                avg_count_pct=("count_pct", "mean"),
+        if filtered_df.empty:
+            st.info("No province data.")
+        else:
+            province_summary = (
+                filtered_df.groupby("province", as_index=False)
+                .agg(
+                    constituencies=("constituency", "count"),
+                    avg_count_pct=("count_pct", "mean"),
+                )
+                .sort_values("avg_count_pct", ascending=False)
             )
-            .sort_values("avg_count_pct", ascending=False)
-        )
 
-        fig_province = px.bar(
-            province_summary,
-            x="province",
-            y="avg_count_pct",
-            text_auto=".1f",
-            color="avg_count_pct",
-            color_continuous_scale="Blues",
-        )
-        fig_province = plotly_dark_layout(fig_province)
-        fig_province.update_layout(height=320, coloraxis_showscale=False)
-        st.plotly_chart(fig_province, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+            fig_province = px.bar(
+                province_summary,
+                x="province",
+                y="avg_count_pct",
+                text_auto=".1f",
+                color="avg_count_pct",
+                color_continuous_scale="Blues",
+            )
+            fig_province = plotly_dark_layout(fig_province)
+            fig_province.update_layout(height=320, coloraxis_showscale=False)
+            st.plotly_chart(fig_province, use_container_width=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_mid:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Votes by Party</div>', unsafe_allow_html=True)
 
-        votes_by_party = (
-            filtered_df.groupby("party", as_index=False)["votes"]
-            .sum()
-            .sort_values("votes", ascending=False)
-        )
+        if filtered_df.empty:
+            st.info("No vote data.")
+        else:
+            votes_by_party = (
+                filtered_df.groupby("party", as_index=False)["votes"]
+                .sum()
+                .sort_values("votes", ascending=False)
+                .head(10)
+            )
 
-        fig_votes = px.pie(
-            votes_by_party,
-            names="party",
-            values="votes",
-            color="party",
-            color_discrete_map=PARTY_COLORS,
-            hole=0.58,
-        )
-        fig_votes = plotly_dark_layout(fig_votes)
-        fig_votes.update_layout(height=320, margin=dict(l=10, r=10, t=30, b=10))
-        st.plotly_chart(fig_votes, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+            fig_votes = px.pie(
+                votes_by_party,
+                names="party",
+                values="votes",
+                hole=0.58,
+            )
+            fig_votes = plotly_dark_layout(fig_votes)
+            fig_votes.update_layout(height=320, margin=dict(l=10, r=10, t=30, b=10))
+            st.plotly_chart(fig_votes, use_container_width=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Top Candidates</div>', unsafe_allow_html=True)
 
-        top_candidates = filtered_df.sort_values("votes", ascending=False)[
-            ["candidate", "party", "constituency", "votes", "status"]
-        ].head(8)
+        if filtered_df.empty:
+            st.info("No candidate data.")
+        else:
+            top_candidates = filtered_df.sort_values("votes", ascending=False)[
+                ["candidate", "party", "constituency", "votes", "status"]
+            ].head(8)
 
-        st.dataframe(top_candidates, use_container_width=True, hide_index=True, height=320)
-        st.markdown('</div>', unsafe_allow_html=True)
+            st.dataframe(top_candidates, use_container_width=True, hide_index=True, height=320)
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown(
-        '<div class="small-note">Auto-refresh runs every 30 seconds. Replace the mock data loader with official endpoint parsing in the next step.</div>',
+        '<div class="small-note">Source: result.election.gov.np official central result file. Count progress is estimated as 100 for elected seats and 0 otherwise because the central file does not expose a direct count percentage field.</div>',
         unsafe_allow_html=True,
     )
 
@@ -462,11 +470,11 @@ def render_details_page():
 
     render_hero(
         "Constituency Details",
-        "Drill down into a seat, compare top candidates, and inspect margin and count progress.",
+        "Drill down into a seat, compare top two candidates, and inspect margin and result status.",
     )
 
     st.sidebar.title("Seat Drilldown")
-    province_list = ["All"] + sorted(df["province"].unique().tolist())
+    province_list = ["All"] + sorted(df["province"].dropna().unique().tolist())
     selected_province = st.sidebar.selectbox("Province", province_list, key="details_province")
 
     filtered_df = df.copy()
@@ -474,6 +482,11 @@ def render_details_page():
         filtered_df = filtered_df[filtered_df["province"] == selected_province]
 
     constituency_list = filtered_df["constituency"].sort_values().tolist()
+
+    if not constituency_list:
+        st.warning("No constituencies available for the selected province.")
+        return
+
     selected_constituency = st.sidebar.selectbox(
         "Choose constituency",
         constituency_list,
@@ -509,7 +522,7 @@ def render_details_page():
         ])
 
         st.dataframe(summary_df, use_container_width=True, hide_index=True, height=388)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
@@ -526,13 +539,12 @@ def render_details_page():
             x="Candidate",
             y="Votes",
             color="Party",
-            color_discrete_map=PARTY_COLORS,
             text_auto=True,
         )
         fig_compare = plotly_dark_layout(fig_compare)
         fig_compare.update_layout(height=420)
         st.plotly_chart(fig_compare, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
     bottom_left, bottom_right = st.columns([1.2, 1])
 
@@ -557,7 +569,7 @@ def render_details_page():
         ].sort_values(["province", "district", "constituency"])
 
         st.dataframe(table_df, use_container_width=True, hide_index=True, height=380)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
@@ -572,13 +584,12 @@ def render_details_page():
             x="constituency",
             y="margin",
             color="party",
-            color_discrete_map=PARTY_COLORS,
             text_auto=True,
         )
         fig_margin = plotly_dark_layout(fig_margin)
         fig_margin.update_layout(height=380)
         st.plotly_chart(fig_margin, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("</div>", unsafe_allow_html=True)
 
 
 inject_css()
