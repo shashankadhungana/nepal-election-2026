@@ -3,4 +3,5 @@ pandas
 plotly
 streamlit-autorefresh
 requests
-urllib3s
+
+urllib3
