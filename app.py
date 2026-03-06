@@ -256,6 +256,28 @@ def normalize_raw_results(raw):
 
 
 @st.cache_data(ttl=30)
+def load_fetch_status():
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/122.0.0.0 Safari/537.36"
+        )
+    }
+
+    status_url = "https://raw.githubusercontent.com/shashankadhungana/nepal-election-2026/main/data/fetch_status.json"
+
+    try:
+        r = requests.get(status_url, headers=headers, timeout=20)
+        if r.status_code == 200:
+            return r.json()
+    except Exception:
+        pass
+
+    return None
+
+
+@st.cache_data(ttl=30)
 def load_election_data():
     headers = {
         "User-Agent": (
@@ -305,13 +327,20 @@ def load_election_data():
 
 
 def render_empty_state(title_text):
+    status = load_fetch_status()
+
     render_hero(
         title_text,
         "Official data source is temporarily unavailable or blocked from the hosting environment.",
     )
     st.info("The Election Commission source did not return usable data right now.")
+
+    if status:
+        st.markdown("### Fetch status")
+        st.json(status, expanded=True)
+
     st.markdown(
-        '<div class="small-note">Tip: this often works locally but may be blocked on Streamlit Cloud. The GitHub mirror will solve that once the workflow writes data/election_data.json.</div>',
+        '<div class="small-note">The app is waiting for the GitHub mirror workflow to fetch and store usable data.</div>',
         unsafe_allow_html=True,
     )
 
