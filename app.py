@@ -586,34 +586,32 @@ def seat_share_chart(df):
     seat_counts = (
         df.groupby("party", as_index=False)
         .agg(
-            counting=("status", lambda x: int((x == "Counting").sum())),
+            current_top_seats=("party", "size"),
             declared=("status", lambda x: int((x == "Won").sum())),
         )
-        .sort_values(["declared", "counting"], ascending=False)
+        .sort_values(["declared", "current_top_seats"], ascending=False)
         .head(12)
     )
 
-    if seat_counts.empty:
-        return go.Figure()
-
     fig = go.Figure()
 
-    fig.add_trace(
-        go.Bar(
-            x=seat_counts["party"],
-            y=seat_counts["counting"],
-            name="Leading / Counting",
-            marker_color="#38bdf8",
+    if not seat_counts.empty:
+        fig.add_trace(
+            go.Bar(
+                x=seat_counts["party"],
+                y=seat_counts["current_top_seats"],
+                name="Current top seats",
+                marker_color="#38bdf8",
+            )
         )
-    )
-    fig.add_trace(
-        go.Bar(
-            x=seat_counts["party"],
-            y=seat_counts["declared"],
-            name="Declared",
-            marker_color="#22c55e",
+        fig.add_trace(
+            go.Bar(
+                x=seat_counts["party"],
+                y=seat_counts["declared"],
+                name="Declared",
+                marker_color="#22c55e",
+            )
         )
-    )
 
     fig.add_hline(
         y=MAJORITY_NEEDED,
@@ -624,7 +622,7 @@ def seat_share_chart(df):
     )
 
     fig.update_layout(
-        barmode="stack",
+        barmode="group",
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="#111827",
         font=dict(color="#e5e7eb"),
@@ -648,20 +646,18 @@ def featured_seats(df):
 
 
 def build_updates(df):
-    if df.empty:
-        return []
-
     updates = []
+
     declared_df = df[df["status"] == "Won"].sort_values("margin", ascending=False).head(4)
     for _, row in declared_df.iterrows():
         updates.append(
             f"{row['candidate']} ({row['party']}) declared in {row['constituency']} by {int(row['margin']):,} votes."
         )
 
-    counting_df = df[df["status"] == "Counting"].sort_values("margin", ascending=True).head(4)
+    counting_df = df[df["status"] != "Won"].sort_values("margin", ascending=True).head(4)
     for _, row in counting_df.iterrows():
         updates.append(
-            f"{row['constituency']} remains close: {row['candidate']} ({row['party']}) leads by {int(row['margin']):,} votes."
+            f"{row['constituency']} remains close: {row['candidate']} ({row['party']}) is currently top by {int(row['margin']):,} votes."
         )
 
     return updates[:6]
@@ -699,6 +695,7 @@ def render_home_page():
     search_text = st.sidebar.text_input("Search seat, district, candidate")
 
     filtered_df = df.copy()
+
     if selected_province != "All":
         filtered_df = filtered_df[filtered_df["province"] == selected_province]
     if selected_party != "All":
@@ -727,6 +724,20 @@ def render_home_page():
     declared_pct = round((declared_count / FPTP_SEATS) * 100, 1) if FPTP_SEATS else 0
     hot_df = filtered_df.sort_values(["margin", "count_pct"], ascending=[True, False]).head(6)
     featured_df = featured_seats(filtered_df)
+
+    top_party = "N/A"
+    top_party_count = 0
+    if not filtered_df.empty:
+        top_counts = filtered_df["party"].value_counts()
+        top_party = top_counts.index[0]
+        top_party_count = int(top_counts.iloc[0])
+
+    m1, m2, m3, m4, m5 = st.columns(5)
+    m1.metric("Visible seats", len(filtered_df))
+    m2.metric("Declared", declared_count)
+    m3.metric("Current top party", top_party)
+    m4.metric("Current top seats", top_party_count)
+    m5.metric("Declared progress", f"{declared_pct}%")
 
     c1, c2 = st.columns([1.4, 1])
 
@@ -757,7 +768,7 @@ def render_home_page():
 
     with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("🔥 Hot Seats", "Closely contested constituencies")
+        card_title("🔥 Hot Seats", "Closest visible constituencies")
         st.metric("Seats in hot list", len(hot_df))
         hot_display = hot_df[
             ["constituency", "candidate", "party", "runner_up", "margin", "status"]
@@ -778,7 +789,7 @@ def render_home_page():
 
     with c1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Latest Updates", "Newly declared seats and lead changes")
+        card_title("Latest Updates", "Newly declared seats and close-race movement")
         updates = build_updates(filtered_df)
         if updates:
             for item in updates:
@@ -793,7 +804,7 @@ def render_home_page():
         st.metric("Declared progress", f"{declared_pct}%")
         st.progress(min(max(declared_pct / 100, 0.0), 1.0))
         st.markdown(
-            f'<div class="small-note" style="margin-top:0.7rem;">Counting and declared status are based on the visible filtered seats.</div>',
+            '<div class="small-note" style="margin-top:0.7rem;">Based on visible filtered FPTP constituencies.</div>',
             unsafe_allow_html=True,
         )
         st.markdown("</div>", unsafe_allow_html=True)
@@ -807,87 +818,86 @@ def render_home_page():
     c1, c2 = st.columns(2)
 
     with c1:
-    st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    card_title("Party position", "Current top seats and declared seats by party")
+        st.markdown('<div class="section-card">', unsafe_allow_html=True)
+        card_title("Party position", "Current top seats and declared seats by party")
 
-    party_summary = (
-        filtered_df.groupby("party", as_index=False)
-        .size()
-        .rename(columns={"size": "current_top_seats"})
-        .merge(
-            filtered_df[filtered_df["status"] == "Won"]
-            .groupby("party", as_index=False)
+        party_summary = (
+            filtered_df.groupby("party", as_index=False)
             .size()
-            .rename(columns={"size": "declared"}),
-            on="party",
-            how="left",
+            .rename(columns={"size": "current_top_seats"})
+            .merge(
+                filtered_df[filtered_df["status"] == "Won"]
+                .groupby("party", as_index=False)
+                .size()
+                .rename(columns={"size": "declared"}),
+                on="party",
+                how="left",
+            )
+            .merge(
+                filtered_df.groupby("party", as_index=False)["votes"]
+                .sum()
+                .rename(columns={"votes": "top_votes"}),
+                on="party",
+                how="left",
+            )
+            .fillna({"declared": 0, "top_votes": 0})
         )
-        .merge(
-            filtered_df.groupby("party", as_index=False)["votes"]
-            .sum()
-            .rename(columns={"votes": "top_votes"}),
-            on="party",
-            how="left",
-        )
-        .fillna({"declared": 0, "top_votes": 0})
-    )
 
-    party_summary["declared"] = party_summary["declared"].astype(int)
-    party_summary["top_votes"] = party_summary["top_votes"].astype(int)
+        party_summary["declared"] = party_summary["declared"].astype(int)
+        party_summary["top_votes"] = party_summary["top_votes"].astype(int)
 
-    party_summary = party_summary.sort_values(
-        ["declared", "current_top_seats", "top_votes"],
-        ascending=False
-    ).head(12)
+        party_summary = party_summary.sort_values(
+            ["declared", "current_top_seats", "top_votes"],
+            ascending=False
+        ).head(12)
 
-    fig_party = px.bar(
-        party_summary,
-        x="party",
-        y=["current_top_seats", "declared"],
-        barmode="group",
-        text_auto=True,
-        color_discrete_sequence=["#38bdf8", "#22c55e"],
-        labels={
-            "party": "Party",
-            "value": "Seats",
-            "variable": "Metric",
-        },
-    )
-
-    fig_party.for_each_trace(
-        lambda t: t.update(
-            name={
-                "current_top_seats": "Current top seats",
-                "declared": "Declared seats",
-            }.get(t.name, t.name)
-        )
-    )
-
-    fig_party = chart_layout(fig_party)
-    fig_party.update_layout(height=360)
-
-    st.plotly_chart(fig_party, width="stretch")
-
-    st.dataframe(
-        party_summary.rename(
-            columns={
+        fig_party = px.bar(
+            party_summary,
+            x="party",
+            y=["current_top_seats", "declared"],
+            barmode="group",
+            text_auto=True,
+            color_discrete_sequence=["#38bdf8", "#22c55e"],
+            labels={
                 "party": "Party",
-                "current_top_seats": "Current top seats",
-                "declared": "Declared seats",
-                "top_votes": "Top votes",
-            }
-        ),
-        width="stretch",
-        hide_index=True,
-        height=260,
-    )
+                "value": "Seats",
+                "variable": "Metric",
+            },
+        )
 
-    st.markdown("</div>", unsafe_allow_html=True)
+        fig_party.for_each_trace(
+            lambda t: t.update(
+                name={
+                    "current_top_seats": "Current top seats",
+                    "declared": "Declared seats",
+                }.get(t.name, t.name)
+            )
+        )
 
+        fig_party = chart_layout(fig_party)
+        fig_party.update_layout(height=360)
+
+        st.plotly_chart(fig_party, width="stretch")
+
+        st.dataframe(
+            party_summary.rename(
+                columns={
+                    "party": "Party",
+                    "current_top_seats": "Current top seats",
+                    "declared": "Declared seats",
+                    "top_votes": "Top votes",
+                }
+            ),
+            width="stretch",
+            hide_index=True,
+            height=260,
+        )
+        st.markdown("</div>", unsafe_allow_html=True)
 
     with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
         card_title("Province progress", "Average visible count progress by province")
+
         province_summary = (
             filtered_df.groupby("province", as_index=False)
             .agg(
@@ -896,6 +906,7 @@ def render_home_page():
             )
             .sort_values("avg_count_pct", ascending=False)
         )
+
         fig_province = px.bar(
             province_summary,
             x="province",
@@ -911,6 +922,7 @@ def render_home_page():
 
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     card_title("Constituency Results", "Searchable live table")
+
     table_df = filtered_df.rename(
         columns={
             "constituency": "Seat",
@@ -932,6 +944,7 @@ def render_home_page():
             "Runner-up", "Runner-up party", "Runner-up votes", "Margin", "Status", "Count %",
         ]
     ].sort_values(["Status", "Leader votes"], ascending=[True, False])
+
     st.dataframe(table_df, width="stretch", hide_index=True, height=430)
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -974,6 +987,7 @@ def render_details_page():
 
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     card_title("Constituency detail", seat["constituency"])
+
     m1, m2, m3, m4, m5 = st.columns(5)
     m1.metric("Province", seat["province"])
     m2.metric("Leader", seat["candidate"])
@@ -1006,6 +1020,20 @@ def render_details_page():
     fig_compare = chart_layout(fig_compare)
     fig_compare.update_layout(height=420)
     st.plotly_chart(fig_compare, width="stretch")
+
+    summary_df = pd.DataFrame([
+        {"Field": "District", "Value": seat["district"]},
+        {"Field": "Status", "Value": seat["status"]},
+        {"Field": "Leader", "Value": seat["candidate"]},
+        {"Field": "Leader party", "Value": seat["party"]},
+        {"Field": "Leader votes", "Value": f"{int(seat['votes']):,}"},
+        {"Field": "Runner-up", "Value": seat["runner_up"]},
+        {"Field": "Runner-up party", "Value": seat["runner_up_party"]},
+        {"Field": "Runner-up votes", "Value": f"{int(seat['runner_up_votes']):,}"},
+        {"Field": "Margin", "Value": f"{int(seat['margin']):,}"},
+    ])
+
+    st.dataframe(summary_df, width="stretch", hide_index=True, height=320)
     st.markdown("</div>", unsafe_allow_html=True)
 
 
