@@ -1,87 +1,121 @@
 import streamlit as st
 import pandas as pd
 import time
-import requests
+import numpy as np
 from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 
 st.set_page_config(
-    page_title="🇳🇵 Nepal Election 2082 Live",
+    page_title="🇳🇵 Nepal Election 2082 LIVE",
     page_icon="🇳🇵",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    page_title="Live Election Dashboard"
 )
 
-@st.cache_data(ttl=30)
-def fetch_election_data():
-    """Fetch/mock live data - replace with real API when available"""
-    try:
-        # Placeholder: nepalvotes.live or result.election.gov.np scraping
-        # For now, demo data based on live structure (165 seats, parties like Nepali Congress, UML)
-        data = {
-            "province": ["Koshi", "Koshi", "Madhesh", "Bagmati", "Gandaki", "Lumbini", "Karnali"],
-            "leading_party": ["Nepali Congress", "CPN-UML", "Nepali Congress", "CPN-UML", "Rastriya Swatantra", "Nepali Congress", "CPN-Maoist"],
-            "seats_declared": [15, 15, 12, 18, 10, 14, 8],
-            "seats_won": [8, 5, 6, 9, 4, 7, 3],
-            "seats_leading": [4, 3, 2, 5, 3, 4, 2],
-            "total_votes": [450000, 380000, 320000, 420000, 280000, 350000, 220000],
-            "turnout_pct": [65, 62, 58, 70, 68, 64, 55]
-        }
-        df = pd.DataFrame(data)
-        return df
-    except Exception as e:
-        st.error(f"Fetch error: {e}. Using demo data.")
-        return pd.DataFrame()
+# Simulated live data generator (replace with real API)
+@st.cache_data(ttl=10)
+def fetch_live_data():
+    np.random.seed(int(time.time() // 10))  # Deterministic but changing
+    provinces = ["Koshi", "Madhesh", "Bagmati", "Gandaki", "Lumbini", "Karnali", "Sudurpashchim"]
+    major_parties = ["Nepali Congress", "CPN-UML", "Rastriya Swatantra", "Maoist Centre", "Independent"]
+    
+    data = []
+    for province in provinces:
+        for i in range(np.random.randint(8, 20)):
+            party = np.random.choice(major_parties)
+            seats_won = np.random.randint(0, 3)
+            seats_leading = np.random.choice([0, 1, 2], p=[0.6, 0.3, 0.1])
+            votes = np.random.randint(50000, 300000)
+            data.append({
+                "province": province,
+                "party": party,
+                "seats_won": seats_won,
+                "seats_leading": seats_leading,
+                "votes": votes,
+                "update_time": datetime.now()
+            })
+    return pd.DataFrame(data)
 
-st.title("🇳🇵 Nepal Election 2082 Live Dashboard")
-st.markdown("**House of Representatives | 165 FPTP seats | Data via Election Commission**")
+# App
+st.title("🇳🇵 Nepal Election 2082 LIVE COUNTDOWN")
+st.markdown("**Real-time FPTP results | 165 seats | Auto-refresh every 10s** 🎯")
 
-df = fetch_election_data()
-if df.empty:
-    st.stop()
+# Real-time loop with animation-friendly updates
+placeholder = st.empty()
+refresh_col, last_update_col = st.columns([3, 1])
 
-## Live KPIs
-col1, col2, col3, col4 = st.columns(4)
-total_won = df["seats_won"].sum()
-total_leading = df["seats_leading"].sum()
-col1.metric("Seats Won", f"{total_won:,}", delta="+12")
-col2.metric("Seats Leading", f"{total_leading:,}", delta="+8")
-col3.metric("Declared", f"{total_won + total_leading}/165")
-col4.metric("Updated", datetime.now().strftime("%H:%M AEDT"))
+with refresh_col:
+    if st.button("🔄 Force Refresh", use_container_width=True):
+        st.cache_data.clear()
+with last_update_col:
+    st.metric("Last Update", datetime.now().strftime("%H:%M:%S"))
 
-## Leaderboard & Hot Races
-col_a, col_b = st.columns(2)
-with col_a:
-    st.subheader("🏆 Party Leaderboard")
+# Main live content
+with placeholder.container():
+    df = fetch_live_data()
+    
+    # Animated KPIs with deltas (built-in animation)
+    col1, col2, col3, col4 = st.columns(4)
+    
+    total_won = df["seats_won"].sum()
+    total_leading = df["seats_leading"].sum()
+    total_declared = total_won + total_leading
+    top_votes = df["votes"].max()
+    
+    col1.metric("Seats Won 🏆", f"{total_won:,}", delta="+2")  # Animated delta
+    col2.metric("Seats Leading ⚡", f"{total_leading:,}", delta="+1")
+    col3.metric("Declared /165", f"{total_declared:,}", f"{165-total_declared:,} left")
+    col4.metric("Top Constituency", f"{top_votes:,}", delta="+15k")
+    
+    # Confetti on milestones
+    if total_declared >= 100:
+        st.balloons()  # Or st.snow() for snow effect
+    
+    # Leaderboard with animation-ready bar chart
     party_summary = (
-        df.groupby("leading_party")[["seats_won", "seats_leading"]].sum()
+        df.groupby("party")[["seats_won", "seats_leading"]].sum()
         .assign(total=lambda x: x.sum(axis=1))
-        .sort_values("total", ascending=False)
-        .head(10)
+        .sort_values("total", ascending=False).head(8)
         .reset_index()
     )
-    fig = px.bar(
-        party_summary, x="total", y="leading_party", orientation="h",
-        title="Seats (Won + Leading)", color="total", color_continuous_scale="plasma"
+    
+    col_a, col_b = st.columns([2, 1])
+    
+    with col_a:
+        st.subheader("🏅 Live Party Leaderboard")
+        fig_leader = px.bar(
+            party_summary, x="total", y="party", orientation="h",
+            title="Seats (Won + Leading)",
+            color="total", color_continuous_scale="RdYlGn",
+            text="total", height=400
+        )
+        fig_leader.update_traces(texttemplate="%{text}<br>(%{y})", textposition="outside")
+        st.plotly_chart(fig_leader, use_container_width=True)
+    
+    with col_b:
+        st.subheader("🔥 Hot Races")
+        hot_races = df.nlargest(5, "votes")[["province", "party", "votes"]]
+        st.dataframe(
+            hot_races.style.format({"votes": "{:,}"}),
+            use_container_width=True,
+            height=300
+        )
+    
+    # Vote trends animation (simulated line chart)
+    st.subheader("📈 Vote Surge (Last 10 Updates)")
+    trend_df = df.groupby("party")["votes"].sum().reset_index()
+    fig_trend = px.line(
+        trend_df.sort_values("votes", ascending=False).head(7),
+        x="party", y="votes", markers=True,
+        title="Total Votes by Party",
+        color_discrete_sequence=px.colors.qualitative.Set3
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig_trend, use_container_width=True)
+    
+    # Footer
+    st.caption("💡 Demo data simulating live counts | Real API: nepalvotes.live / result.election.gov.np")
 
-with col_b:
-    st.subheader("🔥 Hot Races")
-    # Smallest margins simulation - enhance with real data
-    hot = df.sort_values("seats_declared").head(5)[["province", "leading_party", "seats_won"]]
-    st.dataframe(hot.style.highlight_max(axis=0), use_container_width=True)
-
-## Province View
-st.subheader("Province Breakdown")
-fig_map = px.bar(
-    df, x="province", y="seats_won",
-    color="leading_party", hover_data=["total_votes", "turnout_pct"],
-    title="Seats Won by Province", barmode="group"
-)
-st.plotly_chart(fig_map, use_container_width=True)
-
-# Auto-refresh button for iPad
-st.button("🔄 Refresh Now", on_click=lambda: st.cache_data.clear())
-st.caption("💡 Data refreshes every 30s. For official: result.election.gov.np")
+# Auto-refresh simulation (runs every 10s in background)
+time.sleep(10)
+st.rerun()
