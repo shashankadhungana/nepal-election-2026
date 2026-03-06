@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-06T05:15:20.134145+00:00",
+  "last_attempt_utc": "2026-03-06T05:22:03.981529+00:00",
   "success": false,
   "row_count": 0,
   "source_url": null,
-  "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+  "error": "HTTPSConnectionPool(host='result.election.gov.np', port=443): Max retries exceeded with url: /JSONFiles/ElectionResultCentral.txt (Caused by ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
 }
