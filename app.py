@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import plotly.express as px
+import streamlit_autorefresh
 
 st.set_page_config(
     page_title="Nepal Election 2082 | Live Results",
@@ -10,9 +11,12 @@ st.set_page_config(
     layout="wide"
 )
 
-@st.cache_data(ttl=15)
+# Auto-refresh every 15s (client-side, no server load)
+count = streamlit_autorefresh.st_autorefresh(interval=15000, limit=None, key="f")
+
+@st.cache_data(ttl=300)  # 5 min cache = instant loads
 def fetch_live_results():
-    """Simulates real constituency data from nepalvotes.live structure"""
+    """Simulates real constituency data"""
     constituencies = [
         "Jhapa-5", "Chitwan-2", "Kathmandu-1", "Bhaktapur-1", "Jumla-1", "Pyuthan-1", 
         "Rautahat-1", "Kanchanpur-2", "Dang-2", "Nuwakot-1", "Rolpa-1", "Saptari-3"
@@ -23,7 +27,7 @@ def fetch_live_results():
     ]
     
     data = []
-    np.random.seed(int(datetime.now().timestamp() // 15))
+    np.random.seed(int(datetime.now().timestamp() // 300))
     for const in constituencies:
         for cand in np.random.choice(candidates, np.random.randint(3,6), replace=False):
             votes = np.random.randint(8000, 35000)
@@ -38,19 +42,18 @@ def fetch_live_results():
                 "Status": status,
                 "Update": datetime.now().strftime("%H:%M")
             })
-    df = pd.DataFrame(data)
-    return df.sort_values("Votes", ascending=False)
+    return pd.DataFrame(data).sort_values("Votes", ascending=False)
 
 st.title("🇳🇵 Nepal Election 2082")
 st.markdown("**House of Representatives | Live FPTP Results | Data simulated from Election Commission**")
 
-# Header KPIs (professional metrics)
-col1, col2, col3 = st.columns(3)
 df = fetch_live_results()
 
+# Header KPIs
+col1, col2, col3 = st.columns(3)
 total_declared = df["Constituency"].nunique()
 top_votes = df["Votes"].max()
-seats_projected = int(total_declared * 0.6)  # Simulated projection
+seats_projected = int(total_declared * 0.6)
 
 with col1:
     st.metric("Constituencies Reporting", total_declared, "12")
@@ -59,7 +62,7 @@ with col2:
 with col3:
     st.metric("Projected Seats (RSP)", seats_projected, "+5")
 
-# Tabs for clean navigation
+# Tabs
 tab1, tab2, tab3 = st.tabs(["📊 Leaderboard", "🔥 Hot Seats", "🏛️ All Constituencies"])
 
 with tab1:
@@ -81,13 +84,12 @@ with tab2:
     
     col_h1, col_h2 = st.columns(2)
     with col_h1:
-        st.metric("Tightest Race", hot_df["Margin"].min())
+        st.metric("Tightest Race", f"{hot_df['Margin'].min():,.0f}")
     with col_h2:
         st.metric("Hot Seat Constituencies", len(hot_df))
 
 with tab3:
     st.subheader("All Area Vote Results")
-    # Filter & sort options
     province_filter = st.multiselect("Filter Constituency", df["Constituency"].unique(), default=df["Constituency"].unique()[:6])
     df_filtered = df[df["Constituency"].isin(province_filter)]
     
@@ -100,11 +102,9 @@ with tab3:
     df_display = df_filtered.sort_values(sort_by, ascending=(sort_by != "Votes")).loc[:, show_cols]
     st.dataframe(df_display.style.format({"Votes": "{:,}", "Margin": "{:,.0f}"}), height=600, use_container_width=True)
 
-# Footer
 st.markdown("---")
-st.caption("Live simulation | Real data: nepalvotes.live, result.election.gov.np | Refreshes every 15s")
+st.caption("Live simulation | Real data: nepalvotes.live, result.election.gov.np | Auto-refreshes every 15s")
 
-# Auto-refresh
-if st.button("🔄 Update Now"):
+if st.button("🔄 Manual Refresh"):
     st.cache_data.clear()
-st.rerun()
+    st.rerun()
