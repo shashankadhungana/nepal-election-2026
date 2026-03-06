@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-06T04:30:19.765266+00:00",
+  "last_attempt_utc": "2026-03-06T04:40:11.755353+00:00",
   "success": false,
   "row_count": 0,
   "source_url": null,
-  "error": "404 Client Error: Not Found for url: https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt"
+  "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
 }
