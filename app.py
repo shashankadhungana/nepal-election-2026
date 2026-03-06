@@ -807,30 +807,83 @@ def render_home_page():
     c1, c2 = st.columns(2)
 
     with c1:
-        st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Party position", "Leading and declared seats by party")
-        party_summary = (
-            filtered_df.groupby("party", as_index=False)
-            .agg(
-                counting=("status", lambda x: int((x == "Counting").sum())),
-                declared=("status", lambda x: int((x == "Won").sum())),
-                top_votes=("votes", "sum"),
-            )
-            .sort_values(["declared", "counting", "top_votes"], ascending=False)
-            .head(12)
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    card_title("Party position", "Current top seats and declared seats by party")
+
+    party_summary = (
+        filtered_df.groupby("party", as_index=False)
+        .size()
+        .rename(columns={"size": "current_top_seats"})
+        .merge(
+            filtered_df[filtered_df["status"] == "Won"]
+            .groupby("party", as_index=False)
+            .size()
+            .rename(columns={"size": "declared"}),
+            on="party",
+            how="left",
         )
-        fig_party = px.bar(
-            party_summary,
-            x="party",
-            y=["counting", "declared"],
-            barmode="group",
-            text_auto=True,
-            color_discrete_sequence=["#38bdf8", "#22c55e"],
+        .merge(
+            filtered_df.groupby("party", as_index=False)["votes"]
+            .sum()
+            .rename(columns={"votes": "top_votes"}),
+            on="party",
+            how="left",
         )
-        fig_party = chart_layout(fig_party)
-        fig_party.update_layout(height=360)
-        st.plotly_chart(fig_party, width="stretch")
-        st.markdown("</div>", unsafe_allow_html=True)
+        .fillna({"declared": 0, "top_votes": 0})
+    )
+
+    party_summary["declared"] = party_summary["declared"].astype(int)
+    party_summary["top_votes"] = party_summary["top_votes"].astype(int)
+
+    party_summary = party_summary.sort_values(
+        ["declared", "current_top_seats", "top_votes"],
+        ascending=False
+    ).head(12)
+
+    fig_party = px.bar(
+        party_summary,
+        x="party",
+        y=["current_top_seats", "declared"],
+        barmode="group",
+        text_auto=True,
+        color_discrete_sequence=["#38bdf8", "#22c55e"],
+        labels={
+            "party": "Party",
+            "value": "Seats",
+            "variable": "Metric",
+        },
+    )
+
+    fig_party.for_each_trace(
+        lambda t: t.update(
+            name={
+                "current_top_seats": "Current top seats",
+                "declared": "Declared seats",
+            }.get(t.name, t.name)
+        )
+    )
+
+    fig_party = chart_layout(fig_party)
+    fig_party.update_layout(height=360)
+
+    st.plotly_chart(fig_party, width="stretch")
+
+    st.dataframe(
+        party_summary.rename(
+            columns={
+                "party": "Party",
+                "current_top_seats": "Current top seats",
+                "declared": "Declared seats",
+                "top_votes": "Top votes",
+            }
+        ),
+        width="stretch",
+        hide_index=True,
+        height=260,
+    )
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
     with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
