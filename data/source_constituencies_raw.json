@@ -7,7 +7,7 @@
     "name": "Taplejung-1",
     "nameNp": "ताप्लेजुङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339933,
@@ -211,7 +211,7 @@
     "name": "Panchthar-1",
     "nameNp": "पाँचथर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339925,
@@ -454,7 +454,7 @@
     "name": "Ilam-1",
     "nameNp": "इलाम क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340081,
@@ -634,7 +634,7 @@
     "name": "Ilam-2",
     "nameNp": "इलाम क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339922,
@@ -824,7 +824,7 @@
     "name": "Jhapa-1",
     "nameNp": "झापा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339485,
@@ -1068,7 +1068,7 @@
     "name": "Jhapa-2",
     "nameNp": "झापा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339380,
@@ -1356,7 +1356,7 @@
     "name": "Jhapa-3",
     "nameNp": "झापा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339542,
@@ -1616,7 +1616,7 @@
     "name": "Jhapa-4",
     "nameNp": "झापा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339393,
@@ -1863,7 +1863,7 @@
     "name": "Jhapa-5",
     "nameNp": "झापा क्षेत्र नं. 5",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339653,
@@ -2205,7 +2205,7 @@
     "name": "Sankhuwasabha-1",
     "nameNp": "संखुवासभा क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340348,
@@ -2463,7 +2463,7 @@
     "name": "Tehrathum-1",
     "nameNp": "तेह्रथुम क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340612,
@@ -2636,7 +2636,7 @@
     "name": "Bhojpur-1",
     "nameNp": "भोजपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339661,
@@ -2803,7 +2803,7 @@
     "name": "Dhankuta-1",
     "nameNp": "धनकुटा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339725,
@@ -3064,7 +3064,7 @@
     "name": "Morang-1",
     "nameNp": "मोरङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341227,
@@ -3331,7 +3331,7 @@
     "name": "Morang-2",
     "nameNp": "मोरङ क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341642,
@@ -3561,7 +3561,7 @@
     "name": "Morang-3",
     "nameNp": "मोरङ क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341077,
@@ -3842,7 +3842,7 @@
     "name": "Morang-4",
     "nameNp": "मोरङ क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342293,
@@ -4142,7 +4142,7 @@
     "name": "Morang-5",
     "nameNp": "मोरङ क्षेत्र नं. 5",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341509,
@@ -4501,7 +4501,7 @@
     "name": "Morang-6",
     "nameNp": "मोरङ क्षेत्र नं. 6",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341123,
@@ -4748,7 +4748,7 @@
     "name": "Sunsari-1",
     "nameNp": "सुनसरी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339794,
@@ -5166,7 +5166,7 @@
     "name": "Sunsari-2",
     "nameNp": "सुनसरी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341392,
@@ -5594,7 +5594,7 @@
     "name": "Sunsari-3",
     "nameNp": "सुनसरी क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340042,
@@ -5933,7 +5933,7 @@
     "name": "Sunsari-4",
     "nameNp": "सुनसरी क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340603,
@@ -6446,7 +6446,7 @@
     "name": "Solukhumbu-1",
     "nameNp": "सोलुखुम्बु क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341534,
@@ -6625,7 +6625,7 @@
     "name": "Khotang-1",
     "nameNp": "खोटाङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339964,
@@ -6860,7 +6860,7 @@
     "name": "Okhaldhunga-1",
     "nameNp": "ओखलढुंगा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341555,
@@ -7103,7 +7103,7 @@
     "name": "Udayapur-1",
     "nameNp": "उदयपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341485,
@@ -7385,7 +7385,7 @@
     "name": "Udayapur-2",
     "nameNp": "उदयपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339923,
@@ -7566,7 +7566,7 @@
     "name": "Saptari-1",
     "nameNp": "सप्तरी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341238,
@@ -7850,7 +7850,7 @@
     "name": "Saptari-2",
     "nameNp": "सप्तरी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339852,
@@ -8314,7 +8314,7 @@
     "name": "Saptari-3",
     "nameNp": "सप्तरी क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341099,
@@ -8630,7 +8630,7 @@
     "name": "Saptari-4",
     "nameNp": "सप्तरी क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341103,
@@ -9005,7 +9005,7 @@
     "name": "Siraha-1",
     "nameNp": "सिराहा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340556,
@@ -9460,7 +9460,7 @@
     "name": "Siraha-2",
     "nameNp": "सिराहा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341250,
@@ -9934,7 +9934,7 @@
     "name": "Siraha-3",
     "nameNp": "सिराहा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342059,
@@ -10591,7 +10591,7 @@
     "name": "Siraha-4",
     "nameNp": "सिराहा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341713,
@@ -11132,7 +11132,7 @@
     "name": "Dolakha-1",
     "nameNp": "दोलखा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339522,
@@ -11623,7 +11623,7 @@
     "name": "Ramechhap-1",
     "nameNp": "रामेछाप क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339706,
@@ -11885,7 +11885,7 @@
     "name": "Sindhuli-1",
     "nameNp": "सिन्धुली क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340576,
@@ -12052,7 +12052,7 @@
     "name": "Sindhuli-2",
     "nameNp": "सिन्धुली क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340409,
@@ -12302,7 +12302,7 @@
     "name": "Dhanusha-1",
     "nameNp": "धनुषा क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340982,
@@ -12927,7 +12927,7 @@
     "name": "Dhanusha-2",
     "nameNp": "धनुषा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339806,
@@ -13413,7 +13413,7 @@
     "name": "Dhanusha-3",
     "nameNp": "धनुषा क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340296,
@@ -14103,7 +14103,7 @@
     "name": "Dhanusha-4",
     "nameNp": "धनुषा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341797,
@@ -14667,7 +14667,7 @@
     "name": "Mahottari-1",
     "nameNp": "महोत्तरी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341312,
@@ -15059,7 +15059,7 @@
     "name": "Mahottari-2",
     "nameNp": "महोत्तरी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341190,
@@ -15606,7 +15606,7 @@
     "name": "Mahottari-3",
     "nameNp": "महोत्तरी क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340549,
@@ -16177,7 +16177,7 @@
     "name": "Mahottari-4",
     "nameNp": "महोत्तरी क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341656,
@@ -16721,7 +16721,7 @@
     "name": "Sarlahi-1",
     "nameNp": "सर्लाही क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342793,
@@ -17147,7 +17147,7 @@
     "name": "Sarlahi-2",
     "nameNp": "सर्लाही क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341252,
@@ -17613,7 +17613,7 @@
     "name": "Sarlahi-3",
     "nameNp": "सर्लाही क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339904,
@@ -18115,7 +18115,7 @@
     "name": "Sarlahi-4",
     "nameNp": "सर्लाही क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340974,
@@ -18622,7 +18622,7 @@
     "name": "Rasuwa-1",
     "nameNp": "रसुवा क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341095,
@@ -18791,7 +18791,7 @@
     "name": "Dhading-1",
     "nameNp": "धादिङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342066,
@@ -19152,7 +19152,7 @@
     "name": "Dhading-2",
     "nameNp": "धादिङ क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340512,
@@ -19516,7 +19516,7 @@
     "name": "Nuwakot-1",
     "nameNp": "नुवाकोट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340093,
@@ -19809,7 +19809,7 @@
     "name": "Nuwakot-2",
     "nameNp": "नुवाकोट क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341708,
@@ -20002,7 +20002,7 @@
     "name": "Kathmandu-1",
     "nameNp": "काठमाडौं क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340716,
@@ -20411,7 +20411,7 @@
     "name": "Kathmandu-2",
     "nameNp": "काठमाडौं क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341881,
@@ -20845,7 +20845,7 @@
     "name": "Kathmandu-3",
     "nameNp": "काठमाडौं क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339690,
@@ -21177,7 +21177,7 @@
     "name": "Kathmandu-4",
     "nameNp": "काठमाडौं क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340660,
@@ -21546,7 +21546,7 @@
     "name": "Kathmandu-5",
     "nameNp": "काठमाडौं क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340670,
@@ -21923,7 +21923,7 @@
     "name": "Kathmandu-6",
     "nameNp": "काठमाडौं क्षेत्र नं. 6",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342290,
@@ -22239,7 +22239,7 @@
     "name": "Kathmandu-7",
     "nameNp": "काठमाडौं क्षेत्र नं. 7",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340951,
@@ -22623,7 +22623,7 @@
     "name": "Kathmandu-8",
     "nameNp": "काठमाडौं क्षेत्र नं. 8",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340972,
@@ -22974,7 +22974,7 @@
     "name": "Kathmandu-9",
     "nameNp": "काठमाडौं क्षेत्र नं. 9",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340686,
@@ -23310,7 +23310,7 @@
     "name": "Kathmandu-10",
     "nameNp": "काठमाडौं क्षेत्र नं. 10",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340506,
@@ -23697,7 +23697,7 @@
     "name": "Bhaktapur-1",
     "nameNp": "भक्तपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339461,
@@ -24105,7 +24105,7 @@
     "name": "Bhaktapur-2",
     "nameNp": "भक्तपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340060,
@@ -24524,7 +24524,7 @@
     "name": "Lalitpur-1",
     "nameNp": "ललितपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341868,
@@ -24960,7 +24960,7 @@
     "name": "Lalitpur-2",
     "nameNp": "ललितपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340217,
@@ -25290,7 +25290,7 @@
     "name": "Lalitpur-3",
     "nameNp": "ललितपुर क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341547,
@@ -25619,7 +25619,7 @@
     "name": "Kavrepalanchok-1",
     "nameNp": "काभ्रेपलाञ्चोक क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341073,
@@ -25882,7 +25882,7 @@
     "name": "Kavrepalanchok-2",
     "nameNp": "काभ्रेपलाञ्चोक क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339525,
@@ -26264,7 +26264,7 @@
     "name": "Sindhupalchok-1",
     "nameNp": "सिन्धुपाल्चोक क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341908,
@@ -26509,7 +26509,7 @@
     "name": "Sindhupalchok-2",
     "nameNp": "सिन्धुपाल्चोक क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340921,
@@ -26768,7 +26768,7 @@
     "name": "Makwanpur-1",
     "nameNp": "मकवानपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339633,
@@ -27128,7 +27128,7 @@
     "name": "Makwanpur-2",
     "nameNp": "मकवानपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339629,
@@ -27449,7 +27449,7 @@
     "name": "Rautahat-1",
     "nameNp": "रौतहट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341836,
@@ -28039,7 +28039,7 @@
     "name": "Rautahat-2",
     "nameNp": "रौतहट क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340266,
@@ -28428,7 +28428,7 @@
     "name": "Rautahat-3",
     "nameNp": "रौतहट क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341005,
@@ -29018,7 +29018,7 @@
     "name": "Rautahat-4",
     "nameNp": "रौतहट क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341093,
@@ -29539,7 +29539,7 @@
     "name": "Bara-1",
     "nameNp": "बारा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340083,
@@ -29863,7 +29863,7 @@
     "name": "Bara-2",
     "nameNp": "बारा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341439,
@@ -30314,7 +30314,7 @@
     "name": "Bara-3",
     "nameNp": "बारा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340776,
@@ -30681,7 +30681,7 @@
     "name": "Bara-4",
     "nameNp": "बारा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341514,
@@ -31186,7 +31186,7 @@
     "name": "Parsa-1",
     "nameNp": "पर्सा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340884,
@@ -31595,7 +31595,7 @@
     "name": "Parsa-2",
     "nameNp": "पर्सा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340881,
@@ -32069,7 +32069,7 @@
     "name": "Parsa-3",
     "nameNp": "पर्सा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340309,
@@ -32410,7 +32410,7 @@
     "name": "Parsa-4",
     "nameNp": "पर्सा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342274,
@@ -32780,7 +32780,7 @@
     "name": "Chitwan-1",
     "nameNp": "चितवन क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341241,
@@ -33054,7 +33054,7 @@
     "name": "Chitwan-2",
     "nameNp": "चितवन क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340990,
@@ -33378,7 +33378,7 @@
     "name": "Chitwan-3",
     "nameNp": "चितवन क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341145,
@@ -33703,7 +33703,7 @@
     "name": "Gorkha-1",
     "nameNp": "गोरखा क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340183,
@@ -33869,7 +33869,7 @@
     "name": "Gorkha-2",
     "nameNp": "गोरखा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339991,
@@ -34050,7 +34050,7 @@
     "name": "Manang-1",
     "nameNp": "मनाङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339862,
@@ -34112,7 +34112,7 @@
     "name": "Lamjung-1",
     "nameNp": "लमजुङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339858,
@@ -34310,7 +34310,7 @@
     "name": "Kaski-1",
     "nameNp": "कास्की क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339553,
@@ -34541,7 +34541,7 @@
     "name": "Kaski-2",
     "nameNp": "कास्की क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339683,
@@ -34814,7 +34814,7 @@
     "name": "Kaski-3",
     "nameNp": "कास्की क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339651,
@@ -35056,7 +35056,7 @@
     "name": "Tanahun-1",
     "nameNp": "तनहुँ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340905,
@@ -35301,7 +35301,7 @@
     "name": "Tanahun-2",
     "nameNp": "तनहुँ क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341124,
@@ -35486,7 +35486,7 @@
     "name": "Syangja-1",
     "nameNp": "स्याङजा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339751,
@@ -35679,7 +35679,7 @@
     "name": "Syangja-2",
     "nameNp": "स्याङजा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340887,
@@ -35870,7 +35870,7 @@
     "name": "Gulmi-1",
     "nameNp": "गुल्मी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341377,
@@ -36194,7 +36194,7 @@
     "name": "Gulmi-2",
     "nameNp": "गुल्मी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341282,
@@ -36529,7 +36529,7 @@
     "name": "Palpa-1",
     "nameNp": "पाल्पा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340207,
@@ -36726,7 +36726,7 @@
     "name": "Palpa-2",
     "nameNp": "पाल्पा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341329,
@@ -36977,7 +36977,7 @@
     "name": "Arghakhanchi-1",
     "nameNp": "अर्घाखाँची क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339640,
@@ -37217,7 +37217,7 @@
     "name": "Nawalpur-1",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पूर्व) क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340220,
@@ -37438,7 +37438,7 @@
     "name": "Nawalpur-2",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पूर्व) क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340347,
@@ -37708,7 +37708,7 @@
     "name": "Rupandehi-1",
     "nameNp": "रूपन्देही क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340189,
@@ -38168,7 +38168,7 @@
     "name": "Rupandehi-2",
     "nameNp": "रूपन्देही क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341184,
@@ -38743,7 +38743,7 @@
     "name": "Rupandehi-3",
     "nameNp": "रूपन्देही क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339605,
@@ -39283,7 +39283,7 @@
     "name": "Rupandehi-4",
     "nameNp": "रूपन्देही क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342471,
@@ -39627,7 +39627,7 @@
     "name": "Rupandehi-5",
     "nameNp": "रूपन्देही क्षेत्र नं. 5",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341416,
@@ -40030,7 +40030,7 @@
     "name": "Kapilvastu-1",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341902,
@@ -40546,7 +40546,7 @@
     "name": "Kapilvastu-2",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341561,
@@ -41001,7 +41001,7 @@
     "name": "Kapilvastu-3",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341266,
@@ -41510,7 +41510,7 @@
     "name": "Mustang-1",
     "nameNp": "मुस्ताङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342128,
@@ -41644,7 +41644,7 @@
     "name": "Myagdi-1",
     "nameNp": "म्याग्दी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339417,
@@ -41842,7 +41842,7 @@
     "name": "Baglung-1",
     "nameNp": "बाग्लुङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339959,
@@ -42023,7 +42023,7 @@
     "name": "Baglung-2",
     "nameNp": "बाग्लुङ क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341354,
@@ -42197,7 +42197,7 @@
     "name": "Parbat-1",
     "nameNp": "पर्वत क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341279,
@@ -42472,7 +42472,7 @@
     "name": "Rukum East-1",
     "nameNp": "रुकुम (पूर्वी भाग) क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340050,
@@ -42651,7 +42651,7 @@
     "name": "Rolpa-1",
     "nameNp": "रोल्पा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339842,
@@ -42818,7 +42818,7 @@
     "name": "Pyuthan-1",
     "nameNp": "प्यूठान क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340722,
@@ -43031,7 +43031,7 @@
     "name": "Salyan-1",
     "nameNp": "सल्यान क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340418,
@@ -43234,7 +43234,7 @@
     "name": "Dang-1",
     "nameNp": "दाङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342029,
@@ -43444,7 +43444,7 @@
     "name": "Dang-2",
     "nameNp": "दाङ क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340655,
@@ -43776,7 +43776,7 @@
     "name": "Dang-3",
     "nameNp": "दाङ क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339501,
@@ -44120,7 +44120,7 @@
     "name": "Dolpa-1",
     "nameNp": "डोल्पा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339703,
@@ -44275,7 +44275,7 @@
     "name": "Mugu-1",
     "nameNp": "मुगु क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340557,
@@ -44396,7 +44396,7 @@
     "name": "Jumla-1",
     "nameNp": "जुम्ला क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341535,
@@ -44539,7 +44539,7 @@
     "name": "Kalikot-1",
     "nameNp": "कालिकोट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340992,
@@ -44700,7 +44700,7 @@
     "name": "Humla-1",
     "nameNp": "हुम्ला क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340087,
@@ -44821,7 +44821,7 @@
     "name": "Jajarkot-1",
     "nameNp": "जाजरकोट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342453,
@@ -44999,7 +44999,7 @@
     "name": "Dailekh-1",
     "nameNp": "दैलेख क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341040,
@@ -45153,7 +45153,7 @@
     "name": "Dailekh-2",
     "nameNp": "दैलेख क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340637,
@@ -45340,7 +45340,7 @@
     "name": "Surkhet-1",
     "nameNp": "सुर्खेत क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341140,
@@ -45553,7 +45553,7 @@
     "name": "Surkhet-2",
     "nameNp": "सुर्खेत क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340194,
@@ -45829,7 +45829,7 @@
     "name": "Banke-1",
     "nameNp": "बाँके क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341907,
@@ -46021,7 +46021,7 @@
     "name": "Banke-2",
     "nameNp": "बाँके क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340037,
@@ -46333,7 +46333,7 @@
     "name": "Banke-3",
     "nameNp": "बाँके क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339589,
@@ -46642,7 +46642,7 @@
     "name": "Bardiya-1",
     "nameNp": "बर्दिया क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340825,
@@ -46932,7 +46932,7 @@
     "name": "Bardiya-2",
     "nameNp": "बर्दिया क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342516,
@@ -47135,7 +47135,7 @@
     "name": "Bajura-1",
     "nameNp": "बाजुरा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341303,
@@ -47273,7 +47273,7 @@
     "name": "Achham-1",
     "nameNp": "अछाम क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341030,
@@ -47412,7 +47412,7 @@
     "name": "Achham-2",
     "nameNp": "अछाम क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340611,
@@ -47560,7 +47560,7 @@
     "name": "Bajhang-1",
     "nameNp": "बझाङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340443,
@@ -47682,7 +47682,7 @@
     "name": "Doti-1",
     "nameNp": "डोटी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 341208,
@@ -47830,7 +47830,7 @@
     "name": "Kailali-1",
     "nameNp": "कैलाली क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342184,
@@ -48110,7 +48110,7 @@
     "name": "Kailali-2",
     "nameNp": "कैलाली क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339795,
@@ -48336,7 +48336,7 @@
     "name": "Kailali-3",
     "nameNp": "कैलाली क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342441,
@@ -48515,7 +48515,7 @@
     "name": "Kailali-4",
     "nameNp": "कैलाली क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 342757,
@@ -48759,7 +48759,7 @@
     "name": "Kailali-5",
     "nameNp": "कैलाली क्षेत्र नं. 5",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339984,
@@ -48996,7 +48996,7 @@
     "name": "Darchula-1",
     "nameNp": "दार्चुला क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340502,
@@ -49151,7 +49151,7 @@
     "name": "Baitadi-1",
     "nameNp": "बैतडी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340516,
@@ -49308,7 +49308,7 @@
     "name": "Dadeldhura-1",
     "nameNp": "डडेलधुरा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340545,
@@ -49526,7 +49526,7 @@
     "name": "Kanchanpur-1",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 339943,
@@ -49781,7 +49781,7 @@
     "name": "Kanchanpur-2",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340896,
@@ -50090,7 +50090,7 @@
     "name": "Kanchanpur-3",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340127,
@@ -50324,7 +50324,7 @@
     "name": "Parasi-1",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पश्चिम) क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340029,
@@ -50719,7 +50719,7 @@
     "name": "Parasi-2",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पश्चिम) क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340191,
@@ -51195,7 +51195,7 @@
     "name": "Rukum West-1",
     "nameNp": "रुकुम (पश्चिम भाग) क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-06T23:20:21.192Z",
+    "lastUpdated": "2026-03-06T23:46:21.575Z",
     "candidates": [
       {
         "candidateId": 340125,
