@@ -9,14 +9,12 @@ import plotly.graph_objects as go
 st.set_page_config(
     page_title="🇳🇵 Nepal Election 2082 LIVE",
     page_icon="🇳🇵",
-    layout="wide",
-    page_title="Live Election Dashboard"
+    layout="wide"
 )
 
-# Simulated live data generator (replace with real API)
 @st.cache_data(ttl=10)
 def fetch_live_data():
-    np.random.seed(int(time.time() // 10))  # Deterministic but changing
+    np.random.seed(int(time.time() // 10))
     provinces = ["Koshi", "Madhesh", "Bagmati", "Gandaki", "Lumbini", "Karnali", "Sudurpashchim"]
     major_parties = ["Nepali Congress", "CPN-UML", "Rastriya Swatantra", "Maoist Centre", "Independent"]
     
@@ -37,11 +35,9 @@ def fetch_live_data():
             })
     return pd.DataFrame(data)
 
-# App
 st.title("🇳🇵 Nepal Election 2082 LIVE COUNTDOWN")
 st.markdown("**Real-time FPTP results | 165 seats | Auto-refresh every 10s** 🎯")
 
-# Real-time loop with animation-friendly updates
 placeholder = st.empty()
 refresh_col, last_update_col = st.columns([3, 1])
 
@@ -51,28 +47,23 @@ with refresh_col:
 with last_update_col:
     st.metric("Last Update", datetime.now().strftime("%H:%M:%S"))
 
-# Main live content
 with placeholder.container():
     df = fetch_live_data()
     
-    # Animated KPIs with deltas (built-in animation)
     col1, col2, col3, col4 = st.columns(4)
-    
     total_won = df["seats_won"].sum()
     total_leading = df["seats_leading"].sum()
     total_declared = total_won + total_leading
     top_votes = df["votes"].max()
     
-    col1.metric("Seats Won 🏆", f"{total_won:,}", delta="+2")  # Animated delta
+    col1.metric("Seats Won 🏆", f"{total_won:,}", delta="+2")
     col2.metric("Seats Leading ⚡", f"{total_leading:,}", delta="+1")
     col3.metric("Declared /165", f"{total_declared:,}", f"{165-total_declared:,} left")
     col4.metric("Top Constituency", f"{top_votes:,}", delta="+15k")
     
-    # Confetti on milestones
     if total_declared >= 100:
-        st.balloons()  # Or st.snow() for snow effect
+        st.balloons()
     
-    # Leaderboard with animation-ready bar chart
     party_summary = (
         df.groupby("party")[["seats_won", "seats_leading"]].sum()
         .assign(total=lambda x: x.sum(axis=1))
@@ -102,7 +93,6 @@ with placeholder.container():
             height=300
         )
     
-    # Vote trends animation (simulated line chart)
     st.subheader("📈 Vote Surge (Last 10 Updates)")
     trend_df = df.groupby("party")["votes"].sum().reset_index()
     fig_trend = px.line(
@@ -113,9 +103,7 @@ with placeholder.container():
     )
     st.plotly_chart(fig_trend, use_container_width=True)
     
-    # Footer
-    st.caption("💡 Demo data simulating live counts | Real API: nepalvotes.live / result.election.gov.np")
+    st.caption("💡 Demo simulating live counts | Real: nepalvotes.live")
 
-# Auto-refresh simulation (runs every 10s in background)
 time.sleep(10)
 st.rerun()
