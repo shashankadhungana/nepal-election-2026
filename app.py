@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from datetime import datetime, timezone
 
 import pandas as pd
 import plotly.express as px
@@ -82,17 +83,8 @@ def inject_css():
             padding-bottom: 2rem;
         }
 
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 14px;
-            flex-wrap: wrap;
-        }
-
         .hero {
-            padding: 1.25rem 1.3rem;
+            padding: 1.2rem 1.3rem;
             border-radius: 20px;
             background: linear-gradient(135deg, #111827 0%, #1d4ed8 100%);
             border: 1px solid rgba(255,255,255,0.08);
@@ -112,10 +104,11 @@ def inject_css():
             font-size: 0.98rem;
         }
 
-        .top-pills {
+        .hero-tags {
+            margin-top: 0.75rem;
             display: flex;
-            gap: 8px;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tag {
@@ -138,8 +131,14 @@ def inject_css():
 
         .section-title {
             color: #f8fafc;
-            font-size: 1.03rem;
+            font-size: 1.05rem;
             font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtle {
+            color: #94a3b8;
+            font-size: 0.85rem;
             margin-bottom: 0.75rem;
         }
 
@@ -159,11 +158,6 @@ def inject_css():
             color: #f8fafc;
         }
 
-        .subtle {
-            color: #94a3b8;
-            font-size: 0.86rem;
-        }
-
         .party-chip {
             display: inline-block;
             padding: 0.22rem 0.55rem;
@@ -175,12 +169,14 @@ def inject_css():
             font-weight: 600;
         }
 
+        .small-note {
+            color: #94a3b8;
+            font-size: 0.84rem;
+        }
+
         @media (max-width: 900px) {
             .hero h1 {
                 font-size: 1.6rem;
-            }
-            .block-container {
-                padding-top: 0.8rem;
             }
         }
         </style>
@@ -249,10 +245,6 @@ def validate_final_schema(df):
     return out[EMPTY_COLUMNS].copy()
 
 
-def clean_candidate_name(value):
-    return str(value or "").strip()
-
-
 def normalize_nepalvotes_results(items):
     if not items or not isinstance(items, list):
         return pd.DataFrame(columns=EMPTY_COLUMNS)
@@ -264,20 +256,20 @@ def normalize_nepalvotes_results(items):
         if not isinstance(candidates, list) or len(candidates) == 0:
             continue
 
-        cleaned_candidates = []
+        cleaned = []
         for c in candidates:
-            cleaned_candidates.append(
+            cleaned.append(
                 {
-                    "candidate": clean_candidate_name(c.get("name") or c.get("nameEn") or c.get("nameNp")),
+                    "candidate": str(c.get("name") or c.get("nameEn") or c.get("nameNp") or "").strip(),
                     "party": normalize_party_name(c.get("partyName") or c.get("party") or c.get("partyId") or "Independent"),
                     "votes": int(pd.to_numeric(c.get("votes", 0), errors="coerce") or 0),
                     "isWinner": bool(c.get("isWinner", False)),
                 }
             )
 
-        cleaned_candidates = sorted(cleaned_candidates, key=lambda x: x["votes"], reverse=True)
-        top = cleaned_candidates[0]
-        runner = cleaned_candidates[1] if len(cleaned_candidates) > 1 else {
+        cleaned = sorted(cleaned, key=lambda x: x["votes"], reverse=True)
+        top = cleaned[0]
+        runner = cleaned[1] if len(cleaned) > 1 else {
             "candidate": "",
             "party": "Independent",
             "votes": 0,
@@ -320,8 +312,9 @@ def normalize_nepalvotes_results(items):
     if not rows:
         return pd.DataFrame(columns=EMPTY_COLUMNS)
 
-    df = pd.DataFrame(rows).sort_values(["province", "district", "constituency"]).reset_index(drop=True)
-    return validate_final_schema(df)
+    return validate_final_schema(
+        pd.DataFrame(rows).sort_values(["province", "district", "constituency"]).reset_index(drop=True)
+    )
 
 
 def load_local_repo_json():
@@ -409,19 +402,33 @@ def chart_layout(fig):
     return fig
 
 
-def hero(title, subtitle, source_text):
+def party_chip_html(party):
+    return f'<span class="party-chip" style="background:{party_color(party)};">{normalize_party_name(party)}</span>'
+
+
+def format_last_updated(fetch_status):
+    if not fetch_status:
+        return "Unknown"
+    raw = fetch_status.get("last_attempt_utc")
+    if not raw:
+        return "Unknown"
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00")).astimezone(timezone.utc)
+        return dt.strftime("%Y-%m-%d %H:%M UTC")
+    except Exception:
+        return str(raw)
+
+
+def hero(title, subtitle, source_text, updated_text):
     st.markdown(
         f"""
         <div class="hero">
-            <div class="topbar">
-                <div>
-                    <h1>{title}</h1>
-                    <p>{subtitle}</p>
-                </div>
-                <div class="top-pills">
-                    <span class="tag">{source_text}</span>
-                    <span class="tag">Auto-refresh: 25s</span>
-                </div>
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+            <div class="hero-tags">
+                <span class="tag">{source_text}</span>
+                <span class="tag">Updated: {updated_text}</span>
+                <span class="tag">Auto-refresh: 25s</span>
             </div>
         </div>
         """,
@@ -429,24 +436,25 @@ def hero(title, subtitle, source_text):
     )
 
 
-def card_title(text):
+def card_title(text, subtle=None):
     st.markdown(f'<div class="section-title">{text}</div>', unsafe_allow_html=True)
-
-
-def party_chip_html(party):
-    color = party_color(party)
-    label = normalize_party_name(party)
-    return f'<span class="party-chip" style="background:{color};">{label}</span>'
+    if subtle:
+        st.markdown(f'<div class="section-subtle">{subtle}</div>', unsafe_allow_html=True)
 
 
 def render_empty_state(errors):
-    hero("Nepal Election Live Dashboard", "No election data is available right now.", "Source unavailable")
+    fetch_status = load_fetch_status()
+    hero(
+        "Nepal Election Live Dashboard",
+        "No election data is available right now.",
+        "Source unavailable",
+        format_last_updated(fetch_status),
+    )
     st.warning("The app could not load live or backup data.")
 
-    status = load_fetch_status()
-    if status:
+    if fetch_status:
         st.markdown("### Latest fetch status")
-        st.json(status, expanded=False)
+        st.json(fetch_status, expanded=False)
 
     if errors:
         st.markdown("### Source errors")
@@ -455,10 +463,12 @@ def render_empty_state(errors):
 
 def render_home_page():
     st_autorefresh(interval=25 * 1000, key="autorefresh")
+
     result = load_election_data()
     df = result["data"]
     active_source = result["source"]
     source_errors = result["errors"]
+    fetch_status = load_fetch_status()
 
     if df.empty:
         render_empty_state(source_errors)
@@ -492,49 +502,113 @@ def render_home_page():
         ]
 
     if filtered_df.empty:
-        hero("Nepal Election Live Dashboard", "No seats match the current filters.", f"Source: {active_source}")
-        st.info("Try changing your province, party, status, or search text.")
+        hero(
+            "Nepal Election Live Dashboard",
+            "No seats match the current filters.",
+            f"Source: {active_source}",
+            format_last_updated(fetch_status),
+        )
+        st.info("Try changing the filters or search text.")
         return
+
+    hero(
+        "Nepal Election Live Dashboard",
+        "Who is ahead, which races are close, and how much counting is done.",
+        f"Source: {active_source}",
+        format_last_updated(fetch_status),
+    )
 
     total_seats = len(filtered_df)
     declared = int((filtered_df["status"] == "Won").sum())
     leading = int((filtered_df["status"] == "Leading").sum())
     avg_progress = round(filtered_df["count_pct"].mean(), 1)
-    highest_margin = int(filtered_df["margin"].max())
-    closest_race = int(filtered_df["margin"].min())
+    top_party = filtered_df["party"].value_counts().idxmax() if not filtered_df.empty else "N/A"
 
-    hero(
-        "Nepal Election Live Dashboard",
-        "Fast, readable live tracking for constituency leaders, margins, and counting progress.",
-        f"Source: {active_source}",
+    m1, m2, m3, m4, m5 = st.columns(5)
+    m1.metric("Seats shown", total_seats)
+    m2.metric("Declared", declared)
+    m3.metric("Still leading", leading)
+    m4.metric("Avg count progress", f"{avg_progress}%")
+    m5.metric("Most visible party", top_party)
+
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    card_title("Party standings", "Which parties are currently strongest in the visible results.")
+
+    party_summary = (
+        filtered_df.groupby("party", as_index=False)
+        .agg(
+            declared=("status", lambda x: int((x == "Won").sum())),
+            leading=("status", lambda x: int((x == "Leading").sum())),
+            top_votes=("votes", "sum"),
+        )
+        .sort_values(["declared", "leading", "top_votes"], ascending=False)
+        .head(10)
     )
 
-    k1, k2 = st.columns(2)
-    with k1:
+    c1, c2 = st.columns([1.15, 1])
+
+    with c1:
+        fig_party = px.bar(
+            party_summary,
+            x="party",
+            y=["declared", "leading"],
+            barmode="group",
+            text_auto=True,
+            color_discrete_sequence=["#22c55e", "#38bdf8"],
+        )
+        fig_party = chart_layout(fig_party)
+        fig_party.update_layout(height=360)
+        st.plotly_chart(fig_party, width="stretch")
+
+    with c2:
+        st.dataframe(party_summary, width="stretch", hide_index=True, height=360)
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    c1, c2 = st.columns(2)
+
+    with c1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Headline numbers")
-        m1, m2 = st.columns(2)
-        m3, m4 = st.columns(2)
-        m1.metric("Seats shown", total_seats)
-        m2.metric("Declared", declared)
-        m3.metric("Still leading", leading)
-        m4.metric("Average count", f"{avg_progress}%")
+        card_title("Tight races", "Seats with the smallest current margin.")
+        tight_races = filtered_df.sort_values(["margin", "count_pct"], ascending=[True, False]).head(10)
+        tight_display = tight_races[
+            ["constituency", "candidate", "party", "runner_up", "runner_up_party", "margin", "count_pct", "status"]
+        ].rename(
+            columns={
+                "constituency": "Seat",
+                "candidate": "Leader",
+                "party": "Leader party",
+                "runner_up": "Runner-up",
+                "runner_up_party": "Runner-up party",
+                "margin": "Margin",
+                "count_pct": "Count %",
+                "status": "Status",
+            }
+        )
+        st.dataframe(tight_display, width="stretch", hide_index=True, height=340)
         st.markdown("</div>", unsafe_allow_html=True)
 
-    with k2:
+    with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Race snapshot")
-        m1, m2 = st.columns(2)
-        m1.metric("Highest margin", f"{highest_margin:,}")
-        m2.metric("Closest race", f"{closest_race:,}")
-        top_parties = filtered_df["party"].value_counts().head(4).index.tolist()
-        chips = "".join(party_chip_html(p) for p in top_parties)
-        st.markdown(chips, unsafe_allow_html=True)
-        st.markdown('<div class="subtle">Most visible parties in current results.</div>', unsafe_allow_html=True)
+        card_title("Biggest leads", "Seats with the widest current margin.")
+        biggest_leads = filtered_df.sort_values("margin", ascending=False).head(10)
+        leads_display = biggest_leads[
+            ["constituency", "candidate", "party", "margin", "votes", "status"]
+        ].rename(
+            columns={
+                "constituency": "Seat",
+                "candidate": "Leader",
+                "party": "Party",
+                "margin": "Margin",
+                "votes": "Leader votes",
+                "status": "Status",
+            }
+        )
+        st.dataframe(leads_display, width="stretch", hide_index=True, height=340)
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    card_title("Live constituency table")
+    card_title("Constituency results", "Searchable seat-by-seat results for the current filter.")
 
     table_df = filtered_df.rename(
         columns={
@@ -565,63 +639,7 @@ def render_home_page():
 
     with c1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Party position")
-
-        party_summary = (
-            filtered_df.groupby("party", as_index=False)
-            .agg(
-                declared=("status", lambda x: int((x == "Won").sum())),
-                leading=("status", lambda x: int((x == "Leading").sum())),
-                top_votes=("votes", "sum"),
-            )
-            .sort_values(["declared", "leading", "top_votes"], ascending=False)
-            .head(10)
-        )
-
-        fig_party = px.bar(
-            party_summary,
-            x="party",
-            y=["declared", "leading"],
-            barmode="group",
-            text_auto=True,
-            color_discrete_sequence=["#22c55e", "#38bdf8"],
-        )
-        fig_party = chart_layout(fig_party)
-        fig_party.update_layout(height=360)
-        st.plotly_chart(fig_party, width="stretch")
-        st.dataframe(party_summary, width="stretch", hide_index=True, height=200)
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    with c2:
-        st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Top vote totals by party")
-
-        votes_by_party = (
-            filtered_df.groupby("party", as_index=False)["votes"]
-            .sum()
-            .sort_values("votes", ascending=False)
-            .head(8)
-        )
-
-        fig_votes = px.pie(
-            votes_by_party,
-            names="party",
-            values="votes",
-            hole=0.58,
-            color="party",
-            color_discrete_map={p: party_color(p) for p in votes_by_party["party"].tolist()},
-        )
-        fig_votes = chart_layout(fig_votes)
-        fig_votes.update_layout(height=360, margin=dict(l=10, r=10, t=30, b=10))
-        st.plotly_chart(fig_votes, width="stretch")
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    d1, d2 = st.columns(2)
-
-    with d1:
-        st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Province progress")
-
+        card_title("Province progress", "Which provinces are further along in counting.")
         province_summary = (
             filtered_df.groupby("province", as_index=False)
             .agg(
@@ -630,7 +648,6 @@ def render_home_page():
             )
             .sort_values("avg_count_pct", ascending=False)
         )
-
         fig_province = px.bar(
             province_summary,
             x="province",
@@ -640,35 +657,55 @@ def render_home_page():
             color_continuous_scale="Blues",
         )
         fig_province = chart_layout(fig_province)
-        fig_province.update_layout(height=320, coloraxis_showscale=False)
+        fig_province.update_layout(height=330, coloraxis_showscale=False)
         st.plotly_chart(fig_province, width="stretch")
         st.markdown("</div>", unsafe_allow_html=True)
 
-    with d2:
+    with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
-        card_title("Top leaders by votes")
-
-        leaders = filtered_df.sort_values("votes", ascending=False)[
-            ["candidate", "party", "constituency", "votes", "status"]
-        ].rename(
-            columns={
-                "candidate": "Candidate",
-                "party": "Party",
-                "constituency": "Seat",
-                "votes": "Votes",
-                "status": "Status",
-            }
-        ).head(10)
-
-        st.dataframe(leaders, width="stretch", hide_index=True, height=320)
+        card_title("Top vote totals by party", "Current top-candidate votes summed across visible seats.")
+        votes_by_party = (
+            filtered_df.groupby("party", as_index=False)["votes"]
+            .sum()
+            .sort_values("votes", ascending=False)
+            .head(8)
+        )
+        fig_votes = px.pie(
+            votes_by_party,
+            names="party",
+            values="votes",
+            hole=0.58,
+            color="party",
+            color_discrete_map={p: party_color(p) for p in votes_by_party["party"].tolist()},
+        )
+        fig_votes = chart_layout(fig_votes)
+        fig_votes.update_layout(height=330, margin=dict(l=10, r=10, t=30, b=10))
+        st.plotly_chart(fig_votes, width="stretch")
         st.markdown("</div>", unsafe_allow_html=True)
+
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+    card_title("Source and freshness", "Trust cues so users know how current the dashboard is.")
+    chips = "".join(party_chip_html(p) for p in filtered_df["party"].value_counts().head(6).index.tolist())
+    st.markdown(chips, unsafe_allow_html=True)
+    st.markdown(
+        f"""
+        <div class="small-note">
+        Data source: {active_source}<br>
+        Last fetch attempt: {format_last_updated(fetch_status)}<br>
+        Seats shown in current filter: {len(filtered_df)}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 def render_details_page():
     result = load_election_data()
     df = result["data"]
-    source_errors = result["errors"]
     active_source = result["source"]
+    source_errors = result["errors"]
+    fetch_status = load_fetch_status()
 
     if df.empty:
         render_empty_state(source_errors)
@@ -676,8 +713,9 @@ def render_details_page():
 
     hero(
         "Constituency details",
-        "Choose a seat to compare the leader and runner-up with cleaner local race detail.",
+        "Inspect one seat in detail: leader, runner-up, margin, and progress.",
         f"Source: {active_source}",
+        format_last_updated(fetch_status),
     )
 
     st.sidebar.title("Seat view")
@@ -696,26 +734,23 @@ def render_details_page():
     selected_constituency = st.sidebar.selectbox("Choose seat", constituency_list, key="details_constituency")
     seat = filtered_df[filtered_df["constituency"] == selected_constituency].iloc[0]
 
-    m1, m2, m3, m4 = st.columns(4)
+    m1, m2, m3, m4, m5 = st.columns(5)
     m1.metric("Seat", seat["constituency"])
-    m2.metric("Leader votes", f"{int(seat['votes']):,}")
-    m3.metric("Margin", f"{int(seat['margin']):,}")
-    m4.metric("Count progress", f"{seat['count_pct']}%")
+    m2.metric("Leader", seat["candidate"])
+    m3.metric("Leader votes", f"{int(seat['votes']):,}")
+    m4.metric("Margin", f"{int(seat['margin']):,}")
+    m5.metric("Count progress", f"{seat['count_pct']}%")
 
     st.markdown(
-        f"""
-        {party_chip_html(seat["party"])}
-        {party_chip_html(seat["runner_up_party"])}
-        """,
+        f'{party_chip_html(seat["party"])}{party_chip_html(seat["runner_up_party"])}',
         unsafe_allow_html=True,
     )
 
-    s1, s2 = st.columns(2)
+    c1, c2 = st.columns(2)
 
-    with s1:
+    with c1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
         card_title("Seat summary")
-
         seat_summary = pd.DataFrame([
             {"Field": "Province", "Value": seat["province"]},
             {"Field": "District", "Value": seat["district"]},
@@ -728,20 +763,17 @@ def render_details_page():
             {"Field": "Runner-up votes", "Value": f"{int(seat['runner_up_votes']):,}"},
             {"Field": "Margin", "Value": f"{int(seat['margin']):,}"},
         ])
-
         st.dataframe(seat_summary, width="stretch", hide_index=True, height=380)
         st.markdown("</div>", unsafe_allow_html=True)
 
-    with s2:
+    with c2:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
         card_title("Leader vs runner-up")
-
         compare_df = pd.DataFrame({
             "Candidate": [seat["candidate"], seat["runner_up"]],
             "Votes": [seat["votes"], seat["runner_up_votes"]],
             "Party": [seat["party"], seat["runner_up_party"]],
         })
-
         fig_compare = px.bar(
             compare_df,
             x="Candidate",
@@ -760,7 +792,6 @@ def render_details_page():
 
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     card_title("Other seats in current filter")
-
     province_table = filtered_df[
         ["constituency", "candidate", "party", "votes", "runner_up", "runner_up_votes", "margin", "status", "count_pct"]
     ].rename(
@@ -776,15 +807,19 @@ def render_details_page():
             "count_pct": "Count %",
         }
     ).sort_values(["Status", "Leader votes"], ascending=[True, False])
-
     st.dataframe(province_table, width="stretch", hide_index=True, height=360)
     st.markdown("</div>", unsafe_allow_html=True)
 
 
-inject_css()
+def main():
+    inject_css()
 
-home = st.Page(render_home_page, title="Dashboard", icon="🗳️", default=True)
-details = st.Page(render_details_page, title="Details", icon="📍")
+    home = st.Page(render_home_page, title="Dashboard", icon="🗳️", default=True)
+    details = st.Page(render_details_page, title="Details", icon="📍")
 
-pg = st.navigation([home, details])
-pg.run()
+    pg = st.navigation([home, details])
+    pg.run()
+
+
+if __name__ == "__main__":
+    main()
