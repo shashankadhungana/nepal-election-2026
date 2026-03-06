@@ -266,7 +266,7 @@ def load_election_data():
 
     official_urls = [
         "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
-        "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
+        
     ]
 
     for url in official_urls:
@@ -571,3 +571,4 @@ details = st.Page(render_details_page, title="Details", icon="📍")
 
 pg = st.navigation([home, details])
 pg.run()
+
