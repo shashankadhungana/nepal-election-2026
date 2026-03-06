@@ -18,46 +18,50 @@ count = streamlit_autorefresh.st_autorefresh(interval=15000, limit=None, key="f"
 
 @st.cache_data(ttl=60)  # Scrape every minute
 def fetch_live_results():
-    """Scrapes nepalvotes.live + EC fallback"""
+    """Scrapes nepalvotes.live + bulletproof column handling"""
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         
-        # nepalvotes.live (live EC scraper)
+        # Primary: nepalvotes.live
         r = requests.get("https://nepalvotes.live", headers=headers, timeout=15)
         soup = BeautifulSoup(r.text, 'html.parser')
         tables = soup.find_all('table')
         
         if tables:
-            df_list = pd.read_html(str(tables))
-            if df_list:
-                df = df_list[0]
-                df.columns = [str(col).strip().lower() for col in df.columns]
-                df = df.rename(columns={
-                    'constituency': 'Constituency', 'candidate': 'Candidate',
-                    'party': 'Party', 'votes': 'Votes', 'margin': 'Margin'
-                }).fillna(0)
-                
-                df['Votes'] = pd.to_numeric(df['Votes'], errors='coerce').fillna(0)
-                df['Margin'] = pd.to_numeric(df['Margin'], errors='coerce').fillna(0)
-                df['Status'] = np.where(
-                    df.groupby('Constituency')['Votes'].rank(ascending=False, method='first') == 1,
-                    'Leading', 'Trailing'
-                )
-                df['Update'] = datetime.now().strftime("%H:%M")
-                return df.sort_values("Votes", ascending=False).head(100)
+            df_scraped = pd.read_html(str(tables[0]))[0]
+            
+            # Bulletproof column mapping (handles any scraped table)
+            df = pd.DataFrame({
+                'Constituency': df_scraped.iloc[:, 0].fillna('Unknown').astype(str),
+                'Candidate': df_scraped.iloc[:, 1].fillna('Unknown').astype(str),
+                'Party': df_scraped.iloc[:, 2].fillna('Unknown').astype(str) if len(df_scraped.columns) > 2 else 'TBD',
+                'Votes': pd.to_numeric(df_scraped.iloc[:, min(3, len(df_scraped.columns)-1)], errors='coerce').fillna(0),
+                'Margin': pd.to_numeric(df_scraped.iloc[:, min(4, len(df_scraped.columns)-1)], errors='coerce').fillna(0),
+                'Status': 'Scraped'
+            })
+            df['Update'] = datetime.now().strftime("%H:%M")
+            return df.sort_values("Votes", ascending=False).head(50)
         
-        # Official EC fallback
+        # EC fallback
         r = requests.get("https://result.election.gov.np", headers=headers, timeout=15)
         soup = BeautifulSoup(r.text, 'html.parser')
-        tables = soup.find_all('table', class_=['table', 'table-striped'])
+        tables = soup.find_all('table')
         if tables:
-            df = pd.read_html(str(tables[0]))[0]
-            return df.head(100)
+            df_scraped = pd.read_html(str(tables[0]))[0]
+            df = pd.DataFrame({
+                'Constituency': df_scraped.iloc[:, 0].fillna('Unknown').astype(str),
+                'Candidate': df_scraped.iloc[:, 1].fillna('Unknown').astype(str),
+                'Party': 'EC',
+                'Votes': pd.to_numeric(df_scraped.iloc[:, 2], errors='coerce').fillna(0),
+                'Margin': 0,
+                'Status': 'EC'
+            })
+            return df.head(50)
             
     except Exception as e:
-        print(f"Scrape error: {e}")  # Console log
-        
-    # Original simulation (your exact demo)
+        print(f"Scrape failed: {e}")
+    
+    # Your EXACT original simulation (guaranteed columns)
     constituencies = [
         "Jhapa-5", "Chitwan-2", "Kathmandu-1", "Bhaktapur-1", "Jumla-1", "Pyuthan-1", 
         "Rautahat-1", "Kanchanpur-2", "Dang-2", "Nuwakot-1", "Rolpa-1", "Saptari-3"
@@ -90,16 +94,19 @@ st.markdown("**House of Representatives | Live FPTP Results | Scraping nepalvote
 
 df = fetch_live_results()
 
-# Header KPIs
-col1, col2, col3 = st.columns(3)
-total_declared = df["Constituency"].nunique()
-top_votes = df["Votes"].max()
-seats_projected = int(total_declared * 0.6)
+# Debug info (remove after testing)
+st.caption(f"📊 Data source: {len(df)} rows, columns: {list(df.columns)}")
 
+# Header KPIs (SAFE - columns guaranteed)
+total_declared = len(df['Constituency'].unique())
+top_votes = df["Votes"].max()
+seats_projected = min(int(total_declared * 0.6), 165)
+
+col1, col2, col3 = st.columns(3)
 with col1:
     st.metric("Constituencies Reporting", total_declared, "12")
 with col2:
-    st.metric("Highest Votes", f"{top_votes:,}", "+2.1k")
+    st.metric("Highest Votes", f"{int(top_votes):,}", "+2.1k")
 with col3:
     st.metric("Projected Seats (RSP)", seats_projected, "+5")
 
