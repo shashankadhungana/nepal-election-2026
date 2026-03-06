@@ -13,6 +13,22 @@ st.set_page_config(
 )
 
 
+EMPTY_COLUMNS = [
+    "constituency",
+    "province",
+    "district",
+    "candidate",
+    "party",
+    "votes",
+    "runner_up",
+    "runner_up_party",
+    "runner_up_votes",
+    "margin",
+    "status",
+    "count_pct",
+]
+
+
 def inject_css():
     st.markdown(
         """
@@ -171,12 +187,37 @@ def province_name_from_code(code):
 
 @st.cache_data(ttl=30)
 def load_election_data():
-    url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
+    urls = [
+        "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
+        "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
+    ]
 
-    response = requests.get(url, timeout=30)
-    response.raise_for_status()
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/json,text/plain,*/*",
+        "Referer": "https://result.election.gov.np/",
+        "Origin": "https://result.election.gov.np",
+    }
 
-    raw = pd.DataFrame(response.json())
+    raw = None
+
+    for url in urls:
+        try:
+            response = requests.get(url, headers=headers, timeout=30)
+            if response.status_code == 200:
+                json_data = response.json()
+                raw = pd.DataFrame(json_data)
+                if not raw.empty:
+                    break
+        except Exception:
+            continue
+
+    if raw is None or raw.empty:
+        return pd.DataFrame(columns=EMPTY_COLUMNS)
 
     required_columns = [
         "CandidateName",
@@ -193,22 +234,6 @@ def load_election_data():
         if col not in raw.columns:
             raw[col] = None
 
-    if raw.empty:
-        return pd.DataFrame(columns=[
-            "constituency",
-            "province",
-            "district",
-            "candidate",
-            "party",
-            "votes",
-            "runner_up",
-            "runner_up_party",
-            "runner_up_votes",
-            "margin",
-            "status",
-            "count_pct",
-        ])
-
     raw["candidate"] = raw["CandidateName"].fillna("").astype(str).str.strip()
     raw["party"] = raw["PoliticalPartyName"].fillna("Independent").astype(str).str.strip()
     raw["district"] = raw["DistrictName"].fillna("Unknown").astype(str).str.strip()
@@ -220,6 +245,9 @@ def load_election_data():
     raw["province"] = raw["state_code"].apply(province_name_from_code)
 
     raw = raw[(raw["district"] != "") & (raw["sc_const_id"] != "")]
+    if raw.empty:
+        return pd.DataFrame(columns=EMPTY_COLUMNS)
+
     raw["constituency"] = raw["district"] + "-" + raw["sc_const_id"]
 
     rows = []
@@ -261,13 +289,32 @@ def load_election_data():
             }
         )
 
+    if not rows:
+        return pd.DataFrame(columns=EMPTY_COLUMNS)
+
     df = pd.DataFrame(rows)
     return df.sort_values(["province", "district", "constituency"]).reset_index(drop=True)
+
+
+def render_empty_state(title_text):
+    render_hero(
+        title_text,
+        "Official data source is temporarily unavailable or blocked from the hosting environment.",
+    )
+    st.info("The Election Commission source did not return usable data right now.")
+    st.markdown(
+        '<div class="small-note">Tip: this often works locally but may be blocked on Streamlit Cloud. A proxy, scheduled fetcher, or mirrored JSON source may be needed.</div>',
+        unsafe_allow_html=True,
+    )
 
 
 def render_home_page():
     st_autorefresh(interval=30 * 1000, key="election_autorefresh")
     df = load_election_data()
+
+    if df.empty:
+        render_empty_state("Nepal Election Live Dashboard")
+        return
 
     st.sidebar.title("Dashboard Filters")
 
@@ -299,11 +346,19 @@ def render_home_page():
             | filtered_df["candidate"].str.lower().str.contains(q, na=False)
         ]
 
+    if filtered_df.empty:
+        render_hero(
+            "Nepal Election Live Dashboard",
+            "No results matched your current filters.",
+        )
+        st.warning("Try changing province, party, status, or search text.")
+        return
+
     total_seats = len(filtered_df)
-    total_votes = int(filtered_df["votes"].sum()) if not filtered_df.empty else 0
-    won_count = int((filtered_df["status"] == "Won").sum()) if not filtered_df.empty else 0
-    leading_count = int((filtered_df["status"] == "Leading").sum()) if not filtered_df.empty else 0
-    avg_progress = round(filtered_df["count_pct"].mean(), 1) if not filtered_df.empty else 0
+    total_votes = int(filtered_df["votes"].sum())
+    won_count = int((filtered_df["status"] == "Won").sum())
+    leading_count = int((filtered_df["status"] == "Leading").sum())
+    avg_progress = round(filtered_df["count_pct"].mean(), 1)
 
     render_hero(
         "Nepal Election Live Dashboard",
@@ -356,34 +411,30 @@ def render_home_page():
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Party Standings</div>', unsafe_allow_html=True)
 
-        if filtered_df.empty:
-            st.info("No data for selected filters.")
-        else:
-            party_summary = (
-                filtered_df.groupby("party", as_index=False)
-                .agg(
-                    seats_leading=("status", lambda x: int((x == "Leading").sum())),
-                    seats_won=("status", lambda x: int((x == "Won").sum())),
-                    total_votes=("votes", "sum"),
-                )
-                .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
-                .head(12)
+        party_summary = (
+            filtered_df.groupby("party", as_index=False)
+            .agg(
+                seats_leading=("status", lambda x: int((x == "Leading").sum())),
+                seats_won=("status", lambda x: int((x == "Won").sum())),
+                total_votes=("votes", "sum"),
             )
+            .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
+            .head(12)
+        )
 
-            fig_party = px.bar(
-                party_summary,
-                x="party",
-                y=["seats_won", "seats_leading"],
-                barmode="group",
-                color_discrete_sequence=["#22c55e", "#38bdf8"],
-                text_auto=True,
-            )
-            fig_party = plotly_dark_layout(fig_party)
-            fig_party.update_layout(height=360, showlegend=True)
-            st.plotly_chart(fig_party, use_container_width=True)
+        fig_party = px.bar(
+            party_summary,
+            x="party",
+            y=["seats_won", "seats_leading"],
+            barmode="group",
+            color_discrete_sequence=["#22c55e", "#38bdf8"],
+            text_auto=True,
+        )
+        fig_party = plotly_dark_layout(fig_party)
+        fig_party.update_layout(height=360, showlegend=True)
+        st.plotly_chart(fig_party, use_container_width=True)
 
-            st.dataframe(party_summary, use_container_width=True, hide_index=True, height=180)
-
+        st.dataframe(party_summary, use_container_width=True, hide_index=True, height=180)
         st.markdown("</div>", unsafe_allow_html=True)
 
     bottom_left, bottom_mid, bottom_right = st.columns([1, 1, 1])
@@ -392,29 +443,26 @@ def render_home_page():
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Province Progress</div>', unsafe_allow_html=True)
 
-        if filtered_df.empty:
-            st.info("No province data.")
-        else:
-            province_summary = (
-                filtered_df.groupby("province", as_index=False)
-                .agg(
-                    constituencies=("constituency", "count"),
-                    avg_count_pct=("count_pct", "mean"),
-                )
-                .sort_values("avg_count_pct", ascending=False)
+        province_summary = (
+            filtered_df.groupby("province", as_index=False)
+            .agg(
+                constituencies=("constituency", "count"),
+                avg_count_pct=("count_pct", "mean"),
             )
+            .sort_values("avg_count_pct", ascending=False)
+        )
 
-            fig_province = px.bar(
-                province_summary,
-                x="province",
-                y="avg_count_pct",
-                text_auto=".1f",
-                color="avg_count_pct",
-                color_continuous_scale="Blues",
-            )
-            fig_province = plotly_dark_layout(fig_province)
-            fig_province.update_layout(height=320, coloraxis_showscale=False)
-            st.plotly_chart(fig_province, use_container_width=True)
+        fig_province = px.bar(
+            province_summary,
+            x="province",
+            y="avg_count_pct",
+            text_auto=".1f",
+            color="avg_count_pct",
+            color_continuous_scale="Blues",
+        )
+        fig_province = plotly_dark_layout(fig_province)
+        fig_province.update_layout(height=320, coloraxis_showscale=False)
+        st.plotly_chart(fig_province, use_container_width=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -422,25 +470,22 @@ def render_home_page():
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Votes by Party</div>', unsafe_allow_html=True)
 
-        if filtered_df.empty:
-            st.info("No vote data.")
-        else:
-            votes_by_party = (
-                filtered_df.groupby("party", as_index=False)["votes"]
-                .sum()
-                .sort_values("votes", ascending=False)
-                .head(10)
-            )
+        votes_by_party = (
+            filtered_df.groupby("party", as_index=False)["votes"]
+            .sum()
+            .sort_values("votes", ascending=False)
+            .head(10)
+        )
 
-            fig_votes = px.pie(
-                votes_by_party,
-                names="party",
-                values="votes",
-                hole=0.58,
-            )
-            fig_votes = plotly_dark_layout(fig_votes)
-            fig_votes.update_layout(height=320, margin=dict(l=10, r=10, t=30, b=10))
-            st.plotly_chart(fig_votes, use_container_width=True)
+        fig_votes = px.pie(
+            votes_by_party,
+            names="party",
+            values="votes",
+            hole=0.58,
+        )
+        fig_votes = plotly_dark_layout(fig_votes)
+        fig_votes.update_layout(height=320, margin=dict(l=10, r=10, t=30, b=10))
+        st.plotly_chart(fig_votes, use_container_width=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -448,15 +493,11 @@ def render_home_page():
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Top Candidates</div>', unsafe_allow_html=True)
 
-        if filtered_df.empty:
-            st.info("No candidate data.")
-        else:
-            top_candidates = filtered_df.sort_values("votes", ascending=False)[
-                ["candidate", "party", "constituency", "votes", "status"]
-            ].head(8)
+        top_candidates = filtered_df.sort_values("votes", ascending=False)[
+            ["candidate", "party", "constituency", "votes", "status"]
+        ].head(8)
 
-            st.dataframe(top_candidates, use_container_width=True, hide_index=True, height=320)
-
+        st.dataframe(top_candidates, use_container_width=True, hide_index=True, height=320)
         st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown(
@@ -467,6 +508,10 @@ def render_home_page():
 
 def render_details_page():
     df = load_election_data()
+
+    if df.empty:
+        render_empty_state("Constituency Details")
+        return
 
     render_hero(
         "Constituency Details",
