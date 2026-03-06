@@ -95,7 +95,6 @@ jobs:
 
               for constituency, group in raw.groupby("constituency", sort=True):
                   group = group.sort_values(["votes", "rank_num"], ascending=[False, True]).reset_index(drop=True)
-
                   top = group.iloc[0]
                   runner = group.iloc[1] if len(group) > 1 else None
 
