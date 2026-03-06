@@ -1,158 +1,162 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
 import plotly.express as px
-import streamlit_autorefresh
+from streamlit_autorefresh import st_autorefresh
+from data import load_election_data
+
 
 st.set_page_config(
-    page_title="Nepal Election 2082 | Live Results",
-    page_icon="🇳🇵",
-    layout="wide"
+    page_title="Nepal Election Dashboard",
+    page_icon="🗳️",
+    layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-# Auto-refresh every 15s (client-side, no server load)
-count = streamlit_autorefresh.st_autorefresh(interval=15000, limit=None, key="f")
+st_autorefresh(interval=30 * 1000, key="election_autorefresh")
 
-@st.cache_data(ttl=60)  # Scrape every minute
-def fetch_live_results():
-    """Scrapes nepalvotes.live + bulletproof column handling"""
-    try:
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        
-        # Primary: nepalvotes.live
-        r = requests.get("https://nepalvotes.live", headers=headers, timeout=15)
-        soup = BeautifulSoup(r.text, 'html.parser')
-        tables = soup.find_all('table')
-        
-        if tables:
-            df_scraped = pd.read_html(str(tables[0]))[0]
-            
-            # Bulletproof column mapping (handles any scraped table)
-            df = pd.DataFrame({
-                'Constituency': df_scraped.iloc[:, 0].fillna('Unknown').astype(str),
-                'Candidate': df_scraped.iloc[:, 1].fillna('Unknown').astype(str),
-                'Party': df_scraped.iloc[:, 2].fillna('Unknown').astype(str) if len(df_scraped.columns) > 2 else 'TBD',
-                'Votes': pd.to_numeric(df_scraped.iloc[:, min(3, len(df_scraped.columns)-1)], errors='coerce').fillna(0),
-                'Margin': pd.to_numeric(df_scraped.iloc[:, min(4, len(df_scraped.columns)-1)], errors='coerce').fillna(0),
-                'Status': 'Scraped'
-            })
-            df['Update'] = datetime.now().strftime("%H:%M")
-            return df.sort_values("Votes", ascending=False).head(50)
-        
-        # EC fallback
-        r = requests.get("https://result.election.gov.np", headers=headers, timeout=15)
-        soup = BeautifulSoup(r.text, 'html.parser')
-        tables = soup.find_all('table')
-        if tables:
-            df_scraped = pd.read_html(str(tables[0]))[0]
-            df = pd.DataFrame({
-                'Constituency': df_scraped.iloc[:, 0].fillna('Unknown').astype(str),
-                'Candidate': df_scraped.iloc[:, 1].fillna('Unknown').astype(str),
-                'Party': 'EC',
-                'Votes': pd.to_numeric(df_scraped.iloc[:, 2], errors='coerce').fillna(0),
-                'Margin': 0,
-                'Status': 'EC'
-            })
-            return df.head(50)
-            
-    except Exception as e:
-        print(f"Scrape failed: {e}")
-    
-    # Your EXACT original simulation (guaranteed columns)
-    constituencies = [
-        "Jhapa-5", "Chitwan-2", "Kathmandu-1", "Bhaktapur-1", "Jumla-1", "Pyuthan-1", 
-        "Rautahat-1", "Kanchanpur-2", "Dang-2", "Nuwakot-1", "Rolpa-1", "Saptari-3"
+constituencies_df = load_election_data()
+
+st.sidebar.title("Filters")
+
+province_options = ["All"] + sorted(constituencies_df["province"].unique().tolist())
+party_options = ["All"] + sorted(constituencies_df["party"].unique().tolist())
+status_options = ["All"] + sorted(constituencies_df["status"].unique().tolist())
+
+selected_province = st.sidebar.selectbox("Province", province_options)
+selected_party = st.sidebar.selectbox("Party", party_options)
+selected_status = st.sidebar.selectbox("Status", status_options)
+search_text = st.sidebar.text_input("Search constituency, district, or candidate")
+
+filtered_df = constituencies_df.copy()
+
+if selected_province != "All":
+    filtered_df = filtered_df[filtered_df["province"] == selected_province]
+
+if selected_party != "All":
+    filtered_df = filtered_df[filtered_df["party"] == selected_party]
+
+if selected_status != "All":
+    filtered_df = filtered_df[filtered_df["status"] == selected_status]
+
+if search_text:
+    q = search_text.strip().lower()
+    filtered_df = filtered_df[
+        filtered_df["constituency"].str.lower().str.contains(q)
+        | filtered_df["district"].str.lower().str.contains(q)
+        | filtered_df["candidate"].str.lower().str.contains(q)
     ]
-    candidates = [
-        "Balen Shah (RSP)", "Rabi Lamichhane (RSP)", "KP Sharma Oli (UML)", "Gagan Thapa (NC)",
-        "Sobita Gautam (RSP)", "Shanti Lal Mahat (UML)", "Prakash Sharan Mahat (NC)"
-    ]
-    
-    data = []
-    np.random.seed(int(datetime.now().timestamp() // 300))
-    for const in constituencies:
-        for cand in np.random.choice(candidates, np.random.randint(3,6), replace=False):
-            votes = np.random.randint(8000, 35000)
-            margin = np.random.uniform(-5000, 5000)
-            status = "Leading" if margin > 0 else "Trailing"
-            data.append({
-                "Constituency": const,
-                "Candidate": cand,
-                "Party": cand.split(" (")[1][:-1] if "(" in cand else "IND",
-                "Votes": votes,
-                "Margin": abs(margin),
-                "Status": status,
-                "Update": datetime.now().strftime("%H:%M")
-            })
-    return pd.DataFrame(data).sort_values("Votes", ascending=False)
 
-st.title("🇳🇵 Nepal Election 2082")
-st.markdown("**House of Representatives | Live FPTP Results | Scraping nepalvotes.live + Election Commission**")
+total_constituencies = len(filtered_df)
+total_votes = int(filtered_df["votes"].sum()) if not filtered_df.empty else 0
+won_count = int((filtered_df["status"] == "Won").sum()) if not filtered_df.empty else 0
+leading_count = int((filtered_df["status"] == "Leading").sum()) if not filtered_df.empty else 0
+avg_progress = round(filtered_df["count_pct"].mean(), 1) if not filtered_df.empty else 0
 
-df = fetch_live_results()
+st.title("Nepal Election Dashboard")
+st.caption("Prototype UI using shared mock data. Official result endpoint integration comes next.")
 
-# Debug info (remove after testing)
-st.caption(f"📊 Data source: {len(df)} rows, columns: {list(df.columns)}")
+metric_cols = st.columns(5)
+metric_cols[0].metric("Visible Seats", total_constituencies)
+metric_cols[1].metric("Total Votes", f"{total_votes:,}")
+metric_cols[2].metric("Won", won_count)
+metric_cols[3].metric("Leading", leading_count)
+metric_cols[4].metric("Avg Count %", f"{avg_progress}%")
 
-# Header KPIs (SAFE - columns guaranteed)
-total_declared = len(df['Constituency'].unique())
-top_votes = df["Votes"].max()
-seats_projected = min(int(total_declared * 0.6), 165)
+left, right = st.columns([1.6, 1])
 
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.metric("Constituencies Reporting", total_declared, "12")
-with col2:
-    st.metric("Highest Votes", f"{int(top_votes):,}", "+2.1k")
-with col3:
-    st.metric("Projected Seats (RSP)", seats_projected, "+5")
+with left:
+    st.subheader("Constituency Results")
+    display_df = filtered_df.copy()
 
-# Tabs
-tab1, tab2, tab3 = st.tabs(["📊 Leaderboard", "🔥 Hot Seats", "🏛️ All Constituencies"])
+    if not display_df.empty:
+        display_df = display_df[
+            [
+                "constituency",
+                "province",
+                "district",
+                "candidate",
+                "party",
+                "votes",
+                "runner_up",
+                "runner_up_party",
+                "runner_up_votes",
+                "margin",
+                "status",
+                "count_pct",
+            ]
+        ].sort_values(["status", "votes"], ascending=[True, False])
 
-with tab1:
-    st.subheader("Top Candidates by Votes")
-    top_df = df.nlargest(15, "Votes")[["Candidate", "Party", "Constituency", "Votes", "Status"]]
-    st.dataframe(top_df.style.format({"Votes": "{:,}"}), use_container_width=True)
+    st.dataframe(display_df, use_container_width=True, hide_index=True)
 
-with tab2:
-    st.subheader("Hot Seats (Closest Races)")
-    hot_df = df.loc[df.groupby("Constituency")["Margin"].idxmin()].nsmallest(10, "Margin")
-    hot_df = hot_df[["Constituency", "Candidate", "Party", "Votes", "Margin", "Status"]]
-    fig_hot = px.bar(
-        hot_df, x="Margin", y="Constituency", orientation="h",
-        color="Status", title="Margin Between Leader & Runner-up",
-        color_discrete_map={"Leading": "#1f77b4", "Trailing": "#ff7f0e"},
-        height=500
-    )
-    st.plotly_chart(fig_hot, use_container_width=True)
-    
-    col_h1, col_h2 = st.columns(2)
-    with col_h1:
-        st.metric("Tightest Race", f"{hot_df['Margin'].min():,.0f}")
-    with col_h2:
-        st.metric("Hot Seat Constituencies", len(hot_df))
+with right:
+    st.subheader("Party Standings")
 
-with tab3:
-    st.subheader("All Area Vote Results")
-    province_filter = st.multiselect("Filter Constituency", df["Constituency"].unique(), default=df["Constituency"].unique()[:6])
-    df_filtered = df[df["Constituency"].isin(province_filter)]
-    
-    col_sort, col_view = st.columns(2)
-    with col_sort:
-        sort_by = st.selectbox("Sort by", ["Votes", "Margin", "Constituency"])
-    with col_view:
-        show_cols = st.multiselect("Columns", df.columns, default=["Constituency", "Candidate", "Party", "Votes", "Status"])
-    
-    df_display = df_filtered.sort_values(sort_by, ascending=(sort_by != "Votes")).loc[:, show_cols]
-    st.dataframe(df_display.style.format({"Votes": "{:,}", "Margin": "{:,.0f}"}), height=600, use_container_width=True)
+    if not filtered_df.empty:
+        filtered_party = (
+            filtered_df.groupby("party", as_index=False)
+            .agg(
+                seats_leading=("status", lambda x: int((x == "Leading").sum())),
+                seats_won=("status", lambda x: int((x == "Won").sum())),
+                total_votes=("votes", "sum"),
+            )
+            .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
+        )
+
+        fig_party = px.bar(
+            filtered_party,
+            x="party",
+            y=["seats_won", "seats_leading"],
+            barmode="group",
+            title="Seats by Party",
+            text_auto=True,
+        )
+        fig_party.update_layout(height=360, legend_title_text="")
+        st.plotly_chart(fig_party, use_container_width=True)
+
+        st.dataframe(filtered_party, use_container_width=True, hide_index=True)
+    else:
+        st.info("No data for the selected filters.")
 
 st.markdown("---")
-st.caption("🕐 Scraping nepalvotes.live every 60s | Official: result.election.gov.np | Auto-refresh 15s")
 
-if st.button("🔄 Manual Refresh"):
-    st.cache_data.clear()
-    st.rerun()
+bottom_left, bottom_right = st.columns(2)
+
+with bottom_left:
+    st.subheader("Province Progress")
+
+    if not filtered_df.empty:
+        filtered_province = (
+            filtered_df.groupby("province", as_index=False)
+            .agg(
+                constituencies=("constituency", "count"),
+                avg_count_pct=("count_pct", "mean"),
+                total_votes=("votes", "sum"),
+            )
+            .sort_values("constituencies", ascending=False)
+        )
+
+        fig_province = px.bar(
+            filtered_province,
+            x="province",
+            y="avg_count_pct",
+            text_auto=".1f",
+            title="Average Count Progress by Province",
+        )
+        fig_province.update_layout(height=350, yaxis_title="Count %")
+        st.plotly_chart(fig_province, use_container_width=True)
+    else:
+        st.info("No province data available.")
+
+with bottom_right:
+    st.subheader("Top Candidates")
+
+    if not filtered_df.empty:
+        top_candidates = filtered_df.sort_values("votes", ascending=False)[
+            ["candidate", "party", "constituency", "votes", "status"]
+        ].head(10)
+        st.dataframe(top_candidates, use_container_width=True, hide_index=True)
+    else:
+        st.info("No candidate data available.")
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Next step: connect result.election.gov.np and replace mock data.")
