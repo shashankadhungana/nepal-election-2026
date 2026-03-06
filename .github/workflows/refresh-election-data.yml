@@ -35,7 +35,7 @@ jobs:
 
           urls = [
               "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
-              "https://result.election.gov.np/JSONFiles/ElectionResultCentral2079.txt",
+              
           ]
 
           headers = {
