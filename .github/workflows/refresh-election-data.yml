@@ -27,9 +27,11 @@ jobs:
       - name: Fetch and normalize data
         run: |
           python <<'PY'
+          import json
           import requests
           import pandas as pd
           from pathlib import Path
+          from datetime import datetime, timezone
 
           urls = [
               "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt",
@@ -119,7 +121,12 @@ jobs:
                   ["province", "district", "constituency"]
               ).reset_index(drop=True)
 
-          df = None
+          Path("data").mkdir(exist_ok=True)
+
+          success = False
+          error_message = None
+          row_count = 0
+          used_url = None
 
           for url in urls:
               try:
@@ -127,23 +134,36 @@ jobs:
                   r.raise_for_status()
                   raw = pd.DataFrame(r.json())
                   df = normalize(raw)
+
                   if df is not None and not df.empty:
+                      df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
+                      success = True
+                      row_count = len(df)
+                      used_url = url
                       break
-              except Exception:
-                  continue
+              except Exception as e:
+                  error_message = str(e)
 
-          if df is None or df.empty:
-              raise SystemExit("No usable election data fetched.")
+          metadata = {
+              "last_attempt_utc": datetime.now(timezone.utc).isoformat(),
+              "success": success,
+              "row_count": row_count,
+              "source_url": used_url,
+              "error": error_message,
+          }
 
-          Path("data").mkdir(exist_ok=True)
-          df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
+          with open("data/fetch_status.json", "w", encoding="utf-8") as f:
+              json.dump(metadata, f, ensure_ascii=False, indent=2)
+
+          print(metadata)
           PY
 
-      - name: Commit updated JSON
+      - name: Commit updated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/election_data.json
-          git diff --staged --quiet || git commit -m "Update election data"
-          git push
-
+          git add data/election_data.json data/fetch_status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update election data"
+            git push
+          fi
