@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-06T04:51:07.345618+00:00",
+  "last_attempt_utc": "2026-03-06T05:15:20.134145+00:00",
   "success": false,
   "row_count": 0,
   "source_url": null,
-  "error": "HTTPSConnectionPool(host='result.election.gov.np', port=443): Max retries exceeded with url: /JSONFiles/ElectionResultCentral.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='result.election.gov.np', port=443) at 0x7ff3a829c510>, 'Connection to result.election.gov.np timed out. (connect timeout=30)'))"
+  "error": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
 }
