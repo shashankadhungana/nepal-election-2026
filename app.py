@@ -3,6 +3,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 st.set_page_config(
@@ -163,6 +165,22 @@ def province_name_from_code(code):
     return province_map.get(code, "Unknown")
 
 
+def make_session():
+    session = requests.Session()
+    retry = Retry(
+        total=4,
+        connect=4,
+        read=4,
+        backoff_factor=1.5,
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET", "HEAD", "OPTIONS"],
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
+
+
 def normalize_raw_results(raw):
     if raw is None or raw.empty:
         return pd.DataFrame(columns=EMPTY_COLUMNS)
@@ -231,14 +249,57 @@ def normalize_raw_results(raw):
     return pd.DataFrame(rows).sort_values(["province", "district", "constituency"]).reset_index(drop=True)
 
 
+def normalize_nepalvotes_results(data):
+    if not data or not isinstance(data, list):
+        return pd.DataFrame(columns=EMPTY_COLUMNS)
+
+    rows = []
+
+    for item in data:
+        candidate = str(item.get("candidate") or item.get("candidate_name") or "").strip()
+        party = str(item.get("party") or item.get("party_name") or "Independent").strip()
+        district = str(item.get("district") or item.get("district_name") or "Unknown").strip()
+        province = str(item.get("province") or item.get("province_name") or "Unknown").strip()
+        constituency = str(item.get("constituency") or item.get("seat") or "").strip()
+        votes = pd.to_numeric(item.get("votes", 0), errors="coerce")
+        runner_up = str(item.get("runner_up") or "").strip()
+        runner_up_party = str(item.get("runner_up_party") or "").strip()
+        runner_up_votes = pd.to_numeric(item.get("runner_up_votes", 0), errors="coerce")
+        status = str(item.get("status") or "Leading").strip()
+
+        if constituency == "":
+            continue
+
+        votes = 0 if pd.isna(votes) else int(votes)
+        runner_up_votes = 0 if pd.isna(runner_up_votes) else int(runner_up_votes)
+
+        rows.append({
+            "constituency": constituency,
+            "province": province,
+            "district": district,
+            "candidate": candidate if candidate else "Unknown Candidate",
+            "party": party if party else "Independent",
+            "votes": votes,
+            "runner_up": runner_up,
+            "runner_up_party": runner_up_party,
+            "runner_up_votes": runner_up_votes,
+            "margin": votes - runner_up_votes,
+            "status": status if status else "Leading",
+            "count_pct": 100 if status.lower() == "won" else 0,
+        })
+
+    if not rows:
+        return pd.DataFrame(columns=EMPTY_COLUMNS)
+
+    return pd.DataFrame(rows).sort_values(["province", "district", "constituency"]).reset_index(drop=True)
+
+
 @st.cache_data(ttl=30)
 def load_fetch_status():
     url = "https://raw.githubusercontent.com/shashankadhungana/nepal-election-2026/main/data/fetch_status.json"
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
+    session = make_session()
     try:
-        r = requests.get(url, headers=headers, timeout=20)
+        r = session.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
         if r.status_code == 200:
             return r.json()
     except Exception:
@@ -248,15 +309,16 @@ def load_fetch_status():
 
 @st.cache_data(ttl=30)
 def load_election_data():
-    headers = {
-        "User-Agent": "Mozilla/5.0",
-        "Accept": "application/json,text/plain,*/*",
-    }
+    session = make_session()
 
     github_raw_url = "https://raw.githubusercontent.com/shashankadhungana/nepal-election-2026/main/data/election_data.json"
 
     try:
-        r = requests.get(github_raw_url, headers=headers, timeout=20)
+        r = session.get(
+            github_raw_url,
+            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json,text/plain,*/*"},
+            timeout=20,
+        )
         if r.status_code == 200:
             data = r.json()
             if isinstance(data, list) and len(data) > 0:
@@ -267,10 +329,15 @@ def load_election_data():
     official_url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
 
     try:
-        r = requests.get(
+        r = session.get(
             official_url,
             headers={
-                **headers,
+                "User-Agent": (
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/122.0.0.0 Safari/537.36"
+                ),
+                "Accept": "application/json,text/plain,*/*",
                 "Referer": "https://result.election.gov.np/",
                 "Origin": "https://result.election.gov.np",
             },
@@ -283,6 +350,27 @@ def load_election_data():
                 return df
     except Exception:
         pass
+
+    nepalvotes_urls = [
+        "https://nepalvotes.live/api/results",
+        "https://nepalvotes.live/api/constituencies",
+        "https://nepalvotes.live/api/explore",
+    ]
+
+    for url in nepalvotes_urls:
+        try:
+            r = session.get(
+                url,
+                headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json,text/plain,*/*"},
+                timeout=20,
+            )
+            if r.status_code == 200:
+                data = r.json()
+                df = normalize_nepalvotes_results(data)
+                if not df.empty:
+                    return df
+        except Exception:
+            pass
 
     return pd.DataFrame(columns=EMPTY_COLUMNS)
 
@@ -301,7 +389,7 @@ def render_empty_state(title_text):
         st.json(status, expanded=True)
 
     st.markdown(
-        '<div class="small-note">The app is waiting for the GitHub mirror workflow to fetch and store usable data.</div>',
+        '<div class="small-note">The app is trying GitHub mirror, official feed, and fallback public sources.</div>',
         unsafe_allow_html=True,
     )
 
@@ -355,14 +443,14 @@ def render_home_page():
 
     render_hero(
         "Nepal Election Live Dashboard",
-        "Live dashboard using mirrored official election data with auto-refresh every 30 seconds.",
+        "Live dashboard with auto-refresh every 30 seconds.",
     )
 
     st.markdown(
         """
-        <span class="pill">Official-source mirror</span>
-        <span class="pill">30s app refresh</span>
+        <span class="pill">Live updates</span>
         <span class="pill">Constituency drilldown</span>
+        <span class="pill">Resilient data loading</span>
         """,
         unsafe_allow_html=True,
     )
@@ -379,6 +467,7 @@ def render_home_page():
     with left:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Constituency Results</div>', unsafe_allow_html=True)
+
         display_df = filtered_df[
             [
                 "constituency", "province", "district", "candidate", "party",
@@ -386,12 +475,14 @@ def render_home_page():
                 "margin", "status", "count_pct",
             ]
         ].sort_values(["status", "votes"], ascending=[True, False])
+
         st.dataframe(display_df, use_container_width=True, hide_index=True, height=430)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Party Standings</div>', unsafe_allow_html=True)
+
         party_summary = (
             filtered_df.groupby("party", as_index=False)
             .agg(
@@ -402,6 +493,7 @@ def render_home_page():
             .sort_values(["seats_won", "seats_leading", "total_votes"], ascending=False)
             .head(12)
         )
+
         fig_party = px.bar(
             party_summary,
             x="party",
@@ -413,6 +505,7 @@ def render_home_page():
         fig_party = plotly_dark_layout(fig_party)
         fig_party.update_layout(height=360, showlegend=True)
         st.plotly_chart(fig_party, use_container_width=True)
+
         st.dataframe(party_summary, use_container_width=True, hide_index=True, height=180)
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -421,11 +514,16 @@ def render_home_page():
     with bottom_left:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Province Progress</div>', unsafe_allow_html=True)
+
         province_summary = (
             filtered_df.groupby("province", as_index=False)
-            .agg(constituencies=("constituency", "count"), avg_count_pct=("count_pct", "mean"))
+            .agg(
+                constituencies=("constituency", "count"),
+                avg_count_pct=("count_pct", "mean"),
+            )
             .sort_values("avg_count_pct", ascending=False)
         )
+
         fig_province = px.bar(
             province_summary,
             x="province",
@@ -437,29 +535,35 @@ def render_home_page():
         fig_province = plotly_dark_layout(fig_province)
         fig_province.update_layout(height=320, coloraxis_showscale=False)
         st.plotly_chart(fig_province, use_container_width=True)
+
         st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_mid:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Votes by Party</div>', unsafe_allow_html=True)
+
         votes_by_party = (
             filtered_df.groupby("party", as_index=False)["votes"]
             .sum()
             .sort_values("votes", ascending=False)
             .head(10)
         )
+
         fig_votes = px.pie(votes_by_party, names="party", values="votes", hole=0.58)
         fig_votes = plotly_dark_layout(fig_votes)
         fig_votes.update_layout(height=320, margin=dict(l=10, r=10, t=30, b=10))
         st.plotly_chart(fig_votes, use_container_width=True)
+
         st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Top Candidates</div>', unsafe_allow_html=True)
+
         top_candidates = filtered_df.sort_values("votes", ascending=False)[
             ["candidate", "party", "constituency", "votes", "status"]
         ].head(8)
+
         st.dataframe(top_candidates, use_container_width=True, hide_index=True, height=320)
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -485,6 +589,7 @@ def render_details_page():
         filtered_df = filtered_df[filtered_df["province"] == selected_province]
 
     constituency_list = filtered_df["constituency"].sort_values().tolist()
+
     if not constituency_list:
         st.warning("No constituencies available for the selected province.")
         return
@@ -504,6 +609,7 @@ def render_details_page():
     with left:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Seat Snapshot</div>', unsafe_allow_html=True)
+
         summary_df = pd.DataFrame([
             {"Field": "Province", "Value": seat["province"]},
             {"Field": "District", "Value": seat["district"]},
@@ -516,17 +622,20 @@ def render_details_page():
             {"Field": "Runner-up Votes", "Value": f"{int(seat['runner_up_votes']):,}"},
             {"Field": "Margin", "Value": f"{int(seat['margin']):,}"},
         ])
+
         st.dataframe(summary_df, use_container_width=True, hide_index=True, height=388)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Vote Comparison</div>', unsafe_allow_html=True)
+
         compare_df = pd.DataFrame({
             "Candidate": [seat["candidate"], seat["runner_up"]],
             "Votes": [seat["votes"], seat["runner_up_votes"]],
             "Party": [seat["party"], seat["runner_up_party"]],
         })
+
         fig_compare = px.bar(compare_df, x="Candidate", y="Votes", color="Party", text_auto=True)
         fig_compare = plotly_dark_layout(fig_compare)
         fig_compare.update_layout(height=420)
@@ -538,21 +647,25 @@ def render_details_page():
     with bottom_left:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">All Seats in Current Filter</div>', unsafe_allow_html=True)
+
         table_df = filtered_df[
             [
                 "constituency", "province", "district", "candidate", "party",
                 "votes", "runner_up", "runner_up_votes", "margin", "status", "count_pct",
             ]
         ].sort_values(["province", "district", "constituency"])
+
         st.dataframe(table_df, use_container_width=True, hide_index=True, height=380)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with bottom_right:
         st.markdown('<div class="panel">', unsafe_allow_html=True)
         st.markdown('<div class="section-title">Top Margins</div>', unsafe_allow_html=True)
+
         margin_df = filtered_df[
             ["constituency", "candidate", "party", "margin"]
         ].sort_values("margin", ascending=False).head(8)
+
         fig_margin = px.bar(margin_df, x="constituency", y="margin", color="party", text_auto=True)
         fig_margin = plotly_dark_layout(fig_margin)
         fig_margin.update_layout(height=380)
@@ -567,5 +680,3 @@ details = st.Page(render_details_page, title="Details", icon="📍")
 
 pg = st.navigation([home, details])
 pg.run()
-
-
