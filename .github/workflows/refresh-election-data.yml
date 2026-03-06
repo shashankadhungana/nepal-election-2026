@@ -3,7 +3,7 @@ name: Refresh election data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests pandas urllib3
 
-      - name: Fetch and normalize data
+      - name: Fetch NepalVotes JSON and normalize
         run: |
           python <<'PY'
           import json
@@ -39,17 +39,22 @@ jobs:
 
           Path("data").mkdir(exist_ok=True)
 
-          url = "https://result.election.gov.np/JSONFiles/ElectionResultCentral.txt"
+          SOURCE_URL = "https://pub-4173e04d0b78426caa8cfa525f827daa.r2.dev/constituencies.json"
 
-          province_map = {
-              1: "Koshi",
-              2: "Madhesh",
-              3: "Bagmati",
-              4: "Gandaki",
-              5: "Lumbini",
-              6: "Karnali",
-              7: "Sudurpashchim",
-          }
+          EMPTY_COLUMNS = [
+              "constituency",
+              "province",
+              "district",
+              "candidate",
+              "party",
+              "votes",
+              "runner_up",
+              "runner_up_party",
+              "runner_up_votes",
+              "margin",
+              "status",
+              "count_pct",
+          ]
 
           def make_session():
               session = requests.Session()
@@ -57,107 +62,151 @@ jobs:
                   total=5,
                   connect=5,
                   read=5,
-                  backoff_factor=2,
+                  backoff_factor=1.5,
                   status_forcelist=[429, 500, 502, 503, 504],
                   allowed_methods=["GET", "HEAD"],
               )
               adapter = HTTPAdapter(max_retries=retry)
               session.mount("https://", adapter)
               session.mount("http://", adapter)
-              session.headers.update({
-                  "User-Agent": (
-                      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                      "AppleWebKit/537.36 (KHTML, like Gecko) "
-                      "Chrome/122.0.0.0 Safari/537.36"
-                  ),
-                  "Accept": "application/json,text/plain,*/*",
-                  "Referer": "https://result.election.gov.np/",
-                  "Origin": "https://result.election.gov.np",
-                  "Connection": "keep-alive",
-              })
+              session.headers.update(
+                  {
+                      "User-Agent": (
+                          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                          "AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/122.0.0.0 Safari/537.36"
+                      ),
+                      "Accept": "application/json,text/plain,*/*",
+                      "Origin": "https://nepalvotes.live",
+                      "Referer": "https://nepalvotes.live/",
+                  }
+              )
               return session
 
-          def normalize(raw):
-              required = [
-                  "CandidateName",
-                  "PoliticalPartyName",
-                  "DistrictName",
-                  "State",
-                  "SCConstID",
-                  "TotalVoteReceived",
-                  "Rank",
-                  "Remarks",
-              ]
+          def validate_final_schema(df):
+              if df is None or df.empty:
+                  return pd.DataFrame(columns=EMPTY_COLUMNS)
 
-              for col in required:
-                  if col not in raw.columns:
-                      raw[col] = None
+              out = df.copy()
+              for col in EMPTY_COLUMNS:
+                  if col not in out.columns:
+                      out[col] = "" if col not in ["votes", "runner_up_votes", "margin", "count_pct"] else 0
 
-              raw["candidate"] = raw["CandidateName"].fillna("").astype(str).str.strip()
-              raw["party"] = raw["PoliticalPartyName"].fillna("Independent").astype(str).str.strip()
-              raw["district"] = raw["DistrictName"].fillna("Unknown").astype(str).str.strip()
-              raw["sc_const_id"] = raw["SCConstID"].fillna("").astype(str).str.strip()
-              raw["votes"] = pd.to_numeric(raw["TotalVoteReceived"], errors="coerce").fillna(0).astype(int)
-              raw["rank_num"] = pd.to_numeric(raw["Rank"], errors="coerce")
-              raw["remarks"] = raw["Remarks"].fillna("").astype(str).str.strip()
-              raw["state_code"] = pd.to_numeric(raw["State"], errors="coerce").fillna(0).astype(int)
-              raw["province"] = raw["state_code"].map(province_map).fillna("Unknown")
+              out["votes"] = pd.to_numeric(out["votes"], errors="coerce").fillna(0).astype(int)
+              out["runner_up_votes"] = pd.to_numeric(out["runner_up_votes"], errors="coerce").fillna(0).astype(int)
+              out["margin"] = pd.to_numeric(out["margin"], errors="coerce").fillna(0).astype(int)
+              out["count_pct"] = pd.to_numeric(out["count_pct"], errors="coerce").fillna(0.0)
 
-              raw = raw[(raw["district"] != "") & (raw["sc_const_id"] != "")]
-              if raw.empty:
-                  return pd.DataFrame()
+              for col in ["constituency", "province", "district", "candidate", "party", "runner_up", "runner_up_party", "status"]:
+                  out[col] = out[col].fillna("").astype(str)
 
-              raw["constituency"] = raw["district"] + "-" + raw["sc_const_id"]
+              return out[EMPTY_COLUMNS].copy()
+
+          def clean_party_name(value):
+              if value is None:
+                  return "Independent"
+              text = str(value).strip()
+              return text if text else "Independent"
+
+          def clean_candidate_name(value):
+              return str(value or "").strip()
+
+          def normalize_nepalvotes_results(items):
+              if not items or not isinstance(items, list):
+                  return pd.DataFrame(columns=EMPTY_COLUMNS)
 
               rows = []
 
-              for constituency, group in raw.groupby("constituency", sort=True):
-                  group = group.sort_values(["votes", "rank_num"], ascending=[False, True]).reset_index(drop=True)
-                  top = group.iloc[0]
-                  runner = group.iloc[1] if len(group) > 1 else None
+              for seat in items:
+                  candidates = seat.get("candidates", [])
+                  if not isinstance(candidates, list) or len(candidates) == 0:
+                      continue
 
-                  top_votes = int(top["votes"])
-                  runner_votes = int(runner["votes"]) if runner is not None else 0
+                  cleaned_candidates = []
+                  for c in candidates:
+                      cleaned_candidates.append(
+                          {
+                              "candidate": clean_candidate_name(c.get("name") or c.get("nameEn") or c.get("nameNp")),
+                              "party": clean_party_name(c.get("partyName") or c.get("party") or c.get("partyId")),
+                              "votes": int(pd.to_numeric(c.get("votes", 0), errors="coerce") or 0),
+                              "isWinner": bool(c.get("isWinner", False)),
+                          }
+                      )
 
-                  rows.append({
-                      "constituency": constituency,
-                      "province": top["province"],
-                      "district": top["district"],
-                      "candidate": top["candidate"] if top["candidate"] else "Unknown Candidate",
-                      "party": top["party"] if top["party"] else "Independent",
-                      "votes": top_votes,
-                      "runner_up": runner["candidate"] if runner is not None else "",
-                      "runner_up_party": runner["party"] if runner is not None else "",
-                      "runner_up_votes": runner_votes,
-                      "margin": top_votes - runner_votes,
-                      "status": "Won" if str(top["remarks"]).lower() == "elected" else "Leading",
-                      "count_pct": 100 if str(top["remarks"]).lower() == "elected" else 0,
-                  })
+                  cleaned_candidates = sorted(cleaned_candidates, key=lambda x: x["votes"], reverse=True)
+                  top = cleaned_candidates[0]
+                  runner = cleaned_candidates[1] if len(cleaned_candidates) > 1 else {
+                      "candidate": "",
+                      "party": "",
+                      "votes": 0,
+                      "isWinner": False,
+                  }
 
-              return pd.DataFrame(rows).sort_values(
-                  ["province", "district", "constituency"]
-              ).reset_index(drop=True)
+                  votes_cast = pd.to_numeric(seat.get("votesCast", 0), errors="coerce")
+                  total_voters = pd.to_numeric(seat.get("totalVoters", 0), errors="coerce")
+                  count_pct = 0.0
+                  if pd.notna(votes_cast) and pd.notna(total_voters) and float(total_voters) > 0:
+                      count_pct = round((float(votes_cast) / float(total_voters)) * 100, 1)
+
+                  status_raw = str(seat.get("status") or "").strip().upper()
+                  if top["isWinner"] or status_raw in ["DECLARED", "ELECTED", "WON", "FINAL"]:
+                      final_status = "Won"
+                  else:
+                      final_status = "Leading"
+
+                  constituency = str(seat.get("name") or seat.get("code") or "").strip()
+                  province = str(seat.get("province") or "Unknown").strip()
+                  district = str(seat.get("district") or "Unknown").strip()
+
+                  if not constituency:
+                      continue
+
+                  rows.append(
+                      {
+                          "constituency": constituency,
+                          "province": province,
+                          "district": district,
+                          "candidate": top["candidate"] if top["candidate"] else "Unknown Candidate",
+                          "party": top["party"],
+                          "votes": top["votes"],
+                          "runner_up": runner["candidate"],
+                          "runner_up_party": runner["party"],
+                          "runner_up_votes": runner["votes"],
+                          "margin": top["votes"] - runner["votes"],
+                          "status": final_status,
+                          "count_pct": count_pct,
+                      }
+                  )
+
+              if not rows:
+                  return pd.DataFrame(columns=EMPTY_COLUMNS)
+
+              df = pd.DataFrame(rows).sort_values(["province", "district", "constituency"]).reset_index(drop=True)
+              return validate_final_schema(df)
 
           success = False
           row_count = 0
-          source_url = None
           error_message = None
 
           try:
               session = make_session()
-              response = session.get(url, timeout=45)
+              response = session.get(SOURCE_URL, timeout=30)
               response.raise_for_status()
 
-              raw = pd.DataFrame(response.json())
-              df = normalize(raw)
+              raw_json = response.json()
 
-              if df is not None and not df.empty:
+              with open("data/source_constituencies_raw.json", "w", encoding="utf-8") as f:
+                  json.dump(raw_json, f, ensure_ascii=False, indent=2)
+
+              df = normalize_nepalvotes_results(raw_json)
+
+              if df.empty:
+                  error_message = "Fetched data was empty after normalization."
+              else:
                   df.to_json("data/election_data.json", orient="records", force_ascii=False, indent=2)
                   success = True
                   row_count = len(df)
-                  source_url = url
-              else:
-                  error_message = "Fetched data was empty after normalization."
+
           except Exception as e:
               error_message = str(e)
 
@@ -165,7 +214,7 @@ jobs:
               "last_attempt_utc": datetime.now(timezone.utc).isoformat(),
               "success": success,
               "row_count": row_count,
-              "source_url": source_url,
+              "source_url": SOURCE_URL if success else None,
               "error": error_message,
           }
 
@@ -176,15 +225,20 @@ jobs:
           PY
 
       - name: Commit updated files
+        id: commit_step
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/election_data.json data/fetch_status.json
+          git add data/election_data.json data/fetch_status.json data/source_constituencies_raw.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update election data"
+            git commit -m "Update election data mirror"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Rebase and push
+        if: steps.commit_step.outputs.has_changes == 'true'
         run: |
-          git pull --rebase origin main || true
+          git pull --rebase origin main
           git push origin main
