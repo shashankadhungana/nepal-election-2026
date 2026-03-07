@@ -341,13 +341,13 @@
     "district":"Makwanpur",
     "candidate":"Prashant Upreti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":19692,
+    "votes":20866,
     "runner_up":"Mahesh Kumar Bartaula",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":14690,
-    "margin":5002,
+    "runner_up_votes":15582,
+    "margin":5284,
     "status":"Leading",
-    "count_pct":41.0
+    "count_pct":42.8
   },
   {
     "constituency":"Nuwakot-1",
@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":10678,
-    "runner_up":"Madhav Prasad Dhungel",
-    "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":7317,
-    "margin":3361,
+    "votes":10850,
+    "runner_up":"Ram Chandra Khadka",
+    "runner_up_party":"नेपाली काँग्रेस",
+    "runner_up_votes":7561,
+    "margin":3289,
     "status":"Leading",
-    "count_pct":18.8
+    "count_pct":19.3
   },
   {
     "constituency":"Rasuwa-1",
@@ -509,13 +509,13 @@
     "district":"Gorkha",
     "candidate":"Kabindra Burlakoti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":10804,
+    "votes":11225,
     "runner_up":"Prakash Chandra Dawadi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":6493,
-    "margin":4311,
+    "runner_up_votes":6846,
+    "margin":4379,
     "status":"Leading",
-    "count_pct":23.6
+    "count_pct":24.6
   },
   {
     "constituency":"Kaski-1",
@@ -677,13 +677,13 @@
     "district":"Syangja",
     "candidate":"Bhagwat Prakash Malla",
     "party":"नेपाली काँग्रेस",
-    "votes":14592,
+    "votes":15230,
     "runner_up":"Jhabi Lal Dumre",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":13400,
-    "margin":1192,
+    "runner_up_votes":14155,
+    "margin":1075,
     "status":"Leading",
-    "count_pct":33.8
+    "count_pct":35.1
   },
   {
     "constituency":"Tanahun-1",
@@ -747,13 +747,13 @@
     "district":"Dolpa",
     "candidate":"Dhan Bahadur Budha",
     "party":"नेपाली कम्युनिष्ट पार्टी",
-    "votes":3949,
+    "votes":4270,
     "runner_up":"Karna Bahadur Budha",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":1880,
-    "margin":2069,
+    "runner_up_votes":2191,
+    "margin":2079,
     "status":"Leading",
-    "count_pct":30.7
+    "count_pct":35.9
   },
   {
     "constituency":"Humla-1",
@@ -761,13 +761,13 @@
     "district":"Humla",
     "candidate":"Jaya Pati Rokaya",
     "party":"नेपाली काँग्रेस",
-    "votes":8538,
+    "votes":8797,
     "runner_up":"Dipendra Rokaya",
     "runner_up_party":"नेपाली कम्युनिष्ट पार्टी",
-    "runner_up_votes":7150,
-    "margin":1388,
-    "status":"Leading",
-    "count_pct":62.0
+    "runner_up_votes":7243,
+    "margin":1554,
+    "status":"Won",
+    "count_pct":63.8
   },
   {
     "constituency":"Jajarkot-1",
@@ -817,13 +817,13 @@
     "district":"Mugu",
     "candidate":"Purna Bahadur Rokaya",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":1622,
+    "votes":1826,
     "runner_up":"Khadga Shahi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":1288,
-    "margin":334,
+    "runner_up_votes":1533,
+    "margin":293,
     "status":"Leading",
-    "count_pct":9.4
+    "count_pct":10.8
   },
   {
     "constituency":"Rukum West-1",
@@ -845,13 +845,13 @@
     "district":"Salyan",
     "candidate":"Ramesh Kumar Malla",
     "party":"नेपाली कम्युनिष्ट पार्टी",
-    "votes":21839,
+    "votes":22660,
     "runner_up":"Lalit Kumar Chanda",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":20405,
-    "margin":1434,
+    "runner_up_votes":20720,
+    "margin":1940,
     "status":"Leading",
-    "count_pct":47.0
+    "count_pct":48.2
   },
   {
     "constituency":"Surkhet-1",
@@ -929,13 +929,13 @@
     "district":"Ilam",
     "candidate":"Suhanga Nembang",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":18253,
+    "votes":19122,
     "runner_up":"Sudipa Raee",
     "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":13266,
-    "margin":4987,
+    "runner_up_votes":13478,
+    "margin":5644,
     "status":"Leading",
-    "count_pct":43.7
+    "count_pct":45.6
   },
   {
     "constituency":"Jhapa-1",
@@ -1046,7 +1046,7 @@
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
     "runner_up_votes":15624,
     "margin":25300,
-    "status":"Leading",
+    "status":"Won",
     "count_pct":57.8
   },
   {
@@ -1111,13 +1111,13 @@
     "district":"Okhaldhunga",
     "candidate":"Kumar Luitel",
     "party":"नेपाली काँग्रेस",
-    "votes":10081,
+    "votes":10263,
     "runner_up":"Brish Raj Pokharel",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":9508,
-    "margin":573,
+    "runner_up_votes":9752,
+    "margin":511,
     "status":"Leading",
-    "count_pct":30.9
+    "count_pct":31.6
   },
   {
     "constituency":"Panchthar-1",
@@ -1125,13 +1125,13 @@
     "district":"Panchthar",
     "candidate":"Narendra Kumar Kerung",
     "party":"नेपाली काँग्रेस",
-    "votes":12363,
+    "votes":13543,
     "runner_up":"Aindra Sundar Nembang",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":11110,
-    "margin":1253,
+    "runner_up_votes":12067,
+    "margin":1476,
     "status":"Leading",
-    "count_pct":32.5
+    "count_pct":35.6
   },
   {
     "constituency":"Sankhuwasabha-1",
@@ -1195,13 +1195,13 @@
     "district":"Sunsari",
     "candidate":"Ashok Kumar Chaudhary",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":45335,
+    "votes":47421,
     "runner_up":"Vijaya Kumara Gach‍chhadar",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":19610,
-    "margin":25725,
-    "status":"Leading",
-    "count_pct":63.8
+    "runner_up_votes":20501,
+    "margin":26920,
+    "status":"Won",
+    "count_pct":66.6
   },
   {
     "constituency":"Sunsari-4",
@@ -1251,13 +1251,13 @@
     "district":"Udayapur",
     "candidate":"Paras Mani Gelal",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":16759,
+    "votes":17699,
     "runner_up":"Rajesh Kumar Rai",
     "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":8740,
-    "margin":8019,
+    "runner_up_votes":8938,
+    "margin":8761,
     "status":"Leading",
-    "count_pct":31.4
+    "count_pct":32.8
   },
   {
     "constituency":"Udayapur-2",
@@ -1363,13 +1363,13 @@
     "district":"Dang",
     "candidate":"Devaraj Pathak",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":41562,
+    "votes":42602,
     "runner_up":"Yogendra Chaudhary",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":14890,
-    "margin":26672,
+    "runner_up_votes":15280,
+    "margin":27322,
     "status":"Leading",
-    "count_pct":53.0
+    "count_pct":54.6
   },
   {
     "constituency":"Dang-2",
@@ -1447,13 +1447,13 @@
     "district":"Kapilvastu",
     "candidate":"Bikram Thapa",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":27344,
+    "votes":27635,
     "runner_up":"Surendra Raj Acharya",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":20755,
-    "margin":6589,
+    "runner_up_votes":21527,
+    "margin":6108,
     "status":"Leading",
-    "count_pct":59.8
+    "count_pct":61.5
   },
   {
     "constituency":"Kapilvastu-3",
@@ -1489,13 +1489,13 @@
     "district":"Palpa",
     "candidate":"Madhav Bahadur Thapa",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":21443,
+    "votes":24872,
     "runner_up":"Himal Datta Shrestha",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":10251,
-    "margin":11192,
+    "runner_up_votes":11823,
+    "margin":13049,
     "status":"Leading",
-    "count_pct":44.2
+    "count_pct":49.9
   },
   {
     "constituency":"Parasi-1",
@@ -1657,13 +1657,13 @@
     "district":"Bara",
     "candidate":"Chandana Kumara Sinh",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":29255,
+    "votes":31086,
     "runner_up":"Ramakishora Prasada Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":11882,
-    "margin":17373,
+    "runner_up_votes":12791,
+    "margin":18295,
     "status":"Leading",
-    "count_pct":53.2
+    "count_pct":57.0
   },
   {
     "constituency":"Bara-3",
@@ -1797,13 +1797,13 @@
     "district":"Mahottari",
     "candidate":"Gauri Kumari",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":18200,
+    "votes":19031,
     "runner_up":"Surendra Kumar Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":4723,
-    "margin":13477,
+    "runner_up_votes":4889,
+    "margin":14142,
     "status":"Leading",
-    "count_pct":30.7
+    "count_pct":31.9
   },
   {
     "constituency":"Parsa-1",
@@ -1895,13 +1895,13 @@
     "district":"Rautahat",
     "candidate":"Ravin‍dra Patel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":15680,
+    "votes":16034,
     "runner_up":"Govinda Chaudhari",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":8092,
-    "margin":7588,
+    "runner_up_votes":8118,
+    "margin":7916,
     "status":"Leading",
-    "count_pct":35.6
+    "count_pct":36.2
   },
   {
     "constituency":"Rautahat-4",
@@ -1937,13 +1937,13 @@
     "district":"Saptari",
     "candidate":"Ramji Yadav",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":13382,
+    "votes":14476,
     "runner_up":"Umesh Kumar Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":7717,
-    "margin":5665,
+    "runner_up_votes":8024,
+    "margin":6452,
     "status":"Leading",
-    "count_pct":31.2
+    "count_pct":33.3
   },
   {
     "constituency":"Saptari-3",
@@ -1951,13 +1951,13 @@
     "district":"Saptari",
     "candidate":"Amar Kant Chaudhary",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":21428,
+    "votes":21905,
     "runner_up":"Upendra Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":10056,
-    "margin":11372,
+    "runner_up_votes":10197,
+    "margin":11708,
     "status":"Leading",
-    "count_pct":40.4
+    "count_pct":41.2
   },
   {
     "constituency":"Saptari-4",
@@ -2007,13 +2007,13 @@
     "district":"Sarlahi",
     "candidate":"Narendra Saha Kalavar",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":38499,
+    "votes":39494,
     "runner_up":"Naryan Kaji Shrestha",
     "runner_up_party":"नेपाली कम्युनिष्ट पार्टी",
-    "runner_up_votes":11751,
-    "margin":26748,
+    "runner_up_votes":11843,
+    "margin":27651,
     "status":"Leading",
-    "count_pct":49.8
+    "count_pct":50.7
   },
   {
     "constituency":"Sarlahi-4",
@@ -2063,13 +2063,13 @@
     "district":"Siraha",
     "candidate":"Shambhu Kumar Yadav",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24476,
+    "votes":25146,
     "runner_up":"Lilanath Shrestha",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":8377,
-    "margin":16099,
+    "runner_up_votes":8436,
+    "margin":16710,
     "status":"Leading",
-    "count_pct":48.3
+    "count_pct":49.5
   },
   {
     "constituency":"Siraha-4",
@@ -2245,13 +2245,13 @@
     "district":"Kailali",
     "candidate":"Khem Raj Koirala",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":25472,
+    "votes":25523,
     "runner_up":"Gorakh Bahadur Bista",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":9340,
-    "margin":16132,
+    "runner_up_votes":9583,
+    "margin":15940,
     "status":"Leading",
-    "count_pct":46.6
+    "count_pct":47.3
   },
   {
     "constituency":"Kailali-5",
@@ -2273,13 +2273,13 @@
     "district":"Kanchanpur",
     "candidate":"Janak Singh Dhami",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24127,
+    "votes":24332,
     "runner_up":"Bina Magar",
     "runner_up_party":"नेपाली कम्युनिष्ट पार्टी",
-    "runner_up_votes":10759,
-    "margin":13368,
-    "status":"Leading",
-    "count_pct":55.2
+    "runner_up_votes":11110,
+    "margin":13222,
+    "status":"Won",
+    "count_pct":56.1
   },
   {
     "constituency":"Kanchanpur-2",
