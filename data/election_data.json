@@ -299,13 +299,13 @@
     "district":"Lalitpur",
     "candidate":"Jagadish Kharel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":31769,
+    "votes":34226,
     "runner_up":"Prem Krishna Maharjan",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":4867,
-    "margin":26902,
+    "runner_up_votes":5455,
+    "margin":28771,
     "status":"Leading",
-    "count_pct":53.8
+    "count_pct":58.3
   },
   {
     "constituency":"Lalitpur-3",
@@ -327,13 +327,13 @@
     "district":"Makwanpur",
     "candidate":"Prakash Gautam",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":33500,
+    "votes":33551,
     "runner_up":"Mahalaxmi Upadhyay (Dina)",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":10341,
-    "margin":23159,
+    "runner_up_votes":10605,
+    "margin":22946,
     "status":"Leading",
-    "count_pct":46.5
+    "count_pct":47.4
   },
   {
     "constituency":"Makwanpur-2",
@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":14778,
+    "votes":15012,
     "runner_up":"Madhav Prasad Dhungel",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":10245,
-    "margin":4533,
+    "runner_up_votes":10368,
+    "margin":4644,
     "status":"Leading",
-    "count_pct":26.6
+    "count_pct":27.0
   },
   {
     "constituency":"Rasuwa-1",
@@ -817,13 +817,13 @@
     "district":"Mugu",
     "candidate":"Purna Bahadur Rokaya",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":4040,
+    "votes":4330,
     "runner_up":"Khadga Shahi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":3870,
-    "margin":170,
+    "runner_up_votes":4129,
+    "margin":201,
     "status":"Leading",
-    "count_pct":26.6
+    "count_pct":28.8
   },
   {
     "constituency":"Rukum West-1",
@@ -1111,13 +1111,13 @@
     "district":"Okhaldhunga",
     "candidate":"Brish Raj Pokharel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":12356,
+    "votes":12631,
     "runner_up":"Kumar Luitel",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":12113,
-    "margin":243,
+    "runner_up_votes":12467,
+    "margin":164,
     "status":"Leading",
-    "count_pct":38.9
+    "count_pct":40.2
   },
   {
     "constituency":"Panchthar-1",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":2464,
+    "votes":2777,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":1907,
-    "margin":557,
+    "runner_up_votes":2066,
+    "margin":711,
     "status":"Leading",
-    "count_pct":6.1
+    "count_pct":6.7
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":17251,
+    "votes":19656,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":6455,
-    "margin":10796,
+    "runner_up_votes":6879,
+    "margin":12777,
     "status":"Leading",
-    "count_pct":23.4
+    "count_pct":25.8
   },
   {
     "constituency":"Taplejung-1",
@@ -1251,13 +1251,13 @@
     "district":"Udayapur",
     "candidate":"Paras Mani Gelal",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":20502,
+    "votes":22407,
     "runner_up":"Rajesh Kumar Rai",
     "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":9617,
-    "margin":10885,
+    "runner_up_votes":10242,
+    "margin":12165,
     "status":"Leading",
-    "count_pct":37.1
+    "count_pct":40.3
   },
   {
     "constituency":"Udayapur-2",
@@ -1335,13 +1335,13 @@
     "district":"Bardiya",
     "candidate":"Thakur Singh Tharu",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":41322,
+    "votes":42776,
     "runner_up":"Salik Ram Adhikari",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":12354,
-    "margin":28968,
+    "runner_up_votes":12792,
+    "margin":29984,
     "status":"Leading",
-    "count_pct":47.0
+    "count_pct":48.9
   },
   {
     "constituency":"Bardiya-2",
@@ -1503,13 +1503,13 @@
     "district":"Parasi",
     "candidate":"Vikrama Khanal",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":44328,
+    "votes":45241,
     "runner_up":"Vinoda Kumara Chaudhari",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":9355,
-    "margin":34973,
+    "runner_up_votes":9502,
+    "margin":35739,
     "status":"Leading",
-    "count_pct":61.6
+    "count_pct":62.6
   },
   {
     "constituency":"Parasi-2",
@@ -1797,13 +1797,13 @@
     "district":"Mahottari",
     "candidate":"Gauri Kumari",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":22575,
+    "votes":23293,
     "runner_up":"Surendra Kumar Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":5626,
-    "margin":16949,
+    "runner_up_votes":5771,
+    "margin":17522,
     "status":"Leading",
-    "count_pct":39.2
+    "count_pct":40.2
   },
   {
     "constituency":"Parsa-1",
@@ -1839,13 +1839,13 @@
     "district":"Parsa",
     "candidate":"Raakanta Prasad Chaurasiya",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":27614,
+    "votes":28533,
     "runner_up":"Surendra Prasad Chaudhary",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":15758,
-    "margin":11856,
+    "runner_up_votes":16028,
+    "margin":12505,
     "status":"Leading",
-    "count_pct":61.2
+    "count_pct":62.8
   },
   {
     "constituency":"Parsa-4",
@@ -1923,13 +1923,13 @@
     "district":"Saptari",
     "candidate":"Pushpa Kumari Chaudhary",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":33215,
+    "votes":34867,
     "runner_up":"Sumit Kumar",
     "runner_up_party":"स्वाभिमान पार्टी",
-    "runner_up_votes":7699,
-    "margin":25516,
+    "runner_up_votes":7759,
+    "margin":27108,
     "status":"Leading",
-    "count_pct":52.9
+    "count_pct":55.2
   },
   {
     "constituency":"Saptari-2",
