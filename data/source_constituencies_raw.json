@@ -7,7 +7,7 @@
     "name": "Taplejung-1",
     "nameNp": "ताप्लेजुङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339933,
@@ -211,7 +211,7 @@
     "name": "Panchthar-1",
     "nameNp": "पाँचथर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340563,
@@ -219,7 +219,7 @@
         "name": "Narendra Kumar Kerung",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 14052,
+        "votes": 14371,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dev Man Kerung",
@@ -235,7 +235,7 @@
         "name": "Aindra Sundar Nembang",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 12487,
+        "votes": 12662,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Khamananda Si Nembang",
@@ -250,7 +250,7 @@
         "name": "Hasta Raj Sherma",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 11829,
+        "votes": 11962,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Nar Bahadur Sherma",
@@ -266,7 +266,7 @@
         "name": "Hark Bahadur Nembang",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 7845,
+        "votes": 8071,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गंगा प्रसाद नेम्बाङ",
@@ -282,7 +282,7 @@
         "name": "Mahendra Bikram Thamsuhang",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 3177,
+        "votes": 3578,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Aindra Bikram Thamsuhang",
@@ -298,7 +298,7 @@
         "name": "Tek Bahadur Subba",
         "partyName": "राष्ट्रिय परिवर्तन पार्टी",
         "partyId": "2568",
-        "votes": 2388,
+        "votes": 2421,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jit Bahadur Subba",
@@ -312,7 +312,7 @@
         "name": "Tej Kumar Kurumbang",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 687,
+        "votes": 767,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hari Prasad Kurumbang",
@@ -327,7 +327,7 @@
         "name": "Machindra Prasad Begha",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 206,
+        "votes": 208,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Harka Prasad Begha",
@@ -341,7 +341,7 @@
         "name": "Bhanu Bhakta Phiak",
         "partyName": "संघीय लोकतान्त्रिक राष्ट्रिय मञ्च",
         "partyId": "2550",
-        "votes": 170,
+        "votes": 171,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम जीतहाङ फियाक",
@@ -372,7 +372,7 @@
         "name": "Prakash Kafle",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 95,
+        "votes": 99,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Chandra Prasad Kafle",
@@ -387,7 +387,7 @@
         "name": "Vijay Nembang",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 76,
+        "votes": 77,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम ध्वोज नेम्वाङ",
@@ -417,7 +417,7 @@
         "name": "Ram Kumar Tumrok",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 43,
+        "votes": 44,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Birkha Bahadur Tumrok",
@@ -433,7 +433,7 @@
         "name": "Laksuman Tamang",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 29,
+        "votes": 31,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गान्दे   तामाङ",
@@ -443,7 +443,7 @@
         "address": "पाँचथर फाल्गुनन्द गाउँपालिका "
       }
     ],
-    "votesCast": 53266,
+    "votesCast": 54644,
     "totalVoters": 143358
   },
   {
@@ -454,7 +454,7 @@
     "name": "Ilam-1",
     "nameNp": "इलाम क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339884,
@@ -634,7 +634,7 @@
     "name": "Ilam-2",
     "nameNp": "इलाम क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339922,
@@ -642,7 +642,7 @@
         "name": "Suhanga Nembang",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 19691,
+        "votes": 20364,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सुवासचन्द्र  नेम्बाङ्ग",
@@ -654,7 +654,7 @@
         "name": "Sudipa Raee",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 13607,
+        "votes": 13724,
         "gender": "M",
         "isWinner": false,
         "fatherName": "मोहन सिहं राई",
@@ -666,7 +666,7 @@
         "name": "Bhesharaja Aachary",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 12298,
+        "votes": 12704,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कपिलमणि  आचार्य",
@@ -679,7 +679,7 @@
         "name": "Gokula Bahadura Raee",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 6461,
+        "votes": 6895,
         "gender": "M",
         "isWinner": false,
         "fatherName": "थर्क बहादुर राई",
@@ -691,7 +691,7 @@
         "name": "Oma Bahadura Gurungg",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 1024,
+        "votes": 1046,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सन्त बहादुर गुरुङ्ग",
@@ -703,7 +703,7 @@
         "name": "Pavitra Limbu Tumvangaphe",
         "partyName": "राष्ट्रिय जनमुक्ति पार्टी",
         "partyId": "2605",
-        "votes": 821,
+        "votes": 828,
         "gender": "F",
         "isWinner": false,
         "fatherName": "गणेश बहादुर तुम्वाङफे",
@@ -716,7 +716,7 @@
         "name": "Divasa Raee",
         "partyName": "राष्ट्रिय परिवर्तन पार्टी",
         "partyId": "2568",
-        "votes": 672,
+        "votes": 686,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नारायण  राई",
@@ -728,7 +728,7 @@
         "name": "Shyama Bahadura Limvu",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 641,
+        "votes": 645,
         "gender": "M",
         "isWinner": false,
         "fatherName": "याम बहादुर लिम्वु",
@@ -740,7 +740,7 @@
         "name": "Ganesha Prasada Dulal",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 289,
+        "votes": 319,
         "gender": "M",
         "isWinner": false,
         "fatherName": "पदम लाल दुलाल",
@@ -753,7 +753,7 @@
         "name": "Sadara Sin Lingadena (limbu)",
         "partyName": "संघीय लोकतान्त्रिक राष्ट्रिय मञ्च",
         "partyId": "2550",
-        "votes": 250,
+        "votes": 253,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जस बहादुर लिङदेन (लिम्बु)",
@@ -766,7 +766,7 @@
         "name": "Bala Bahadura Aangadembe",
         "partyName": "जनता समाजवादी पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 147,
+        "votes": 157,
         "gender": "M",
         "isWinner": false,
         "fatherName": "खड्‍ग बहादुर आङदेम्बे",
@@ -779,7 +779,7 @@
         "name": "Homa Prasada Khativada",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 138,
+        "votes": 140,
         "gender": "M",
         "isWinner": false,
         "fatherName": "शिव लाल खतिवडा",
@@ -813,7 +813,7 @@
         "address": "इलाम इलाम नगरपालिका कुलधारा"
       }
     ],
-    "votesCast": 56125,
+    "votesCast": 57847,
     "totalVoters": 119475
   },
   {
@@ -824,7 +824,7 @@
     "name": "Jhapa-1",
     "nameNp": "झापा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339485,
@@ -1068,7 +1068,7 @@
     "name": "Jhapa-2",
     "nameNp": "झापा क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339380,
@@ -1356,7 +1356,7 @@
     "name": "Jhapa-3",
     "nameNp": "झापा क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339542,
@@ -1616,7 +1616,7 @@
     "name": "Jhapa-4",
     "nameNp": "झापा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339393,
@@ -1863,7 +1863,7 @@
     "name": "Jhapa-5",
     "nameNp": "झापा क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339653,
@@ -2205,7 +2205,7 @@
     "name": "Sankhuwasabha-1",
     "nameNp": "संखुवासभा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340348,
@@ -2463,7 +2463,7 @@
     "name": "Tehrathum-1",
     "nameNp": "तेह्रथुम क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340612,
@@ -2636,7 +2636,7 @@
     "name": "Bhojpur-1",
     "nameNp": "भोजपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339479,
@@ -2803,7 +2803,7 @@
     "name": "Dhankuta-1",
     "nameNp": "धनकुटा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339725,
@@ -3064,7 +3064,7 @@
     "name": "Morang-1",
     "nameNp": "मोरङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341227,
@@ -3331,7 +3331,7 @@
     "name": "Morang-2",
     "nameNp": "मोरङ क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341642,
@@ -3561,7 +3561,7 @@
     "name": "Morang-3",
     "nameNp": "मोरङ क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341077,
@@ -3842,7 +3842,7 @@
     "name": "Morang-4",
     "nameNp": "मोरङ क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342293,
@@ -4142,7 +4142,7 @@
     "name": "Morang-5",
     "nameNp": "मोरङ क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341509,
@@ -4501,7 +4501,7 @@
     "name": "Morang-6",
     "nameNp": "मोरङ क्षेत्र नं. 6",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341123,
@@ -4748,7 +4748,7 @@
     "name": "Sunsari-1",
     "nameNp": "सुनसरी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339794,
@@ -5166,7 +5166,7 @@
     "name": "Sunsari-2",
     "nameNp": "सुनसरी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341392,
@@ -5594,7 +5594,7 @@
     "name": "Sunsari-3",
     "nameNp": "सुनसरी क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340042,
@@ -5933,7 +5933,7 @@
     "name": "Sunsari-4",
     "nameNp": "सुनसरी क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340603,
@@ -5941,7 +5941,7 @@
         "name": "Dipaka Kumara Sah",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 13217,
+        "votes": 14739,
         "gender": "M",
         "isWinner": false,
         "fatherName": "मदन लाल साह",
@@ -5957,7 +5957,7 @@
         "name": "Gyanendra Bahadur Karki",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 5206,
+        "votes": 5358,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Krishna Mohan Karki",
@@ -5972,7 +5972,7 @@
         "name": "Jagdish Prasad Kusiyaith",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 3590,
+        "votes": 3739,
         "gender": "M",
         "isWinner": false,
         "fatherName": "फनिलाल  कुसियैत",
@@ -5988,7 +5988,7 @@
         "name": "Bishnu Rana",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 1047,
+        "votes": 1050,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Resham Rana",
@@ -6003,7 +6003,7 @@
         "name": "Mo. Gulab Ansari",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 957,
+        "votes": 976,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रजाक  मिया",
@@ -6018,7 +6018,7 @@
         "name": "Prem Prasad Bhattarai",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 339,
+        "votes": 349,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padam Prasad Bhattarai",
@@ -6033,7 +6033,7 @@
         "name": "Samid Khan",
         "partyName": "राष्ट्र निर्माण दल नेपाल",
         "partyId": "2527",
-        "votes": 231,
+        "votes": 234,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Mastakim Khan",
@@ -6049,7 +6049,7 @@
         "name": "Kapaleshvara Yadav",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 182,
+        "votes": 201,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नीलाम्बर  यादव",
@@ -6064,7 +6064,7 @@
         "name": "Sabita Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 132,
+        "votes": 164,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Moti Lal Yadav",
@@ -6079,7 +6079,7 @@
         "name": "Hari Parajuli",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 108,
+        "votes": 119,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Navaraj Parajuli",
@@ -6094,7 +6094,7 @@
         "name": "Rojana Vish‍vakarma",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 49,
+        "votes": 50,
         "gender": "M",
         "isWinner": false,
         "fatherName": "मान वहादुर विश्‍वकर्मा",
@@ -6109,7 +6109,7 @@
         "name": "Ayuv Ansari",
         "partyName": "समावेशी समाजवादी पार्टी नेपाल",
         "partyId": "2572",
-        "votes": 43,
+        "votes": 46,
         "gender": "M",
         "isWinner": false,
         "fatherName": "इसाहक  अंसारी",
@@ -6123,7 +6123,7 @@
         "name": "Bhesharaj Bajagai",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 40,
+        "votes": 43,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जगन  बजगाई",
@@ -6138,7 +6138,7 @@
         "name": "Ramesh Kumar Sah",
         "partyName": "नेपाल जनता पार्टी",
         "partyId": "2507",
-        "votes": 29,
+        "votes": 31,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Kisan Sah",
@@ -6153,13 +6153,27 @@
         "name": "Mankumar Rai",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 23,
+        "votes": 29,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Larsange Rai",
         "spouseName": "Phulasara Rai",
         "qualification": "कक्षा ८ पास",
         "experience": "भारतीय सैनिक",
+        "address": "Sunsari"
+      },
+      {
+        "candidateId": 341768,
+        "nameNp": "सत्य नारायण लहुटिया",
+        "name": "Satya Narayan Lahutiya",
+        "partyName": "नेपाल कम्युनिष्ट पार्टी (संयुक्त)",
+        "partyId": "2601",
+        "votes": 18,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Ramji Lahutiya",
+        "spouseName": "Kunti Devi Lahutiya",
+        "qualification": "एस.एल.सी",
         "address": "Sunsari"
       },
       {
@@ -6178,17 +6192,19 @@
         "address": "Sunsari"
       },
       {
-        "candidateId": 341768,
-        "nameNp": "सत्य नारायण लहुटिया",
-        "name": "Satya Narayan Lahutiya",
-        "partyName": "नेपाल कम्युनिष्ट पार्टी (संयुक्त)",
-        "partyId": "2601",
-        "votes": 16,
+        "candidateId": 342027,
+        "nameNp": "तेज नारायण गोईत ",
+        "name": "Tej Narayan Goit",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 15,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Ramji Lahutiya",
-        "spouseName": "Kunti Devi Lahutiya",
-        "qualification": "एस.एल.सी",
+        "fatherName": "Nandalal Goit Yadav",
+        "spouseName": "Chandrakala Devi Yadav",
+        "qualification": "प्रमाणपत्र तह",
+        "institution": "कुवार ससिन्दर महता विद्यालय विरपुर",
+        "experience": "सामाजिक अध्ययन",
         "address": "Sunsari"
       },
       {
@@ -6197,7 +6213,7 @@
         "name": "Tavrej Alam Ansari",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 13,
+        "votes": 14,
         "gender": "M",
         "isWinner": false,
         "fatherName": "समसुल  मिया",
@@ -6208,19 +6224,18 @@
         "address": "सुनसरी हरिनगर गाउँपालिका "
       },
       {
-        "candidateId": 342027,
-        "nameNp": "तेज नारायण गोईत ",
-        "name": "Tej Narayan Goit",
+        "candidateId": 342248,
+        "nameNp": "कुन्दन कौसिक",
+        "name": "Kundan Kausik",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 13,
+        "votes": 12,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Nandalal Goit Yadav",
-        "spouseName": "Chandrakala Devi Yadav",
-        "qualification": "प्रमाणपत्र तह",
-        "institution": "कुवार ससिन्दर महता विद्यालय विरपुर",
-        "experience": "सामाजिक अध्ययन",
+        "fatherName": "Vishwanath Sah",
+        "spouseName": "Juli Devi Sah",
+        "qualification": "+2 पास",
+        "institution": "कोशी राजकिय उच्च विद्यालय विरपुर (भारत)",
         "address": "Sunsari"
       },
       {
@@ -6252,21 +6267,6 @@
         "spouseName": "Raj Kumari Sah",
         "qualification": "एस.एल.सी",
         "institution": "जनता मा.वि. नरसिंह",
-        "address": "Sunsari"
-      },
-      {
-        "candidateId": 342248,
-        "nameNp": "कुन्दन कौसिक",
-        "name": "Kundan Kausik",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 11,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Vishwanath Sah",
-        "spouseName": "Juli Devi Sah",
-        "qualification": "+2 पास",
-        "institution": "कोशी राजकिय उच्च विद्यालय विरपुर (भारत)",
         "address": "Sunsari"
       },
       {
@@ -6359,6 +6359,20 @@
         "address": "सुनसरी कोशी गाउँपालिका जुद्धगंज"
       },
       {
+        "candidateId": 342202,
+        "nameNp": "पार्वती मुखिया",
+        "name": "Parvati Mukhia",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 4,
+        "gender": "F",
+        "isWinner": false,
+        "fatherName": "बेचु  मलाह मुखिया",
+        "spouseName": "सुवन्‍सी  मुखिया",
+        "qualification": "साधारण लेखपढ",
+        "address": "सुनसरी कोशी गाउँपालिका गोरी टोल"
+      },
+      {
         "candidateId": 341061,
         "nameNp": "यमुना के.सी.",
         "name": "Yamuna Ke.si.",
@@ -6391,20 +6405,6 @@
         "address": "सुनसरी भोक्राहा नरसिंह गाउँपालिका चिरौली"
       },
       {
-        "candidateId": 342202,
-        "nameNp": "पार्वती मुखिया",
-        "name": "Parvati Mukhia",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 3,
-        "gender": "F",
-        "isWinner": false,
-        "fatherName": "बेचु  मलाह मुखिया",
-        "spouseName": "सुवन्‍सी  मुखिया",
-        "qualification": "साधारण लेखपढ",
-        "address": "सुनसरी कोशी गाउँपालिका गोरी टोल"
-      },
-      {
         "candidateId": 342404,
         "nameNp": "फुल कुमारी खान",
         "name": "Phul Kumari Khan",
@@ -6435,7 +6435,7 @@
         "address": "Sunsari"
       }
     ],
-    "votesCast": 25334,
+    "votesCast": 27276,
     "totalVoters": 137322
   },
   {
@@ -6446,7 +6446,7 @@
     "name": "Solukhumbu-1",
     "nameNp": "सोलुखुम्बु क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341534,
@@ -6625,7 +6625,7 @@
     "name": "Khotang-1",
     "nameNp": "खोटाङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339964,
@@ -6860,7 +6860,7 @@
     "name": "Okhaldhunga-1",
     "nameNp": "ओखलढुंगा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341555,
@@ -7103,7 +7103,7 @@
     "name": "Udayapur-1",
     "nameNp": "उदयपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341485,
@@ -7385,7 +7385,7 @@
     "name": "Udayapur-2",
     "nameNp": "उदयपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341674,
@@ -7393,7 +7393,7 @@
         "name": "Surya Bahadur Tamang",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 11270,
+        "votes": 13065,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padam Bahadur Tamang",
@@ -7406,7 +7406,7 @@
         "name": "Ambar Bahadur Raimajhi",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 6084,
+        "votes": 6962,
         "gender": "M",
         "isWinner": false,
         "fatherName": "टंक बहादुर राया",
@@ -7419,7 +7419,7 @@
         "name": "Ram Kumar Rai",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 5153,
+        "votes": 6311,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Kashiraj Rai",
@@ -7432,7 +7432,7 @@
         "name": "Suresh Kumar Rai",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 4090,
+        "votes": 4406,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Indra Dhwoj Rai",
@@ -7445,7 +7445,7 @@
         "name": "Arun Rai",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 3623,
+        "votes": 3922,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Man Bahadur Rai",
@@ -7458,7 +7458,7 @@
         "name": "Arun Rai",
         "partyName": "राष्ट्रिय परिवर्तन पार्टी",
         "partyId": "2568",
-        "votes": 505,
+        "votes": 559,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Man Bahadur Rai",
@@ -7470,7 +7470,7 @@
         "name": "Bhaskar Rai",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 313,
+        "votes": 366,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Govinda Bahadur Rai",
@@ -7483,7 +7483,7 @@
         "name": "Bishnu Bahadur Khadka",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 200,
+        "votes": 213,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Wan Bahadur Khadka",
@@ -7496,7 +7496,7 @@
         "name": "Durga Bahadur  Tamang",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 128,
+        "votes": 137,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ram Bahadur Tamang",
@@ -7508,24 +7508,11 @@
         "name": "Keshav Bahadur Magar",
         "partyName": "जनता समाजवादी पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 86,
+        "votes": 94,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Khadga Bir Magar",
         "spouseName": "Ambika Thapa Magar",
-        "address": "Udayapur"
-      },
-      {
-        "candidateId": 339784,
-        "nameNp": "बम बहादुर मगर",
-        "name": "Bam Bahadur Magar",
-        "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
-        "partyId": "2581",
-        "votes": 78,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Dik Bahadur Magar",
-        "spouseName": "Binda Kumari Magar",
         "address": "Udayapur"
       },
       {
@@ -7534,7 +7521,7 @@
         "name": "Mejar Kumar Rai",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 78,
+        "votes": 89,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सहल मान राई",
@@ -7542,12 +7529,25 @@
         "address": "उदयपुर लिम्चुङबुङ गाउँपालिका आहाले"
       },
       {
+        "candidateId": 339784,
+        "nameNp": "बम बहादुर मगर",
+        "name": "Bam Bahadur Magar",
+        "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
+        "partyId": "2581",
+        "votes": 83,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Dik Bahadur Magar",
+        "spouseName": "Binda Kumari Magar",
+        "address": "Udayapur"
+      },
+      {
         "candidateId": 339356,
         "nameNp": "पुर्ण बहादुर बुढाथोकी",
         "name": "Purna Bahadur Budathoki",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 28,
+        "votes": 31,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dal Bahadur Budhathoki",
@@ -7555,7 +7555,7 @@
         "address": "Udayapur"
       }
     ],
-    "votesCast": 31636,
+    "votesCast": 36238,
     "totalVoters": 96077
   },
   {
@@ -7566,7 +7566,7 @@
     "name": "Saptari-1",
     "nameNp": "सप्तरी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341238,
@@ -7574,10 +7574,23 @@
         "name": "Pushpa Kumari Chaudhary",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 27342,
+        "votes": 30322,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Govinda Chaudhary",
+        "address": "Saptari"
+      },
+      {
+        "candidateId": 339850,
+        "nameNp": "सुमित कुमार -",
+        "name": "Sumit Kumar",
+        "partyName": "स्वाभिमान पार्टी",
+        "partyId": "2569",
+        "votes": 6073,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Nawalkishore Sah",
+        "spouseName": "Manju Devi Sah",
         "address": "Saptari"
       },
       {
@@ -7586,7 +7599,7 @@
         "name": "Ramdev Sah (Teli)",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 5384,
+        "votes": 5746,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hitlal Sah (Teli)",
@@ -7599,24 +7612,11 @@
         "name": "Suman Raj Pyakurel",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 5032,
+        "votes": 5443,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hom Raj Pyakurel",
         "spouseName": "Jyoti Pyakurel",
-        "address": "Saptari"
-      },
-      {
-        "candidateId": 339850,
-        "nameNp": "सुमित कुमार -",
-        "name": "Sumit Kumar",
-        "partyName": "स्वाभिमान पार्टी",
-        "partyId": "2569",
-        "votes": 4946,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Nawalkishore Sah",
-        "spouseName": "Manju Devi Sah",
         "address": "Saptari"
       },
       {
@@ -7625,7 +7625,7 @@
         "name": "Jaya Kanta Raut",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 3341,
+        "votes": 4043,
         "gender": "M",
         "isWinner": false,
         "fatherName": "श्वेताम्बर  राउत",
@@ -7638,7 +7638,7 @@
         "name": "Shyam Sundar Sardar",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 1871,
+        "votes": 1957,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ram Sardar Watar",
@@ -7651,7 +7651,7 @@
         "name": "Rabindra Chaudhary",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 843,
+        "votes": 911,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Sudarshan Chaudhary",
@@ -7664,11 +7664,24 @@
         "name": "Satya Jit Kumar Jha",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 254,
+        "votes": 277,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jagmohan Jha",
         "spouseName": "Pramila Jha",
+        "address": "Saptari"
+      },
+      {
+        "candidateId": 340781,
+        "nameNp": "हर्ख नारायण चौधरी",
+        "name": "Harkha Narayan Chaudhary",
+        "partyName": "उज्यालो नेपाल पार्टी",
+        "partyId": "2566",
+        "votes": 239,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Mahagu Chaudhary",
+        "spouseName": "Savitri Kumari Chaudhary",
         "address": "Saptari"
       },
       {
@@ -7677,7 +7690,7 @@
         "name": "Dipendra Prasad Yadav",
         "partyName": "नेपाल जनता पार्टी",
         "partyId": "2507",
-        "votes": 167,
+        "votes": 176,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कुन्जी लाल विराजी यादव",
@@ -7690,7 +7703,7 @@
         "name": "Khem Raj Jaishi",
         "partyName": "नेपाल जनता संरक्षण पार्टी",
         "partyId": "2541",
-        "votes": 154,
+        "votes": 171,
         "gender": "M",
         "isWinner": false,
         "fatherName": "धनी राम जैशी",
@@ -7698,16 +7711,16 @@
         "address": "सप्तरी अग्नीसाइर कृष्णासवरन गाउँपालिका मँहुली"
       },
       {
-        "candidateId": 340781,
-        "nameNp": "हर्ख नारायण चौधरी",
-        "name": "Harkha Narayan Chaudhary",
-        "partyName": "उज्यालो नेपाल पार्टी",
-        "partyId": "2566",
-        "votes": 150,
+        "candidateId": 341448,
+        "nameNp": "जगदेव सदा",
+        "name": "Jagdev Sada",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 115,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Mahagu Chaudhary",
-        "spouseName": "Savitri Kumari Chaudhary",
+        "fatherName": "Narayan Sada",
+        "spouseName": "Samuj Devi Sada",
         "address": "Saptari"
       },
       {
@@ -7716,24 +7729,11 @@
         "name": "Shambhu Prasad Dev",
         "partyName": "राष्ट्रिय एकता दल",
         "partyId": "2548",
-        "votes": 103,
+        "votes": 112,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Shivanarayan Lal Dev",
         "spouseName": "Asha Kumari Dev",
-        "address": "Saptari"
-      },
-      {
-        "candidateId": 341448,
-        "nameNp": "जगदेव सदा",
-        "name": "Jagdev Sada",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 99,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Narayan Sada",
-        "spouseName": "Samuj Devi Sada",
         "address": "Saptari"
       },
       {
@@ -7742,7 +7742,7 @@
         "name": "Tikalaxmi Narayan Chaudhary",
         "partyName": "नागरिक उन्मुक्ति पार्टी, नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 62,
+        "votes": 64,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Lalbahadur Chaudhary",
@@ -7755,24 +7755,11 @@
         "name": "Kaushal Sah",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 30,
+        "votes": 36,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Kapleshwar Prasad Sah",
         "address": "Saptari"
-      },
-      {
-        "candidateId": 341850,
-        "nameNp": "रिजवाना खातुन",
-        "name": "Rijwana Khatun",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 18,
-        "gender": "F",
-        "isWinner": false,
-        "fatherName": "अनवारुल  हक",
-        "spouseName": "अकवर  मियाँ",
-        "address": "सप्तरी कञ्चनरुप नगरपालिका धोधनपुर"
       },
       {
         "candidateId": 342120,
@@ -7780,7 +7767,7 @@
         "name": "Md. Amin",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 17,
+        "votes": 20,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रसुल  मियाँ",
@@ -7788,12 +7775,25 @@
         "address": "सप्तरी कञ्चनरुप नगरपालिका "
       },
       {
+        "candidateId": 341850,
+        "nameNp": "रिजवाना खातुन",
+        "name": "Rijwana Khatun",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 19,
+        "gender": "F",
+        "isWinner": false,
+        "fatherName": "अनवारुल  हक",
+        "spouseName": "अकवर  मियाँ",
+        "address": "सप्तरी कञ्चनरुप नगरपालिका धोधनपुर"
+      },
+      {
         "candidateId": 340064,
         "nameNp": "संजय कुमार शर्मा",
         "name": "Sanjay Kumar Sharma",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 12,
+        "votes": 13,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Upendra Sharma",
@@ -7805,7 +7805,7 @@
         "name": "Umda Devi Sada",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 9,
+        "votes": 11,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Gulten Sada",
@@ -7818,7 +7818,7 @@
         "name": "Ram Kumari Khang",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 7,
+        "votes": 8,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Bhola Khang",
@@ -7831,7 +7831,7 @@
         "name": "Lekhnath Kumar Thakur",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 5,
+        "votes": 8,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नारायण  ठाकुर",
@@ -7839,7 +7839,7 @@
         "address": "सप्तरी हनुमाननगर कंकालिनी नगरपालिका हनुमाननगर"
       }
     ],
-    "votesCast": 49846,
+    "votesCast": 55764,
     "totalVoters": 119031
   },
   {
@@ -7850,7 +7850,7 @@
     "name": "Saptari-2",
     "nameNp": "सप्तरी क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339852,
@@ -8314,7 +8314,7 @@
     "name": "Saptari-3",
     "nameNp": "सप्तरी क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341099,
@@ -8630,7 +8630,7 @@
     "name": "Saptari-4",
     "nameNp": "सप्तरी क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341103,
@@ -9005,7 +9005,7 @@
     "name": "Siraha-1",
     "nameNp": "सिराहा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340556,
@@ -9460,7 +9460,7 @@
     "name": "Siraha-2",
     "nameNp": "सिराहा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341250,
@@ -9934,7 +9934,7 @@
     "name": "Siraha-3",
     "nameNp": "सिराहा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342059,
@@ -10591,7 +10591,7 @@
     "name": "Siraha-4",
     "nameNp": "सिराहा क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341713,
@@ -11132,7 +11132,7 @@
     "name": "Dolakha-1",
     "nameNp": "दोलखा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339522,
@@ -11623,7 +11623,7 @@
     "name": "Ramechhap-1",
     "nameNp": "रामेछाप क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340091,
@@ -11631,7 +11631,7 @@
         "name": "Krishna Hari Budhathoki",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 11487,
+        "votes": 11735,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गणेश बहादुर बुढाथोकी",
@@ -11647,7 +11647,7 @@
         "name": "Madhav Prasad Dhungel",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 8096,
+        "votes": 8372,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bodh Raj Dhungel",
@@ -11662,7 +11662,7 @@
         "name": "Ram Chandra Khadka",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 7863,
+        "votes": 8067,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhakta Bahadur Khadka",
@@ -11678,7 +11678,7 @@
         "name": "Shyam Kumar Shrestha",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 5979,
+        "votes": 6080,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Tirtha Das Shrestha",
@@ -11693,7 +11693,7 @@
         "name": "Dip Bahadur Yonjan",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 4000,
+        "votes": 4071,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Singh Bahadur Tamang",
@@ -11707,7 +11707,7 @@
         "name": "Dhal Bahadur Khapangi Magar",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 716,
+        "votes": 787,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhim Thapa",
@@ -11721,7 +11721,7 @@
         "name": "Gore Tamang",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 239,
+        "votes": 242,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Thule Bahadur Tamang",
@@ -11731,26 +11731,12 @@
         "address": "Ramechhap"
       },
       {
-        "candidateId": 340407,
-        "nameNp": "अर्जुन बहादुर थापा मगर",
-        "name": "Arjun Bahadur Thapa Magar",
-        "partyName": "राष्ट्रिय जनमोर्चा",
-        "partyId": "2522",
-        "votes": 81,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Min Bahadur Thapa Magar",
-        "spouseName": "Sant Maya Thapa Magar",
-        "qualification": "साक्षर",
-        "address": "Ramechhap"
-      },
-      {
         "candidateId": 342126,
         "nameNp": "यमुन बहादुर बस्नेत",
         "name": "Yamun Bahadur Basnet",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 80,
+        "votes": 84,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Yagya Bahadur Basnet",
@@ -11758,6 +11744,20 @@
         "qualification": "slc",
         "institution": "गौरी शंकर",
         "experience": "कानूनी राजनैतिक सामाजिक अनुभव",
+        "address": "Ramechhap"
+      },
+      {
+        "candidateId": 340407,
+        "nameNp": "अर्जुन बहादुर थापा मगर",
+        "name": "Arjun Bahadur Thapa Magar",
+        "partyName": "राष्ट्रिय जनमोर्चा",
+        "partyId": "2522",
+        "votes": 83,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Min Bahadur Thapa Magar",
+        "spouseName": "Sant Maya Thapa Magar",
+        "qualification": "साक्षर",
         "address": "Ramechhap"
       },
       {
@@ -11780,7 +11780,7 @@
         "name": "Arun Karki",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 49,
+        "votes": 51,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhim Bahadur Karki",
@@ -11794,7 +11794,7 @@
         "name": "Birendra Shrestha",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 47,
+        "votes": 50,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Indra Bahadur Shrestha",
@@ -11810,7 +11810,7 @@
         "name": "Binod Ghising",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 31,
+        "votes": 33,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Thulokanchha Tamang",
@@ -11824,7 +11824,7 @@
         "name": "Santosh Ghimire",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 25,
+        "votes": 26,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Keshab Prasad Ghimire",
@@ -11837,7 +11837,7 @@
         "name": "Keshari Shrestha",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 20,
+        "votes": 21,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Bhim Bahadur Shrestha",
@@ -11874,7 +11874,7 @@
         "address": "रामेछाप मन्थली नगरपालिका करमवोट"
       }
     ],
-    "votesCast": 38797,
+    "votesCast": 39786,
     "totalVoters": 187939
   },
   {
@@ -11885,7 +11885,7 @@
     "name": "Sindhuli-1",
     "nameNp": "सिन्धुली क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340281,
@@ -12052,7 +12052,7 @@
     "name": "Sindhuli-2",
     "nameNp": "सिन्धुली क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340203,
@@ -12302,7 +12302,7 @@
     "name": "Dhanusha-1",
     "nameNp": "धनुषा क्षेत्र नं. 1",
     "status": "PENDING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340982,
@@ -12927,7 +12927,7 @@
     "name": "Dhanusha-2",
     "nameNp": "धनुषा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339806,
@@ -12935,7 +12935,7 @@
         "name": "Rama Vinoda Yadav",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 25114,
+        "votes": 25525,
         "gender": "M",
         "isWinner": false,
         "fatherName": "तिलेश्वर यादव",
@@ -12950,7 +12950,7 @@
         "name": "Dinesha Prasada Yadava Parasaila",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 5648,
+        "votes": 5743,
         "gender": "M",
         "isWinner": false,
         "fatherName": "शिवलाल परसैला यादव",
@@ -12964,7 +12964,7 @@
         "name": "Umashankara Aragariya",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 4955,
+        "votes": 5087,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राजाराम अरगरिया यादव",
@@ -12979,7 +12979,7 @@
         "name": "Rama Chandra Jha",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 4834,
+        "votes": 4911,
         "gender": "M",
         "isWinner": false,
         "fatherName": "पुलकित  झा",
@@ -12993,7 +12993,7 @@
         "name": "Pashupati Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 2823,
+        "votes": 2847,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विष्णु देव यादव",
@@ -13008,7 +13008,7 @@
         "name": "Surendra Prasada Yadav",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 584,
+        "votes": 610,
         "gender": "M",
         "isWinner": false,
         "fatherName": "ताराचन्द्र  यादव",
@@ -13035,7 +13035,7 @@
         "name": "Laksh‍mi Mukhiya",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 370,
+        "votes": 380,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गर्भु  मुखिया",
@@ -13049,7 +13049,7 @@
         "name": "Sh‍yama Sundara Pajiyar",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 201,
+        "votes": 203,
         "gender": "M",
         "isWinner": false,
         "fatherName": "शोभित  पजियार",
@@ -13063,7 +13063,7 @@
         "name": "Maheshvara Mandal",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 131,
+        "votes": 135,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जिबछ  मंडल",
@@ -13077,7 +13077,7 @@
         "name": "Umesha Kumara Mandal",
         "partyName": "नेपालका लागि नेपाली पार्टी",
         "partyId": "2524",
-        "votes": 62,
+        "votes": 65,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम शरण मणडल",
@@ -13112,6 +13112,20 @@
         "address": "धनुषा जनकपुरधाम उपमहानगरपालिका "
       },
       {
+        "candidateId": 342217,
+        "nameNp": "विनोद कुमार ठाकुर",
+        "name": "Vinoda Kumara Thakur",
+        "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
+        "partyId": "2531",
+        "votes": 24,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "लटु  ठाकुर",
+        "spouseName": "सरिता देवी ठाकुर",
+        "qualification": "BE",
+        "address": "धनुषा विदेह नगरपालिका गोबराही"
+      },
+      {
         "candidateId": 341066,
         "nameNp": "राम किशोर पासमान",
         "name": "Rama Kishora Pasaman",
@@ -13124,20 +13138,6 @@
         "spouseName": "गुलो देवी पासमान",
         "qualification": "एस.एल.सी.",
         "address": "धनुषा शहीदनगर नगरपालिका सिमराढी"
-      },
-      {
-        "candidateId": 342217,
-        "nameNp": "विनोद कुमार ठाकुर",
-        "name": "Vinoda Kumara Thakur",
-        "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
-        "partyId": "2531",
-        "votes": 23,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "लटु  ठाकुर",
-        "spouseName": "सरिता देवी ठाकुर",
-        "qualification": "BE",
-        "address": "धनुषा विदेह नगरपालिका गोबराही"
       },
       {
         "candidateId": 342708,
@@ -13393,7 +13393,7 @@
         "name": "Jnyana Kumara Yadab",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 1,
+        "votes": 2,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम लखन यादब",
@@ -13402,7 +13402,7 @@
         "address": "धनुषा शहीदनगर नगरपालिका "
       }
     ],
-    "votesCast": 45495,
+    "votesCast": 46281,
     "totalVoters": 134755
   },
   {
@@ -13413,7 +13413,7 @@
     "name": "Dhanusha-3",
     "nameNp": "धनुषा क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340296,
@@ -14103,7 +14103,7 @@
     "name": "Dhanusha-4",
     "nameNp": "धनुषा क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341797,
@@ -14667,7 +14667,7 @@
     "name": "Mahottari-1",
     "nameNp": "महोत्तरी क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341312,
@@ -15059,7 +15059,7 @@
     "name": "Mahottari-2",
     "nameNp": "महोत्तरी क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341190,
@@ -15606,7 +15606,7 @@
     "name": "Mahottari-3",
     "nameNp": "महोत्तरी क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340549,
@@ -16177,7 +16177,7 @@
     "name": "Mahottari-4",
     "nameNp": "महोत्तरी क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341656,
@@ -16721,7 +16721,7 @@
     "name": "Sarlahi-1",
     "nameNp": "सर्लाही क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342793,
@@ -17147,7 +17147,7 @@
     "name": "Sarlahi-2",
     "nameNp": "सर्लाही क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341252,
@@ -17613,7 +17613,7 @@
     "name": "Sarlahi-3",
     "nameNp": "सर्लाही क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339904,
@@ -18115,7 +18115,7 @@
     "name": "Sarlahi-4",
     "nameNp": "सर्लाही क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340974,
@@ -18123,7 +18123,7 @@
         "name": "Amaresh Kumar Singh",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 25083,
+        "votes": 26809,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम सागर सिह",
@@ -18136,7 +18136,7 @@
         "name": "Gagan Kumar Thapa",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 16340,
+        "votes": 17974,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Mahendra Kumar Thapa Chhetri",
@@ -18150,7 +18150,7 @@
         "name": "Amnish Kumar Yadav",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 6734,
+        "votes": 7995,
         "gender": "M",
         "isWinner": false,
         "fatherName": "शिब पुजन राय",
@@ -18163,7 +18163,7 @@
         "name": "Rakesh Kumar Mishra",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 1299,
+        "votes": 1321,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bal Kishore Mishra",
@@ -18179,7 +18179,7 @@
         "name": "Rajnish Raya",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 1217,
+        "votes": 1237,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम कैलास राय",
@@ -18193,7 +18193,7 @@
         "name": "Pitamvara Sinha Kushavaha",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 411,
+        "votes": 425,
         "gender": "M",
         "isWinner": false,
         "fatherName": "भगलु महतो कोइरी",
@@ -18207,7 +18207,7 @@
         "name": "Harinandan Kumar Ranjan",
         "partyName": "बहुजन एकता पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2567",
-        "votes": 322,
+        "votes": 339,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Akalu Ram Chamar",
@@ -18220,7 +18220,7 @@
         "name": "Sachitra Sahani",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 298,
+        "votes": 325,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ram Charitra Sahani",
@@ -18232,7 +18232,7 @@
         "name": "Ramcharitra Sahani",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 231,
+        "votes": 232,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Chaturi Sahani",
@@ -18246,7 +18246,7 @@
         "name": "Rameshowr Raya Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 142,
+        "votes": 147,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बिलट राय यादव",
@@ -18260,7 +18260,7 @@
         "name": "Gyanendra Prasad Kushwaha",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 76,
+        "votes": 78,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Shubhanarayan Mahato",
@@ -18273,7 +18273,7 @@
         "name": "Ramnath Prasad Sah",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (संयुक्त)",
         "partyId": "2601",
-        "votes": 73,
+        "votes": 76,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dhanuk Sah",
@@ -18287,10 +18287,23 @@
         "name": "Mukesh Prasad Kushwaha",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 64,
+        "votes": 70,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Satya Narayan Mahato",
+        "address": "Sarlahi"
+      },
+      {
+        "candidateId": 341088,
+        "nameNp": "प्रदीप कुमार झा",
+        "name": "Pradip Kumar Jha",
+        "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
+        "partyId": "2604",
+        "votes": 40,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Shribhagya Narayan Jha",
+        "spouseName": "Sanju Kumari Jha",
         "address": "Sarlahi"
       },
       {
@@ -18307,25 +18320,12 @@
         "address": "Sarlahi"
       },
       {
-        "candidateId": 341088,
-        "nameNp": "प्रदीप कुमार झा",
-        "name": "Pradip Kumar Jha",
-        "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
-        "partyId": "2604",
-        "votes": 39,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Shribhagya Narayan Jha",
-        "spouseName": "Sanju Kumari Jha",
-        "address": "Sarlahi"
-      },
-      {
         "candidateId": 342271,
         "nameNp": "उदय कान्‍त मिश्र",
         "name": "Uday Kant Mishra",
         "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 35,
+        "votes": 39,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhuwaneshwar Mishra",
@@ -18351,12 +18351,37 @@
         "name": "Nrendra Prasad Singh",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 15,
+        "votes": 17,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बैजनाथ प्रसाद सि‌ह",
         "spouseName": "मनोरमा  कुमारी",
         "address": "सर्लाही धनकौल गाउँपालिका "
+      },
+      {
+        "candidateId": 342590,
+        "nameNp": "महेश मंडल धानुक",
+        "name": "Mahesh Mandal Dhanuk",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 15,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Gulabi Mandal Dhanuk",
+        "spouseName": "Kanti Devi",
+        "address": "Sarlahi"
+      },
+      {
+        "candidateId": 342696,
+        "nameNp": "जय शंकर सिंह कुशवाहा",
+        "name": "Jay Shankar Singh Kushwaha",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 14,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Maheshwar Mahato",
+        "address": "Sarlahi"
       },
       {
         "candidateId": 341709,
@@ -18371,28 +18396,15 @@
         "address": "Sarlahi"
       },
       {
-        "candidateId": 342590,
-        "nameNp": "महेश मंडल धानुक",
-        "name": "Mahesh Mandal Dhanuk",
+        "candidateId": 342686,
+        "nameNp": "शुलपानी झा",
+        "name": "Shulpani Jha",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 14,
+        "votes": 11,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Gulabi Mandal Dhanuk",
-        "spouseName": "Kanti Devi",
-        "address": "Sarlahi"
-      },
-      {
-        "candidateId": 342696,
-        "nameNp": "जय शंकर सिंह कुशवाहा",
-        "name": "Jay Shankar Singh Kushwaha",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 13,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Maheshwar Mahato",
+        "fatherName": "Surendra Jha",
         "address": "Sarlahi"
       },
       {
@@ -18409,15 +18421,27 @@
         "address": "सर्लाही गोडैटा नगरपालिका बकैनिया"
       },
       {
-        "candidateId": 342686,
-        "nameNp": "शुलपानी झा",
-        "name": "Shulpani Jha",
+        "candidateId": 342163,
+        "nameNp": "छोटेलाल कुमार यादव",
+        "name": "Chotelal Kumar Yadav",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 10,
+        "votes": 9,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Surendra Jha",
+        "fatherName": "Shiv Prasad Raya Yadav",
+        "address": "Sarlahi"
+      },
+      {
+        "candidateId": 342677,
+        "nameNp": "धिरज ठाकुर",
+        "name": "Dhiraj Thakur",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 9,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Ram Sogarath Thakur",
         "address": "Sarlahi"
       },
       {
@@ -18430,30 +18454,6 @@
         "gender": "M",
         "isWinner": false,
         "fatherName": "Abadh Mandal",
-        "address": "Sarlahi"
-      },
-      {
-        "candidateId": 342163,
-        "nameNp": "छोटेलाल कुमार यादव",
-        "name": "Chotelal Kumar Yadav",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 8,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Shiv Prasad Raya Yadav",
-        "address": "Sarlahi"
-      },
-      {
-        "candidateId": 342677,
-        "nameNp": "धिरज ठाकुर",
-        "name": "Dhiraj Thakur",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 8,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Ram Sogarath Thakur",
         "address": "Sarlahi"
       },
       {
@@ -18494,6 +18494,18 @@
         "address": "Sarlahi"
       },
       {
+        "candidateId": 341464,
+        "nameNp": "संतोष कुमार निषाद",
+        "name": "Santosh Kumar Nisad",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 7,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "राज किशोर कापड",
+        "address": "सर्लाही बलरा नगरपालिका "
+      },
+      {
         "candidateId": 342541,
         "nameNp": "गनेश प्रसाद सिंह",
         "name": "Ganesh Prasad Singh",
@@ -18518,18 +18530,6 @@
         "fatherName": "Bhola Bhandari",
         "spouseName": "Kaushila Devi",
         "address": "Sarlahi"
-      },
-      {
-        "candidateId": 341464,
-        "nameNp": "संतोष कुमार निषाद",
-        "name": "Santosh Kumar Nisad",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 6,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "राज किशोर कापड",
-        "address": "सर्लाही बलरा नगरपालिका "
       },
       {
         "candidateId": 340999,
@@ -18611,7 +18611,7 @@
         "address": "सर्लाही गोडैटा नगरपालिका "
       }
     ],
-    "votesCast": 52581,
+    "votesCast": 57332,
     "totalVoters": 120912
   },
   {
@@ -18622,7 +18622,7 @@
     "name": "Rasuwa-1",
     "nameNp": "रसुवा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340518,
@@ -18791,7 +18791,7 @@
     "name": "Dhading-1",
     "nameNp": "धादिङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342066,
@@ -19152,7 +19152,7 @@
     "name": "Dhading-2",
     "nameNp": "धादिङ क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340512,
@@ -19516,7 +19516,7 @@
     "name": "Nuwakot-1",
     "nameNp": "नुवाकोट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341419,
@@ -19809,7 +19809,7 @@
     "name": "Nuwakot-2",
     "nameNp": "नुवाकोट क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341708,
@@ -20002,7 +20002,7 @@
     "name": "Kathmandu-1",
     "nameNp": "काठमाडौं क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340716,
@@ -20411,7 +20411,7 @@
     "name": "Kathmandu-2",
     "nameNp": "काठमाडौं क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341881,
@@ -20845,7 +20845,7 @@
     "name": "Kathmandu-3",
     "nameNp": "काठमाडौं क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339690,
@@ -21177,7 +21177,7 @@
     "name": "Kathmandu-4",
     "nameNp": "काठमाडौं क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340660,
@@ -21546,7 +21546,7 @@
     "name": "Kathmandu-5",
     "nameNp": "काठमाडौं क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340670,
@@ -21923,7 +21923,7 @@
     "name": "Kathmandu-6",
     "nameNp": "काठमाडौं क्षेत्र नं. 6",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342290,
@@ -22239,7 +22239,7 @@
     "name": "Kathmandu-7",
     "nameNp": "काठमाडौं क्षेत्र नं. 7",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340951,
@@ -22623,7 +22623,7 @@
     "name": "Kathmandu-8",
     "nameNp": "काठमाडौं क्षेत्र नं. 8",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340972,
@@ -22974,7 +22974,7 @@
     "name": "Kathmandu-9",
     "nameNp": "काठमाडौं क्षेत्र नं. 9",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340686,
@@ -23310,7 +23310,7 @@
     "name": "Kathmandu-10",
     "nameNp": "काठमाडौं क्षेत्र नं. 10",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340506,
@@ -23697,7 +23697,7 @@
     "name": "Bhaktapur-1",
     "nameNp": "भक्तपुर क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339461,
@@ -24105,7 +24105,7 @@
     "name": "Bhaktapur-2",
     "nameNp": "भक्तपुर क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340060,
@@ -24524,7 +24524,7 @@
     "name": "Lalitpur-1",
     "nameNp": "ललितपुर क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341868,
@@ -24960,7 +24960,7 @@
     "name": "Lalitpur-2",
     "nameNp": "ललितपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340217,
@@ -25290,7 +25290,7 @@
     "name": "Lalitpur-3",
     "nameNp": "ललितपुर क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341547,
@@ -25619,7 +25619,7 @@
     "name": "Kavrepalanchok-1",
     "nameNp": "काभ्रेपलाञ्चोक क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341324,
@@ -25627,7 +25627,7 @@
         "name": "Madhu Kumara Chaulagaee",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 19135,
+        "votes": 20094,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रामचन्द्र  चौलागाई",
@@ -25641,7 +25641,7 @@
         "name": "Gunaraja Muktan",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 16836,
+        "votes": 17021,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जित बहादुर मुक्तान",
@@ -25655,7 +25655,7 @@
         "name": "Dina Natha Gautam",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 13818,
+        "votes": 13855,
         "gender": "M",
         "isWinner": false,
         "fatherName": "भव नाथ गौतम",
@@ -25669,7 +25669,7 @@
         "name": "Ami Tamang",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 12127,
+        "votes": 12277,
         "gender": "M",
         "isWinner": false,
         "fatherName": "च्याङ्बा  तामाङ",
@@ -25683,7 +25683,7 @@
         "name": "Yogendra Lama",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 7131,
+        "votes": 7156,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सिंह  ध्वज  लामा ",
@@ -25697,7 +25697,7 @@
         "name": "Navaraja Satyal",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 427,
+        "votes": 433,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बाबु राम सत्याल",
@@ -25711,7 +25711,7 @@
         "name": "Dhiraja Lama",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 220,
+        "votes": 223,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विर बहादुर तामाङ्ग",
@@ -25725,7 +25725,7 @@
         "name": "Kamala Bahadura Lama (tamanga)",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 143,
+        "votes": 144,
         "gender": "M",
         "isWinner": false,
         "fatherName": "काजी  मान तामाङ ",
@@ -25740,7 +25740,7 @@
         "name": "Kanchha Tamang",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 137,
+        "votes": 138,
         "gender": "M",
         "isWinner": false,
         "fatherName": "इन्द्र बहादुर तामाङ",
@@ -25767,7 +25767,7 @@
         "name": "Jivana Lama",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 86,
+        "votes": 87,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम वहादुर लामा",
@@ -25781,7 +25781,7 @@
         "name": "Mana Bahadura Tamad",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 67,
+        "votes": 68,
         "gender": "M",
         "isWinner": false,
         "fatherName": "साईला  तामाड",
@@ -25795,7 +25795,7 @@
         "name": "Jnyanendra Kumara Shreshth",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 48,
+        "votes": 49,
         "gender": "M",
         "isWinner": false,
         "fatherName": "लोक बहादुर श्रेष्ठ",
@@ -25808,7 +25808,7 @@
         "name": "Binoda Lama",
         "partyName": "समावेशी समाजवादी पार्टी",
         "partyId": "2590",
-        "votes": 41,
+        "votes": 42,
         "gender": "M",
         "isWinner": false,
         "fatherName": "इमान ध्वज लामा",
@@ -25822,7 +25822,7 @@
         "name": "Raju Tamanga",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 35,
+        "votes": 38,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बुद्ध  बहादुर  तामाङ ",
@@ -25848,7 +25848,7 @@
         "name": "Rajesha Kumara Shreshth",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 16,
+        "votes": 21,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कृष्ण दास श्रेष्ठ",
@@ -25871,7 +25871,7 @@
         "address": "काठमाडौं काठमाडौँ महानगरपालिका गोपीकृष्ण मार्ग"
       }
     ],
-    "votesCast": 70409,
+    "votesCast": 71788,
     "totalVoters": 161065
   },
   {
@@ -25882,7 +25882,7 @@
     "name": "Kavrepalanchok-2",
     "nameNp": "काभ्रेपलाञ्चोक क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339525,
@@ -26264,7 +26264,7 @@
     "name": "Sindhupalchok-1",
     "nameNp": "सिन्धुपाल्चोक क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341908,
@@ -26509,7 +26509,7 @@
     "name": "Sindhupalchok-2",
     "nameNp": "सिन्धुपाल्चोक क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340921,
@@ -26517,7 +26517,7 @@
         "name": "Yuvaraja Dulal",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 11190,
+        "votes": 11992,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गुरु प्रसाद दुलाल",
@@ -26531,7 +26531,7 @@
         "name": "Vanshalala Tamang",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 9478,
+        "votes": 9982,
         "gender": "M",
         "isWinner": false,
         "fatherName": "हवल बहादुर तामाङ",
@@ -26545,7 +26545,7 @@
         "name": "Shera Bahadura Tamangag",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 8019,
+        "votes": 8826,
         "gender": "M",
         "isWinner": false,
         "fatherName": "प्रताप सिं तामाङग",
@@ -26559,7 +26559,7 @@
         "name": "Jhalaka Kumara Shresh‍th",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 6307,
+        "votes": 6805,
         "gender": "M",
         "isWinner": false,
         "fatherName": "वीर वहादुर श्रेष्‍ठ",
@@ -26573,7 +26573,7 @@
         "name": "Gopi Krishna Chaulagaee",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 828,
+        "votes": 882,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बद्री प्रसाद चौलागाई",
@@ -26586,7 +26586,7 @@
         "name": "Rama Sin Tamang",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 733,
+        "votes": 742,
         "gender": "M",
         "isWinner": false,
         "fatherName": "राम लामा तामाङ",
@@ -26600,7 +26600,7 @@
         "name": "Karnavira Syanvu Lama",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 122,
+        "votes": 123,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कर्पु स्याँवु लामा",
@@ -26613,7 +26613,7 @@
         "name": "Somana Lama",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 87,
+        "votes": 88,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कर्पु  लामा",
@@ -26627,7 +26627,7 @@
         "name": "Mingamara Tamang",
         "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 79,
+        "votes": 84,
         "gender": "M",
         "isWinner": false,
         "fatherName": "वीर बहादुर तामाङ",
@@ -26641,7 +26641,7 @@
         "name": "Bhanu Shreshth",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 72,
+        "votes": 73,
         "gender": "M",
         "isWinner": false,
         "fatherName": "लाल बहादुर श्रेष्ठ",
@@ -26654,13 +26654,27 @@
         "name": "Sera Vahadura Tamang",
         "partyName": "नागरिक सर्वोच्चता पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2537",
-        "votes": 42,
+        "votes": 44,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सञ्च वहादुर तामाङ",
         "spouseName": "कौशिला  तामाङ",
         "qualification": "SLC",
         "address": "सिन्धुपाल्चोक मेलम्ची नगरपालिका खानीगाउँ"
+      },
+      {
+        "candidateId": 342557,
+        "nameNp": "दिपक ढकाल",
+        "name": "Dipaka Dhakal",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 22,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "रेवती प्रसाद ढकाल",
+        "spouseName": "जमुना  चापागाई",
+        "qualification": "HSEB",
+        "address": "सिन्धुपाल्चोक मेलम्ची नगरपालिका ढकालखहरे"
       },
       {
         "candidateId": 342515,
@@ -26681,27 +26695,13 @@
         "name": "Dava Chhiringa Sherpa",
         "partyName": "संघीय लोकतान्त्रिक राष्ट्रिय मञ्च",
         "partyId": "2550",
-        "votes": 18,
+        "votes": 21,
         "gender": "M",
         "isWinner": false,
         "fatherName": "करे  शेर्पा",
         "spouseName": "मोती माया शेर्पा",
         "qualification": "10 pass",
         "address": "सिन्धुपाल्चोक वाह्रविसे नगरपालिका ताङसीङ"
-      },
-      {
-        "candidateId": 342557,
-        "nameNp": "दिपक ढकाल",
-        "name": "Dipaka Dhakal",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 11,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "रेवती प्रसाद ढकाल",
-        "spouseName": "जमुना  चापागाई",
-        "qualification": "HSEB",
-        "address": "सिन्धुपाल्चोक मेलम्ची नगरपालिका ढकालखहरे"
       },
       {
         "candidateId": 339649,
@@ -26757,7 +26757,7 @@
         "address": "सिन्धुपाल्चोक सुनकोशी गाउँपालिका भिमेस्थान"
       }
     ],
-    "votesCast": 37032,
+    "votesCast": 39730,
     "totalVoters": 137958
   },
   {
@@ -26768,7 +26768,7 @@
     "name": "Makwanpur-1",
     "nameNp": "मकवानपुर क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339633,
@@ -26776,7 +26776,7 @@
         "name": "Prakash Gautam",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 32512,
+        "votes": 32528,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dhan Bahadur Gautam",
@@ -26792,7 +26792,7 @@
         "name": "Mahalaxmi Upadhyay (Dina)",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 8353,
+        "votes": 8398,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Ishwori Datta Aryal",
@@ -26807,7 +26807,7 @@
         "name": "Rameshwar Rana Magar",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 7997,
+        "votes": 8160,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jaman Bahadur Rana",
@@ -26823,7 +26823,7 @@
         "name": "Surendra Lama",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 6681,
+        "votes": 6765,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Kanchha Lama",
@@ -26833,12 +26833,26 @@
         "address": "Makwanpur"
       },
       {
+        "candidateId": 340438,
+        "nameNp": "बिजय गौतम",
+        "name": "Bijay Gautam",
+        "partyName": "नेपाली कम्युनिष्ट पार्टी",
+        "partyId": "2557",
+        "votes": 3848,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Lok Nath Gautam",
+        "qualification": "स्‍नात्तकोतर",
+        "institution": "त्रि.वि.",
+        "address": "Kavrepalanchowk"
+      },
+      {
         "candidateId": 340025,
         "nameNp": "दिपक बहादुर सिंह",
         "name": "Dipak Bahadur Singh",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 3595,
+        "votes": 3609,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Mohan Bahadur Singh",
@@ -26849,26 +26863,12 @@
         "address": "Makwanpur"
       },
       {
-        "candidateId": 340438,
-        "nameNp": "बिजय गौतम",
-        "name": "Bijay Gautam",
-        "partyName": "नेपाली कम्युनिष्ट पार्टी",
-        "partyId": "2557",
-        "votes": 3436,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Lok Nath Gautam",
-        "qualification": "स्‍नात्तकोतर",
-        "institution": "त्रि.वि.",
-        "address": "Kavrepalanchowk"
-      },
-      {
         "candidateId": 339302,
         "nameNp": "विद्या श्रेष्‍ठ (महर्जन)",
         "name": "Bidya Shrestha Maharjan",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 850,
+        "votes": 853,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Vishnu Lal Shrestha",
@@ -26883,7 +26883,7 @@
         "name": "Tika Prasad Chaulagain",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 451,
+        "votes": 452,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Balbhad Chaulagai",
@@ -26898,7 +26898,7 @@
         "name": "Yuvaraj Lama",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 106,
+        "votes": 107,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दर्शन बहादुर स्याङतान",
@@ -26970,7 +26970,7 @@
         "name": "Amik Pariyar",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 19,
+        "votes": 20,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bal Bahadur Pariyar",
@@ -27061,7 +27061,7 @@
         "name": "Pramila Kumari Khatiwada",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 6,
+        "votes": 7,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Govinda Prasad Adhikari",
@@ -27117,7 +27117,7 @@
         "address": "Makwanpur"
       }
     ],
-    "votesCast": 64223,
+    "votesCast": 64964,
     "totalVoters": 158423
   },
   {
@@ -27128,7 +27128,7 @@
     "name": "Makwanpur-2",
     "nameNp": "मकवानपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339629,
@@ -27136,7 +27136,7 @@
         "name": "Prashant Upreti",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 21338,
+        "votes": 21794,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ramchandra Upreti",
@@ -27150,7 +27150,7 @@
         "name": "Mahesh Kumar Bartaula",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 16108,
+        "votes": 16420,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गोविन्‍द बहादुर वर्तौला",
@@ -27166,7 +27166,7 @@
         "name": "Buddha Lama",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 13383,
+        "votes": 13514,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Maila Lama",
@@ -27180,7 +27180,7 @@
         "name": "Lava Shera Visht",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 11240,
+        "votes": 11469,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बासुदेव  विष्ट",
@@ -27195,7 +27195,7 @@
         "name": "Prabin Kumar Syangtan",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 4843,
+        "votes": 4927,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Krishna Bahadur Syangtan",
@@ -27210,7 +27210,7 @@
         "name": "Yunesh Lama Sintan",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 640,
+        "votes": 647,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padam Bahadur Lama",
@@ -27224,7 +27224,7 @@
         "name": "Ram Bahadur Thokar",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 522,
+        "votes": 536,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hira Lal Thokar",
@@ -27240,7 +27240,7 @@
         "name": "Ram Ghalan",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 309,
+        "votes": 310,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Durga Bahadur Ghalan",
@@ -27256,7 +27256,7 @@
         "name": "Hira Lal Syangtan",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 237,
+        "votes": 240,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Sanuman Bahadur Syangtan",
@@ -27271,7 +27271,7 @@
         "name": "Sitamaya Bal",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 160,
+        "votes": 164,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Shyam Bahadur Bal",
@@ -27286,7 +27286,7 @@
         "name": "Nir Bahadur Sintan",
         "partyName": "राष्ट्रिय जनमोर्चा",
         "partyId": "2522",
-        "votes": 120,
+        "votes": 121,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jay Bahadur Sintan",
@@ -27330,7 +27330,7 @@
         "name": "Saroj Tamang",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 39,
+        "votes": 40,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dhan Bahadur Tamang",
@@ -27438,7 +27438,7 @@
         "address": "Makwanpur"
       }
     ],
-    "votesCast": 69121,
+    "votesCast": 70364,
     "totalVoters": 156778
   },
   {
@@ -27449,7 +27449,7 @@
     "name": "Rautahat-1",
     "nameNp": "रौतहट क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341836,
@@ -28039,7 +28039,7 @@
     "name": "Rautahat-2",
     "nameNp": "रौतहट क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340266,
@@ -28428,7 +28428,7 @@
     "name": "Rautahat-3",
     "nameNp": "रौतहट क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341005,
@@ -29018,7 +29018,7 @@
     "name": "Rautahat-4",
     "nameNp": "रौतहट क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341093,
@@ -29539,7 +29539,7 @@
     "name": "Bara-1",
     "nameNp": "बारा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340083,
@@ -29863,7 +29863,7 @@
     "name": "Bara-2",
     "nameNp": "बारा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341439,
@@ -29871,7 +29871,7 @@
         "name": "Chandana Kumara Sinh",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 33040,
+        "votes": 33444,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विश्‍व नाथ सिंह",
@@ -29886,7 +29886,7 @@
         "name": "Ramakishora Prasada Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 13359,
+        "votes": 13602,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रामानन्द प्रसाद यादव",
@@ -29902,7 +29902,7 @@
         "name": "Bhaiyarama Prasada Yadav",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 11102,
+        "votes": 11332,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रामगोविन्द  राउत",
@@ -29918,7 +29918,7 @@
         "name": "Balabira Prasada Chaudhari",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 6979,
+        "votes": 7177,
         "gender": "M",
         "isWinner": false,
         "fatherName": "भाइराम  चौधरी",
@@ -29934,7 +29934,7 @@
         "name": "Shivachandra Prasada Kushavaha",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 1369,
+        "votes": 1375,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रामदेव महतो कोइरी",
@@ -29950,7 +29950,7 @@
         "name": "Ramesha Prasada Yadav",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 889,
+        "votes": 895,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विष्णु  यादव",
@@ -29966,7 +29966,7 @@
         "name": "Rajesha Sah",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 643,
+        "votes": 651,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सचिदानन्द  साह",
@@ -29997,7 +29997,7 @@
         "name": "Megharaja Pasavan",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 178,
+        "votes": 179,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रामशरण  हजरा",
@@ -30012,7 +30012,7 @@
         "name": "Sudhira Kumara Sah",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 120,
+        "votes": 121,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बुनिलाल प्रसाद साह",
@@ -30026,7 +30026,7 @@
         "name": "Aat‍marama Prasada Sah",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 99,
+        "votes": 101,
         "gender": "M",
         "isWinner": false,
         "fatherName": "स्‍व. भोगराज साह तेली",
@@ -30042,7 +30042,7 @@
         "name": "Pradeshi Sah",
         "partyName": "नेपाल जनता पार्टी",
         "partyId": "2507",
-        "votes": 47,
+        "votes": 48,
         "gender": "M",
         "isWinner": false,
         "fatherName": "देवचन्दर साह रौनीयार वनिया",
@@ -30057,7 +30057,7 @@
         "name": "Amaradeva Prasada Yadav",
         "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 38,
+        "votes": 39,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जिरा राउत अहिर",
@@ -30073,7 +30073,7 @@
         "name": "Shyamababu Prasada Chaudhari",
         "partyName": "जनता लोकतान्त्रिक पार्टी, नेपाल",
         "partyId": "2574",
-        "votes": 32,
+        "votes": 33,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दिपनारायण प्रसाद चौधरी",
@@ -30088,7 +30088,7 @@
         "name": "Eenjada Ansari",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 29,
+        "votes": 33,
         "gender": "M",
         "isWinner": false,
         "fatherName": "मोबारक मिया असारी",
@@ -30131,7 +30131,7 @@
         "name": "Surendra Prasada Yadav",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 14,
+        "votes": 15,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विन्देश्‍वरी  राउत",
@@ -30256,6 +30256,21 @@
         "address": "बारा महागढीमाई नगरपालिका दहियार"
       },
       {
+        "candidateId": 342360,
+        "nameNp": "प्रयाग प्रसाद चौधरी",
+        "name": "Prayaga Prasada Chaudhari",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 4,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "गङ्गाराम  चौधरी",
+        "spouseName": "बिन्दु देवी चौधरी",
+        "qualification": "एस.एल.सी.",
+        "institution": "ने.रा.मा.वि. करैया",
+        "address": "बारा करैयामाई गाउँपालिका करैया"
+      },
+      {
         "candidateId": 341595,
         "nameNp": "छोटेलाल साह",
         "name": "Chhotelala Sah",
@@ -30270,21 +30285,6 @@
         "institution": "रामाराजा क्याम्पस",
         "experience": "राजनैतीक",
         "address": "बारा पचरौता नगरपालिका "
-      },
-      {
-        "candidateId": 342360,
-        "nameNp": "प्रयाग प्रसाद चौधरी",
-        "name": "Prayaga Prasada Chaudhari",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 2,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "गङ्गाराम  चौधरी",
-        "spouseName": "बिन्दु देवी चौधरी",
-        "qualification": "एस.एल.सी.",
-        "institution": "ने.रा.मा.वि. करैया",
-        "address": "बारा करैयामाई गाउँपालिका करैया"
       },
       {
         "candidateId": 342332,
@@ -30303,7 +30303,7 @@
         "address": "बारा पचरौता नगरपालिका श्रीनगर बैरिया"
       }
     ],
-    "votesCast": 68230,
+    "votesCast": 69339,
     "totalVoters": 113833
   },
   {
@@ -30314,7 +30314,7 @@
     "name": "Bara-3",
     "nameNp": "बारा क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340776,
@@ -30681,7 +30681,7 @@
     "name": "Bara-4",
     "nameNp": "बारा क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341514,
@@ -31186,7 +31186,7 @@
     "name": "Parsa-1",
     "nameNp": "पर्सा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340884,
@@ -31595,7 +31595,7 @@
     "name": "Parsa-2",
     "nameNp": "पर्सा क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340881,
@@ -32069,7 +32069,7 @@
     "name": "Parsa-3",
     "nameNp": "पर्सा क्षेत्र नं. 3",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340309,
@@ -32410,7 +32410,7 @@
     "name": "Parsa-4",
     "nameNp": "पर्सा क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342274,
@@ -32780,7 +32780,7 @@
     "name": "Chitwan-1",
     "nameNp": "चितवन क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341241,
@@ -33054,7 +33054,7 @@
     "name": "Chitwan-2",
     "nameNp": "चितवन क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340990,
@@ -33378,7 +33378,7 @@
     "name": "Chitwan-3",
     "nameNp": "चितवन क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341145,
@@ -33703,7 +33703,7 @@
     "name": "Gorkha-1",
     "nameNp": "गोरखा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340913,
@@ -33869,7 +33869,7 @@
     "name": "Gorkha-2",
     "nameNp": "गोरखा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339991,
@@ -34050,7 +34050,7 @@
     "name": "Manang-1",
     "nameNp": "मनाङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339862,
@@ -34112,7 +34112,7 @@
     "name": "Lamjung-1",
     "nameNp": "लमजुङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339858,
@@ -34310,7 +34310,7 @@
     "name": "Kaski-1",
     "nameNp": "कास्की क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339553,
@@ -34541,7 +34541,7 @@
     "name": "Kaski-2",
     "nameNp": "कास्की क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339683,
@@ -34814,7 +34814,7 @@
     "name": "Kaski-3",
     "nameNp": "कास्की क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339651,
@@ -35056,7 +35056,7 @@
     "name": "Tanahun-1",
     "nameNp": "तनहुँ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340905,
@@ -35301,7 +35301,7 @@
     "name": "Tanahun-2",
     "nameNp": "तनहुँ क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341124,
@@ -35486,7 +35486,7 @@
     "name": "Syangja-1",
     "nameNp": "स्याङजा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339751,
@@ -35679,7 +35679,7 @@
     "name": "Syangja-2",
     "nameNp": "स्याङजा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339732,
@@ -35870,7 +35870,7 @@
     "name": "Gulmi-1",
     "nameNp": "गुल्मी क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341377,
@@ -36194,7 +36194,7 @@
     "name": "Gulmi-2",
     "nameNp": "गुल्मी क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341282,
@@ -36529,7 +36529,7 @@
     "name": "Palpa-1",
     "nameNp": "पाल्पा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341027,
@@ -36726,7 +36726,7 @@
     "name": "Palpa-2",
     "nameNp": "पाल्पा क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341329,
@@ -36734,7 +36734,7 @@
         "name": "Madhav Bahadur Thapa",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 25914,
+        "votes": 26736,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Nur Bahadur Thapa",
@@ -36748,7 +36748,7 @@
         "name": "Himal Datta Shrestha",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 12700,
+        "votes": 12992,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Baburam Shrestha",
@@ -36762,7 +36762,7 @@
         "name": "Thakur Prasad Gaire",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 10342,
+        "votes": 10503,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Shobhakhar Gaire",
@@ -36778,7 +36778,7 @@
         "name": "Som Prasad Pandeya",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 5181,
+        "votes": 5288,
         "gender": "M",
         "isWinner": false,
         "fatherName": "ईश्वरी प्रसाद पाण्डेय",
@@ -36793,7 +36793,7 @@
         "name": "Dev Prasad Shrestha",
         "partyName": "नेशनल रिपब्लिक नेपाल",
         "partyId": "2504",
-        "votes": 685,
+        "votes": 693,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Thakur Prasad Shrestha",
@@ -36809,7 +36809,7 @@
         "name": "Mohan Kuwar Thapa Magar",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 456,
+        "votes": 458,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जीत वहादुर कुवर मगर",
@@ -36819,28 +36819,12 @@
         "address": "पाल्पा बगनासकाली गाउँपालिका नायर अर्चले"
       },
       {
-        "candidateId": 339789,
-        "nameNp": "बाल बहादुर दर्लामी ",
-        "name": "Bal Bahadur Darlami",
-        "partyName": "राष्ट्रिय जनमोर्चा",
-        "partyId": "2522",
-        "votes": 428,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Basanta Bahadur Darlami",
-        "spouseName": "Kusum Darlami",
-        "qualification": "बि.ए",
-        "institution": "त्रिभुवन बहुमुखी क्याम्पस",
-        "experience": "राजनितिमा सक्रियता",
-        "address": "Palpa"
-      },
-      {
         "candidateId": 339533,
         "nameNp": "डुल बहादुर कुँवर",
         "name": "Dul Bahadur Kunwar",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 416,
+        "votes": 440,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Lok Bahadur Kunwar",
@@ -36851,12 +36835,28 @@
         "address": "Palpa"
       },
       {
+        "candidateId": 339789,
+        "nameNp": "बाल बहादुर दर्लामी ",
+        "name": "Bal Bahadur Darlami",
+        "partyName": "राष्ट्रिय जनमोर्चा",
+        "partyId": "2522",
+        "votes": 429,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Basanta Bahadur Darlami",
+        "spouseName": "Kusum Darlami",
+        "qualification": "बि.ए",
+        "institution": "त्रिभुवन बहुमुखी क्याम्पस",
+        "experience": "राजनितिमा सक्रियता",
+        "address": "Palpa"
+      },
+      {
         "candidateId": 339998,
         "nameNp": "राम बहादुर अस्लामी",
         "name": "Ram Bahadur Aslami",
         "partyName": "सार्वभौम नागरिक पार्टी",
         "partyId": "2520",
-        "votes": 167,
+        "votes": 169,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Durga Bahadur Aslami",
@@ -36871,7 +36871,7 @@
         "name": "Top Bahadur Aslami",
         "partyName": "राष्ट्रिय जनमुक्ति पार्टी",
         "partyId": "2605",
-        "votes": 134,
+        "votes": 138,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padam Bahadur Aslami",
@@ -36886,7 +36886,7 @@
         "name": "Maan Bahadur Darlami",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 93,
+        "votes": 96,
         "gender": "M",
         "isWinner": false,
         "fatherName": "टोकन सिं दर्लामी",
@@ -36900,7 +36900,7 @@
         "name": "Bishnu Thadrai (Sharki)",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 65,
+        "votes": 66,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विर वहादुर सार्की",
@@ -36914,7 +36914,7 @@
         "name": "Keshav Prasad Bashyaal",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 51,
+        "votes": 53,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रवि लाल वश्‍याल",
@@ -36966,7 +36966,7 @@
         "address": "भक्तपुर भक्तपुर नगरपालिका कमलविनायक"
       }
     ],
-    "votesCast": 56711,
+    "votesCast": 58140,
     "totalVoters": 109033
   },
   {
@@ -36977,7 +36977,7 @@
     "name": "Arghakhanchi-1",
     "nameNp": "अर्घाखाँची क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339640,
@@ -37217,7 +37217,7 @@
     "name": "Nawalpur-1",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पूर्व) क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340220,
@@ -37438,7 +37438,7 @@
     "name": "Nawalpur-2",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पूर्व) क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340347,
@@ -37708,7 +37708,7 @@
     "name": "Rupandehi-1",
     "nameNp": "रूपन्देही क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340189,
@@ -38168,7 +38168,7 @@
     "name": "Rupandehi-2",
     "nameNp": "रूपन्देही क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341184,
@@ -38743,7 +38743,7 @@
     "name": "Rupandehi-3",
     "nameNp": "रूपन्देही क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339605,
@@ -39283,7 +39283,7 @@
     "name": "Rupandehi-4",
     "nameNp": "रूपन्देही क्षेत्र नं. 4",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342471,
@@ -39627,7 +39627,7 @@
     "name": "Rupandehi-5",
     "nameNp": "रूपन्देही क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341416,
@@ -40030,7 +40030,7 @@
     "name": "Kapilvastu-1",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341902,
@@ -40038,7 +40038,7 @@
         "name": "Mohan Lal Acharya",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 24324,
+        "votes": 28093,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Churamani Acharya",
@@ -40054,7 +40054,7 @@
         "name": "Ashish Sharma",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 14226,
+        "votes": 15063,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dip Kumar Upadhyaya",
@@ -40069,7 +40069,7 @@
         "name": "Atahar Kamal Musalman",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 12906,
+        "votes": 13745,
         "gender": "M",
         "isWinner": false,
         "fatherName": "निसार अहमद मुसलमान",
@@ -40085,7 +40085,7 @@
         "name": "Bishram Prasad Chaudhary",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 5477,
+        "votes": 6511,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhikhu Chaudhary",
@@ -40100,7 +40100,7 @@
         "name": "Krishna Bahadur Kunwar",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 3173,
+        "votes": 3603,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hark Bahadur Kunwar",
@@ -40115,7 +40115,7 @@
         "name": "Shatrughan Bilas Singh Kurmi",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 1863,
+        "votes": 1993,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Raghav Sharan Singh Kurmi",
@@ -40130,7 +40130,7 @@
         "name": "Narendra Prasad Chaudhary",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 1863,
+        "votes": 1872,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Kesari Prasad Chaudhary",
@@ -40145,7 +40145,7 @@
         "name": "Babbu Singh Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 1480,
+        "votes": 1481,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Shivharakh Ahir",
@@ -40160,7 +40160,7 @@
         "name": "Nisar Ahmad Musalman",
         "partyName": "राष्ट्र निर्माण दल नेपाल",
         "partyId": "2527",
-        "votes": 292,
+        "votes": 294,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ejar Musalman",
@@ -40174,7 +40174,7 @@
         "name": "Bhaggu Prasad Chaudhary Tharu",
         "partyName": "नागरिक उन्मुक्ति पार्टी, नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 236,
+        "votes": 287,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dhuwari Tharu",
@@ -40189,7 +40189,7 @@
         "name": "Daroga Prasad Kurmi",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 179,
+        "votes": 246,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ram Charitra Kurmi",
@@ -40205,7 +40205,7 @@
         "name": "Madhav Bhat",
         "partyName": "राष्ट्रिय जनमोर्चा",
         "partyId": "2522",
-        "votes": 174,
+        "votes": 228,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Vishnu Bahadur Bhat",
@@ -40221,7 +40221,7 @@
         "name": "Sangh Prasad Tharu",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 166,
+        "votes": 194,
         "gender": "M",
         "isWinner": false,
         "fatherName": "चानु  थारु",
@@ -40237,7 +40237,7 @@
         "name": "Jayavant Bikram Sah",
         "partyName": "राष्ट्रिय मुक्ति आन्दोलन, नेपाल",
         "partyId": "2591",
-        "votes": 131,
+        "votes": 142,
         "gender": "M",
         "isWinner": false,
         "fatherName": "शैलेन्द्र विक्रम शाह",
@@ -40265,7 +40265,7 @@
         "name": "Manoj Kumar Shukla",
         "partyName": "नेपाल जनता पार्टी",
         "partyId": "2507",
-        "votes": 67,
+        "votes": 77,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Prabhakar Shukla",
@@ -40278,7 +40278,7 @@
         "name": "Abdullah Musalman",
         "partyName": "राष्ट्रिय जनमत पार्टी",
         "partyId": "2570",
-        "votes": 66,
+        "votes": 68,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Sahabuddin Musalman",
@@ -40292,7 +40292,7 @@
         "name": "Shankara Bhatakshetri",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 51,
+        "votes": 53,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दल बहादुर भाटक्षेत्री",
@@ -40302,26 +40302,12 @@
         "address": "कपिलबस्तु बाणगंगा नगरपालिका "
       },
       {
-        "candidateId": 342268,
-        "nameNp": "सुरेन्द्र कुमार शुक्ल",
-        "name": "Surendra Kumar Shukla",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 46,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Dip Narayan Shukla",
-        "spouseName": "Suman Shukla",
-        "qualification": "बिए",
-        "address": "Kapilbastu"
-      },
-      {
         "candidateId": 341502,
         "nameNp": "राम गोपाल कुर्मी",
         "name": "Ram Gopal Kurmi",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 45,
+        "votes": 47,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Chhagur Prasad Kurmi",
@@ -40331,12 +40317,26 @@
         "address": "Kapilbastu"
       },
       {
+        "candidateId": 342268,
+        "nameNp": "सुरेन्द्र कुमार शुक्ल",
+        "name": "Surendra Kumar Shukla",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 47,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Dip Narayan Shukla",
+        "spouseName": "Suman Shukla",
+        "qualification": "बिए",
+        "address": "Kapilbastu"
+      },
+      {
         "candidateId": 340997,
         "nameNp": "नरेन्द्र वहादुर वेल्बासे",
         "name": "Narendra Bahadur Belbase",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 37,
+        "votes": 38,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dolak Bahadur Belwase",
@@ -40346,26 +40346,12 @@
         "address": "Arghakhanchi"
       },
       {
-        "candidateId": 341867,
-        "nameNp": "कल्याण टण्‍डन",
-        "name": "Kalyan Tandon",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 29,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "दिपक कुमार टण्‍डन",
-        "spouseName": "कल्पना  टण्‍डन",
-        "qualification": "+2",
-        "address": "कपिलबस्तु बाणगंगा नगरपालिका "
-      },
-      {
         "candidateId": 342741,
         "nameNp": "केशर बहादुर सूर्यवंशी",
         "name": "Keshar Bahadur Suryavanshi",
         "partyName": "मंगोल नेशनल अर्गनाइजेसन",
         "partyId": "2511",
-        "votes": 22,
+        "votes": 34,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Netra Bahadur Suryavanshi",
@@ -40374,12 +40360,26 @@
         "address": "Arghakhanchi"
       },
       {
+        "candidateId": 341867,
+        "nameNp": "कल्याण टण्‍डन",
+        "name": "Kalyan Tandon",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 30,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "दिपक कुमार टण्‍डन",
+        "spouseName": "कल्पना  टण्‍डन",
+        "qualification": "+2",
+        "address": "कपिलबस्तु बाणगंगा नगरपालिका "
+      },
+      {
         "candidateId": 342608,
         "nameNp": "रबिन कार्की",
         "name": "Rabin Karki",
         "partyName": "नेपाल जनसेवा पार्टी",
         "partyId": "2599",
-        "votes": 20,
+        "votes": 22,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Buddhi Bahadur Karki",
@@ -40392,7 +40392,7 @@
         "name": "Shiva Bahadur Darji",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 20,
+        "votes": 21,
         "gender": "M",
         "isWinner": false,
         "fatherName": "छवि बहादुर दमाइ",
@@ -40403,12 +40403,26 @@
         "address": "अर्घाखाँची शितगंगा नगरपालिका बर्रे पात्ल"
       },
       {
+        "candidateId": 340519,
+        "nameNp": "नुमा बि.क",
+        "name": "Numa B.K.",
+        "partyName": "राष्ट्रिय जनमुक्ति पार्टी",
+        "partyId": "2605",
+        "votes": 20,
+        "gender": "F",
+        "isWinner": false,
+        "fatherName": "बम बहादुर खत्री",
+        "spouseName": "ओम बहादुर विश्वकर्मा",
+        "qualification": "SLC",
+        "address": "कपिलबस्तु बाणगंगा नगरपालिका "
+      },
+      {
         "candidateId": 342416,
         "nameNp": "प्रकाश भुसाल",
         "name": "Prakash Bhusal",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 19,
+        "votes": 20,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Prem Chandra Bhusal",
@@ -40416,20 +40430,6 @@
         "qualification": "आईए",
         "institution": "कपिलवस्तु बहुमुखी क्याम्पस तौलिहवा",
         "address": "Kapilbastu"
-      },
-      {
-        "candidateId": 340519,
-        "nameNp": "नुमा बि.क",
-        "name": "Numa B.K.",
-        "partyName": "राष्ट्रिय जनमुक्ति पार्टी",
-        "partyId": "2605",
-        "votes": 18,
-        "gender": "F",
-        "isWinner": false,
-        "fatherName": "बम बहादुर खत्री",
-        "spouseName": "ओम बहादुर विश्वकर्मा",
-        "qualification": "SLC",
-        "address": "कपिलबस्तु बाणगंगा नगरपालिका "
       },
       {
         "candidateId": 342717,
@@ -40461,6 +40461,19 @@
         "address": "Kapilbastu"
       },
       {
+        "candidateId": 340876,
+        "nameNp": "वुद्धि नाथ पोखरेल",
+        "name": "Buddhi Nath Pokharel",
+        "partyName": "स्वतन्त्र",
+        "partyId": "IND",
+        "votes": 7,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Rikhi Ram Pokhrel",
+        "qualification": "BA",
+        "address": "Kapilbastu"
+      },
+      {
         "candidateId": 341960,
         "nameNp": "सुर्य प्रसाद बराल",
         "name": "Surya Prasad Baral",
@@ -40477,16 +40490,18 @@
         "address": "Rupandehi"
       },
       {
-        "candidateId": 340876,
-        "nameNp": "वुद्धि नाथ पोखरेल",
-        "name": "Buddhi Nath Pokharel",
+        "candidateId": 341330,
+        "nameNp": "राम नारायण थारु",
+        "name": "Ram Narayan Tharu",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 6,
+        "votes": 5,
         "gender": "M",
         "isWinner": false,
-        "fatherName": "Rikhi Ram Pokhrel",
-        "qualification": "BA",
+        "fatherName": "Basudev Tharu",
+        "spouseName": "Nathui Tharu",
+        "qualification": "SLC",
+        "institution": "बाणगङ्गा मा.वि. गजेहडा",
         "address": "Kapilbastu"
       },
       {
@@ -40518,24 +40533,9 @@
         "institution": "जनता मा.वि. पिपरा, कपिलवस्तु",
         "experience": "निर्माण व्यवसाय",
         "address": "कपिलबस्तु बाणगंगा नगरपालिका मनोहरापुर"
-      },
-      {
-        "candidateId": 341330,
-        "nameNp": "राम नारायण थारु",
-        "name": "Ram Narayan Tharu",
-        "partyName": "स्वतन्त्र",
-        "partyId": "IND",
-        "votes": 4,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Basudev Tharu",
-        "spouseName": "Nathui Tharu",
-        "qualification": "SLC",
-        "institution": "बाणगङ्गा मा.वि. गजेहडा",
-        "address": "Kapilbastu"
       }
     ],
-    "votesCast": 67071,
+    "votesCast": 74372,
     "totalVoters": 147649
   },
   {
@@ -40546,7 +40546,7 @@
     "name": "Kapilvastu-2",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341561,
@@ -41001,7 +41001,7 @@
     "name": "Kapilvastu-3",
     "nameNp": "कपिलबस्तु क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341266,
@@ -41510,7 +41510,7 @@
     "name": "Mustang-1",
     "nameNp": "मुस्ताङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342128,
@@ -41644,7 +41644,7 @@
     "name": "Myagdi-1",
     "nameNp": "म्याग्दी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339417,
@@ -41842,7 +41842,7 @@
     "name": "Baglung-1",
     "nameNp": "बाग्लुङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339959,
@@ -42023,7 +42023,7 @@
     "name": "Baglung-2",
     "nameNp": "बाग्लुङ क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342039,
@@ -42197,7 +42197,7 @@
     "name": "Parbat-1",
     "nameNp": "पर्वत क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341279,
@@ -42472,7 +42472,7 @@
     "name": "Rukum East-1",
     "nameNp": "रुकुम (पूर्वी भाग) क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340050,
@@ -42651,7 +42651,7 @@
     "name": "Rolpa-1",
     "nameNp": "रोल्पा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339842,
@@ -42818,7 +42818,7 @@
     "name": "Pyuthan-1",
     "nameNp": "प्यूठान क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340722,
@@ -43031,7 +43031,7 @@
     "name": "Salyan-1",
     "nameNp": "सल्यान क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340418,
@@ -43234,7 +43234,7 @@
     "name": "Dang-1",
     "nameNp": "दाङ क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342029,
@@ -43444,7 +43444,7 @@
     "name": "Dang-2",
     "nameNp": "दाङ क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340655,
@@ -43776,7 +43776,7 @@
     "name": "Dang-3",
     "nameNp": "दाङ क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339501,
@@ -44120,7 +44120,7 @@
     "name": "Dolpa-1",
     "nameNp": "डोल्पा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339703,
@@ -44275,7 +44275,7 @@
     "name": "Mugu-1",
     "nameNp": "मुगु क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340557,
@@ -44396,7 +44396,7 @@
     "name": "Jumla-1",
     "nameNp": "जुम्ला क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341535,
@@ -44539,7 +44539,7 @@
     "name": "Kalikot-1",
     "nameNp": "कालिकोट क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340992,
@@ -44700,7 +44700,7 @@
     "name": "Humla-1",
     "nameNp": "हुम्ला क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340564,
@@ -44821,7 +44821,7 @@
     "name": "Jajarkot-1",
     "nameNp": "जाजरकोट क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342453,
@@ -44999,7 +44999,7 @@
     "name": "Dailekh-1",
     "nameNp": "दैलेख क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341040,
@@ -45153,7 +45153,7 @@
     "name": "Dailekh-2",
     "nameNp": "दैलेख क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340637,
@@ -45340,7 +45340,7 @@
     "name": "Surkhet-1",
     "nameNp": "सुर्खेत क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341140,
@@ -45553,7 +45553,7 @@
     "name": "Surkhet-2",
     "nameNp": "सुर्खेत क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340194,
@@ -45829,7 +45829,7 @@
     "name": "Banke-1",
     "nameNp": "बाँके क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341907,
@@ -46021,7 +46021,7 @@
     "name": "Banke-2",
     "nameNp": "बाँके क्षेत्र नं. 2",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340037,
@@ -46333,7 +46333,7 @@
     "name": "Banke-3",
     "nameNp": "बाँके क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339589,
@@ -46642,7 +46642,7 @@
     "name": "Bardiya-1",
     "nameNp": "बर्दिया क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340825,
@@ -46932,7 +46932,7 @@
     "name": "Bardiya-2",
     "nameNp": "बर्दिया क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342516,
@@ -47135,7 +47135,7 @@
     "name": "Bajura-1",
     "nameNp": "बाजुरा क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341303,
@@ -47143,7 +47143,7 @@
         "name": "Janak Raj Giri",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 11185,
+        "votes": 11742,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Karu Giri",
@@ -47158,7 +47158,7 @@
         "name": "Lal Bahadur Thapa",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 10984,
+        "votes": 11207,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Rang Thapa",
@@ -47174,7 +47174,7 @@
         "name": "Hemraj Thapa",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 4242,
+        "votes": 4431,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Bhim Bahadur Thapa",
@@ -47189,7 +47189,7 @@
         "name": "Prakash Bahadur Shah",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 1996,
+        "votes": 2252,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Gagan Bahadur Shah",
@@ -47204,7 +47204,7 @@
         "name": "Keshar Bahadur Shahi",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 201,
+        "votes": 204,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jay Bahadur Shahi",
@@ -47220,7 +47220,7 @@
         "name": "Bhupendra Lwar",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 186,
+        "votes": 188,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padam Lwar",
@@ -47236,7 +47236,7 @@
         "name": "Dipaka Kumara Di.si.",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 87,
+        "votes": 88,
         "gender": "M",
         "isWinner": false,
         "fatherName": "प्रकाश बहादुर धामी",
@@ -47252,7 +47252,7 @@
         "name": "Upendra Shahi",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 62,
+        "votes": 63,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Madan Raj Shahi",
@@ -47262,7 +47262,7 @@
         "address": "Bajura"
       }
     ],
-    "votesCast": 28943,
+    "votesCast": 30175,
     "totalVoters": 87861
   },
   {
@@ -47273,7 +47273,7 @@
     "name": "Achham-1",
     "nameNp": "अछाम क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341661,
@@ -47412,7 +47412,7 @@
     "name": "Achham-2",
     "nameNp": "अछाम क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340611,
@@ -47420,7 +47420,7 @@
         "name": "Yagya Bahadur Bogati",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 5544,
+        "votes": 5766,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jahar Singh Bogati",
@@ -47435,7 +47435,7 @@
         "name": "Pushpa Bahadur Shah",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 4724,
+        "votes": 5059,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Padma Dhoj Shah",
@@ -47450,7 +47450,7 @@
         "name": "Bhup Dev Shah",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 2987,
+        "votes": 3106,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Nrip Bahadur Shah",
@@ -47464,7 +47464,7 @@
         "name": "Bal Bahadur Kunwar",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 1595,
+        "votes": 1795,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jogi Ram Kunwar",
@@ -47479,7 +47479,7 @@
         "name": "Shera Bahadura Vi K",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 346,
+        "votes": 361,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नैने  कामी",
@@ -47494,7 +47494,7 @@
         "name": "Min Bahadur Shahi",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 85,
+        "votes": 97,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jora Singh Shahi",
@@ -47509,13 +47509,29 @@
         "name": "Jhankar Bahadur Shahi",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 40,
+        "votes": 42,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Tek Bahadur Shahi",
         "spouseName": "Suntali Shahi",
         "qualification": "12 pass ",
         "institution": "Binyak Campus",
+        "address": "Achham"
+      },
+      {
+        "candidateId": 341537,
+        "nameNp": "पुष्प राज न्यौपाने",
+        "name": "Pushpa Raj Neupane",
+        "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
+        "partyId": "2516",
+        "votes": 38,
+        "gender": "M",
+        "isWinner": false,
+        "fatherName": "Jakti Ram Upadhyaya",
+        "spouseName": "Durga Paudyal",
+        "qualification": "Bacherlor ",
+        "institution": "rr Campus ",
+        "experience": "worked in radio  Nepal ",
         "address": "Achham"
       },
       {
@@ -47531,25 +47547,9 @@
         "qualification": "12 pass ",
         "institution": "Achham Multiple Campus Mangalsen ",
         "address": "अछाम मंगलसेन नगरपालिका "
-      },
-      {
-        "candidateId": 341537,
-        "nameNp": "पुष्प राज न्यौपाने",
-        "name": "Pushpa Raj Neupane",
-        "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
-        "partyId": "2516",
-        "votes": 36,
-        "gender": "M",
-        "isWinner": false,
-        "fatherName": "Jakti Ram Upadhyaya",
-        "spouseName": "Durga Paudyal",
-        "qualification": "Bacherlor ",
-        "institution": "rr Campus ",
-        "experience": "worked in radio  Nepal ",
-        "address": "Achham"
       }
     ],
-    "votesCast": 15394,
+    "votesCast": 16301,
     "totalVoters": 82787
   },
   {
@@ -47560,7 +47560,7 @@
     "name": "Bajhang-1",
     "nameNp": "बझाङ क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340443,
@@ -47682,7 +47682,7 @@
     "name": "Doti-1",
     "nameNp": "डोटी क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 341208,
@@ -47830,7 +47830,7 @@
     "name": "Kailali-1",
     "nameNp": "कैलाली क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342184,
@@ -48110,7 +48110,7 @@
     "name": "Kailali-2",
     "nameNp": "कैलाली क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339795,
@@ -48336,7 +48336,7 @@
     "name": "Kailali-3",
     "nameNp": "कैलाली क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342441,
@@ -48515,7 +48515,7 @@
     "name": "Kailali-4",
     "nameNp": "कैलाली क्षेत्र नं. 4",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 342757,
@@ -48523,7 +48523,7 @@
         "name": "Khem Raj Koirala",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 25523,
+        "votes": 26694,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Maha Nand Koirala",
@@ -48537,7 +48537,7 @@
         "name": "Gorakh Bahadur Bista",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 9583,
+        "votes": 10035,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दान बहादुर विष्ट",
@@ -48552,7 +48552,7 @@
         "name": "Lekh Raj Bhatta",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 7408,
+        "votes": 7825,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Dashrath Bhatta",
@@ -48566,7 +48566,7 @@
         "name": "Hari Ram Chaudhary",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 4969,
+        "votes": 5284,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Asha Ram Chaudhary",
@@ -48581,7 +48581,7 @@
         "name": "Kamala Rajavar",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 1077,
+        "votes": 1142,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नर बहादुर रजवार",
@@ -48595,7 +48595,7 @@
         "name": "Dhan Bahadur Sunar",
         "partyName": "नागरिक उन्मुक्ति पार्टी, नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 651,
+        "votes": 669,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Til Bahadur Sunar",
@@ -48610,7 +48610,7 @@
         "name": "Bhim Bahadur Thapa Magar",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 311,
+        "votes": 341,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Sher Bahadur Thapamagar",
@@ -48624,7 +48624,7 @@
         "name": "Chhatra Bahadur Bhatt Khatri",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 226,
+        "votes": 228,
         "gender": "M",
         "isWinner": false,
         "fatherName": "पद्म बहादुर भट्ट (खत्री)",
@@ -48639,7 +48639,7 @@
         "name": "Bhakt Bahadur Shahi",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 153,
+        "votes": 160,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जंग बहादुर शाही",
@@ -48653,7 +48653,7 @@
         "name": "Subhasa Kuvar",
         "partyName": "उज्यालो नेपाल पार्टी",
         "partyId": "2566",
-        "votes": 134,
+        "votes": 144,
         "gender": "M",
         "isWinner": false,
         "fatherName": "उजिर सिह कुवर",
@@ -48668,7 +48668,7 @@
         "name": "Yagya Bahadur Tamota",
         "partyName": "नेपाल मानवतावादी पार्टी",
         "partyId": "2503",
-        "votes": 126,
+        "votes": 131,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Ram Bahadur Tamata",
@@ -48682,7 +48682,7 @@
         "name": "Hem Raj Bhatta",
         "partyName": "राष्ट्रिय जनमोर्चा",
         "partyId": "2522",
-        "votes": 114,
+        "votes": 116,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Hari Prasad Bhatta",
@@ -48709,7 +48709,7 @@
         "name": "Amrita Bhul",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 35,
+        "votes": 36,
         "gender": "F",
         "isWinner": false,
         "fatherName": "Kallane Bhul",
@@ -48748,7 +48748,7 @@
         "address": "Kailali"
       }
     ],
-    "votesCast": 50384,
+    "votesCast": 52879,
     "totalVoters": 106600
   },
   {
@@ -48759,7 +48759,7 @@
     "name": "Kailali-5",
     "nameNp": "कैलाली क्षेत्र नं. 5",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339984,
@@ -48996,7 +48996,7 @@
     "name": "Darchula-1",
     "nameNp": "दार्चुला क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340502,
@@ -49151,7 +49151,7 @@
     "name": "Baitadi-1",
     "nameNp": "बैतडी क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340516,
@@ -49159,7 +49159,7 @@
         "name": "Hari Mohan Bhandari",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 13540,
+        "votes": 16336,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Laxman Singh Bhandari",
@@ -49172,7 +49172,7 @@
         "name": "Damodar Bhandari",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 12020,
+        "votes": 13313,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Uday Singh Bhandari",
@@ -49185,7 +49185,7 @@
         "name": "Chatur Bahadur Chanda",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 10773,
+        "votes": 11744,
         "gender": "M",
         "isWinner": false,
         "fatherName": "देव बहादुर चन्द",
@@ -49198,7 +49198,7 @@
         "name": "Pramanand Bhatta",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 5637,
+        "votes": 5874,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रतनदेव  भट्ट",
@@ -49211,7 +49211,7 @@
         "name": "Bhupen Bahadur Chanda",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 1609,
+        "votes": 1838,
         "gender": "M",
         "isWinner": false,
         "fatherName": "लोकेन्द्र बहादुर चन्द",
@@ -49224,7 +49224,7 @@
         "name": "Ram Bahadur Kunwar",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 245,
+        "votes": 255,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Daulat Singh Kunwar",
@@ -49237,7 +49237,7 @@
         "name": "Navaraj Koirala",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 70,
+        "votes": 78,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jayarup Koirala",
@@ -49250,7 +49250,7 @@
         "name": "Visan Singh Bohara",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 66,
+        "votes": 70,
         "gender": "M",
         "isWinner": false,
         "fatherName": "विरा  वोहरा",
@@ -49263,7 +49263,7 @@
         "name": "Aan Singh Bhandari",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 63,
+        "votes": 68,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Chandra Singh Bhandari",
@@ -49276,7 +49276,7 @@
         "name": "Gajendra Raj Pandey",
         "partyName": "श्रम संस्कृति पार्टी",
         "partyId": "2501",
-        "votes": 46,
+        "votes": 48,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Jaidev Pandey",
@@ -49289,7 +49289,7 @@
         "name": "Jay Prakash Panta",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 12,
+        "votes": 13,
         "gender": "M",
         "isWinner": false,
         "fatherName": "Keshav Raj Pant",
@@ -49297,7 +49297,7 @@
         "address": "Baitadi"
       }
     ],
-    "votesCast": 44081,
+    "votesCast": 49637,
     "totalVoters": 156370
   },
   {
@@ -49308,7 +49308,7 @@
     "name": "Dadeldhura-1",
     "nameNp": "डडेलधुरा क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340545,
@@ -49526,7 +49526,7 @@
     "name": "Kanchanpur-1",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 1",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 339943,
@@ -49781,7 +49781,7 @@
     "name": "Kanchanpur-2",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340896,
@@ -50090,7 +50090,7 @@
     "name": "Kanchanpur-3",
     "nameNp": "कञ्चनपुर क्षेत्र नं. 3",
     "status": "DECLARED",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340127,
@@ -50324,7 +50324,7 @@
     "name": "Parasi-1",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पश्चिम) क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340029,
@@ -50719,7 +50719,7 @@
     "name": "Parasi-2",
     "nameNp": "नवलपरासी (बर्दघाट सुस्ता पश्चिम) क्षेत्र नं. 2",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340191,
@@ -50727,7 +50727,7 @@
         "name": "Narendra Kumara Gup‍ta",
         "partyName": "राष्ट्रिय स्वतन्त्र पार्टी",
         "partyId": "2528",
-        "votes": 41010,
+        "votes": 42370,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गणेश प्रसाद गुप्‍ता",
@@ -50743,7 +50743,7 @@
         "name": "Bhima Bahadura Thapa Kshetri",
         "partyName": "नेपाली काँग्रेस",
         "partyId": "2583",
-        "votes": 15254,
+        "votes": 15541,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कृष्‍ण बहादुर थापा",
@@ -50759,7 +50759,7 @@
         "name": "Deben‍dra Yadav",
         "partyName": "जनता समाजवादी पार्टी, नेपाल",
         "partyId": "2542",
-        "votes": 6437,
+        "votes": 6783,
         "gender": "M",
         "isWinner": false,
         "fatherName": "बलीराम  यादव",
@@ -50774,7 +50774,7 @@
         "name": "Dhubra Bahadura Pradhan",
         "partyName": "राष्ट्रिय प्रजातन्त्र पार्टी",
         "partyId": "2604",
-        "votes": 4189,
+        "votes": 4403,
         "gender": "M",
         "isWinner": false,
         "fatherName": "रुद्र बहादुर प्रधान",
@@ -50790,7 +50790,7 @@
         "name": "Lekhanatha Kharel",
         "partyName": "नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
         "partyId": "2598",
-        "votes": 4121,
+        "votes": 4210,
         "gender": "M",
         "isWinner": false,
         "fatherName": "कुस्माखर  खरेल",
@@ -50806,7 +50806,7 @@
         "name": "Govin‍da Prasada Chaudhari",
         "partyName": "राष्ट्रिय मुक्ति पार्टी नेपाल(एकल चुनाव चिन्ह)",
         "partyId": "2531",
-        "votes": 1864,
+        "votes": 1892,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दुलारे  थारु",
@@ -50822,7 +50822,7 @@
         "name": "Devendra Paudel",
         "partyName": "नेपाली कम्युनिष्ट पार्टी",
         "partyId": "2557",
-        "votes": 1789,
+        "votes": 1810,
         "gender": "M",
         "isWinner": false,
         "fatherName": "पदम पानी उपाध्याय",
@@ -50838,7 +50838,7 @@
         "name": "Jivana Mallah",
         "partyName": "जनमत पार्टी",
         "partyId": "2585",
-        "votes": 990,
+        "votes": 1024,
         "gender": "M",
         "isWinner": false,
         "fatherName": "पिमला  मल्लाह",
@@ -50854,7 +50854,7 @@
         "name": "Rama Bahadura Kevat",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 679,
+        "votes": 706,
         "gender": "M",
         "isWinner": false,
         "fatherName": "चेतमन  केवट",
@@ -50870,7 +50870,7 @@
         "name": "Sanjaya Kumara Harijan",
         "partyName": "संयुक्त नागरिक पार्टी",
         "partyId": "2521",
-        "votes": 397,
+        "votes": 398,
         "gender": "M",
         "isWinner": false,
         "fatherName": "प्रभु प्रसाद हरिजन",
@@ -50902,7 +50902,7 @@
         "name": "Parvata Paudyal",
         "partyName": "राष्ट्रिय जनमोर्चा",
         "partyId": "2522",
-        "votes": 190,
+        "votes": 191,
         "gender": "F",
         "isWinner": false,
         "fatherName": "तुल्सीराम  पौड्याल",
@@ -50918,7 +50918,7 @@
         "name": "Chandrabhushana Pathak",
         "partyName": "प्रगतिशील लोकतान्त्रिक पार्टी",
         "partyId": "2516",
-        "votes": 129,
+        "votes": 134,
         "gender": "M",
         "isWinner": false,
         "fatherName": "गजेन्द्र प्रसाद पाठक",
@@ -50934,7 +50934,7 @@
         "name": "Prema Prasada Dhakal",
         "partyName": "नेपाल कम्युनिस्ट पार्टी (माओवादी)",
         "partyId": "2526",
-        "votes": 109,
+        "votes": 112,
         "gender": "M",
         "isWinner": false,
         "fatherName": "दाता राम ढकाल",
@@ -50950,7 +50950,7 @@
         "name": "Dhruva Prasada Kahar",
         "partyName": "आम जनता पार्टी(एकल चुनाव चिन्ह)",
         "partyId": "2581",
-        "votes": 85,
+        "votes": 88,
         "gender": "M",
         "isWinner": false,
         "fatherName": "नन्‍दलाल  कहार",
@@ -50966,7 +50966,7 @@
         "name": "Yu Bahadura Rana",
         "partyName": "राष्ट्रिय जनमुक्ति पार्टी",
         "partyId": "2605",
-        "votes": 45,
+        "votes": 46,
         "gender": "M",
         "isWinner": false,
         "fatherName": "जस बहादुर राना",
@@ -50998,7 +50998,7 @@
         "name": "Ashoka Teli",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 22,
+        "votes": 23,
         "gender": "M",
         "isWinner": false,
         "fatherName": "चिनक  तेली",
@@ -51013,7 +51013,7 @@
         "name": "Ranjana Suwal",
         "partyName": "नेपाल मजदुर किसान पार्टी",
         "partyId": "2578",
-        "votes": 19,
+        "votes": 20,
         "gender": "F",
         "isWinner": false,
         "fatherName": "रत्‍न भक्त सुवाल",
@@ -51173,7 +51173,7 @@
         "name": "Haddisa Ali Miya",
         "partyName": "स्वतन्त्र",
         "partyId": "IND",
-        "votes": 2,
+        "votes": 3,
         "gender": "M",
         "isWinner": false,
         "fatherName": "सैयद अली मिया",
@@ -51184,7 +51184,7 @@
         "address": "नवलपरासी (बर्दघाट सुस्ता पश्चिम) रामग्राम नगरपालिका "
       }
     ],
-    "votesCast": 77760,
+    "votesCast": 80183,
     "totalVoters": 131049
   },
   {
@@ -51195,7 +51195,7 @@
     "name": "Rukum West-1",
     "nameNp": "रुकुम (पश्चिम भाग) क्षेत्र नं. 1",
     "status": "COUNTING",
-    "lastUpdated": "2026-03-07T18:46:14.872Z",
+    "lastUpdated": "2026-03-07T19:10:14.562Z",
     "candidates": [
       {
         "candidateId": 340125,
