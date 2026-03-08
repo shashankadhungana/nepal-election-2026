@@ -509,13 +509,13 @@
     "district":"Gorkha",
     "candidate":"Kabindra Burlakoti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":26054,
+    "votes":26660,
     "runner_up":"Prakash Chandra Dawadi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":11562,
-    "margin":14492,
-    "status":"Leading",
-    "count_pct":48.9
+    "runner_up_votes":11700,
+    "margin":14960,
+    "status":"Won",
+    "count_pct":49.9
   },
   {
     "constituency":"Kaski-1",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":6643,
+    "votes":7088,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":5991,
-    "margin":652,
+    "runner_up_votes":6600,
+    "margin":488,
     "status":"Leading",
-    "count_pct":17.7
+    "count_pct":19.5
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":37248,
+    "votes":38838,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":13660,
-    "margin":23588,
+    "runner_up_votes":14167,
+    "margin":24671,
     "status":"Leading",
-    "count_pct":49.1
+    "count_pct":50.9
   },
   {
     "constituency":"Taplejung-1",
