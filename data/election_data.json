@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24607,
+    "votes":24808,
     "runner_up":"Madhav Prasad Dhungel",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":17555,
-    "margin":7052,
-    "status":"Leading",
-    "count_pct":43.1
+    "runner_up_votes":17609,
+    "margin":7199,
+    "status":"Won",
+    "count_pct":43.6
   },
   {
     "constituency":"Rasuwa-1",
@@ -915,13 +915,13 @@
     "district":"Ilam",
     "candidate":"Kaji Mana Kagate",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":7481,
+    "votes":7997,
     "runner_up":"Vinoda Nembangga Limbu",
     "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":6759,
-    "margin":722,
+    "runner_up_votes":7755,
+    "margin":242,
     "status":"Leading",
-    "count_pct":25.6
+    "count_pct":28.2
   },
   {
     "constituency":"Ilam-2",
