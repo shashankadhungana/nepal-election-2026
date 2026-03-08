@@ -913,15 +913,15 @@
     "constituency":"Ilam-1",
     "province":"Koshi",
     "district":"Ilam",
-    "candidate":"Kaji Mana Kagate",
-    "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":8898,
-    "runner_up":"Vinoda Nembangga Limbu",
-    "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":8737,
-    "margin":161,
+    "candidate":"Nishkala Raee",
+    "party":"नेपाली काँग्रेस",
+    "votes":9074,
+    "runner_up":"Kaji Mana Kagate",
+    "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
+    "runner_up_votes":9013,
+    "margin":61,
     "status":"Leading",
-    "count_pct":32.4
+    "count_pct":33.4
   },
   {
     "constituency":"Ilam-2",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":7265,
+    "votes":7461,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":6824,
-    "margin":441,
+    "runner_up_votes":6975,
+    "margin":486,
     "status":"Leading",
-    "count_pct":20.7
+    "count_pct":21.9
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":40685,
+    "votes":42771,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":16015,
-    "margin":24670,
-    "status":"Leading",
-    "count_pct":54.7
+    "runner_up_votes":16587,
+    "margin":26184,
+    "status":"Won",
+    "count_pct":57.1
   },
   {
     "constituency":"Taplejung-1",
