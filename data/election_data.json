@@ -509,13 +509,13 @@
     "district":"Gorkha",
     "candidate":"Kabindra Burlakoti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24892,
+    "votes":26054,
     "runner_up":"Prakash Chandra Dawadi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":11297,
-    "margin":13595,
+    "runner_up_votes":11562,
+    "margin":14492,
     "status":"Leading",
-    "count_pct":47.2
+    "count_pct":48.9
   },
   {
     "constituency":"Kaski-1",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":6149,
+    "votes":6643,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":5387,
-    "margin":762,
+    "runner_up_votes":5991,
+    "margin":652,
     "status":"Leading",
-    "count_pct":16.2
+    "count_pct":17.7
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":35398,
+    "votes":37248,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":13378,
-    "margin":22020,
+    "runner_up_votes":13660,
+    "margin":23588,
     "status":"Leading",
-    "count_pct":47.4
+    "count_pct":49.1
   },
   {
     "constituency":"Taplejung-1",
@@ -1349,13 +1349,13 @@
     "district":"Bardiya",
     "candidate":"Shridhara Pokhrel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":28000,
+    "votes":29678,
     "runner_up":"Kishor Singh Rathore",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":18714,
-    "margin":9286,
-    "status":"Leading",
-    "count_pct":53.5
+    "runner_up_votes":20402,
+    "margin":9276,
+    "status":"Won",
+    "count_pct":56.8
   },
   {
     "constituency":"Dang-1",
@@ -2105,13 +2105,13 @@
     "district":"Achham",
     "candidate":"Yagya Bahadur Bogati",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":8899,
+    "votes":9179,
     "runner_up":"Pushpa Bahadur Shah",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":8397,
-    "margin":502,
+    "runner_up_votes":8571,
+    "margin":608,
     "status":"Leading",
-    "count_pct":33.6
+    "count_pct":34.7
   },
   {
     "constituency":"Baitadi-1",
