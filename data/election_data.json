@@ -206,7 +206,7 @@
     "runner_up_party":"नेपाली काँग्रेस",
     "runner_up_votes":6751,
     "margin":21165,
-    "status":"Leading",
+    "status":"Won",
     "count_pct":64.1
   },
   {
@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24101,
+    "votes":24607,
     "runner_up":"Madhav Prasad Dhungel",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":17187,
-    "margin":6914,
+    "runner_up_votes":17555,
+    "margin":7052,
     "status":"Leading",
-    "count_pct":42.5
+    "count_pct":43.1
   },
   {
     "constituency":"Rasuwa-1",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":5483,
+    "votes":5615,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":4759,
-    "margin":724,
+    "runner_up_votes":5023,
+    "margin":592,
     "status":"Leading",
-    "count_pct":14.2
+    "count_pct":14.8
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":30689,
+    "votes":32596,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":11447,
-    "margin":19242,
+    "runner_up_votes":12572,
+    "margin":20024,
     "status":"Leading",
-    "count_pct":41.1
+    "count_pct":43.9
   },
   {
     "constituency":"Taplejung-1",
