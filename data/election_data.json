@@ -355,13 +355,13 @@
     "district":"Nuwakot",
     "candidate":"Bikram Timilsina",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":21585,
+    "votes":22609,
     "runner_up":"Prakash Sharan Mahat",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":17836,
-    "margin":3749,
+    "runner_up_votes":18597,
+    "margin":4012,
     "status":"Leading",
-    "count_pct":52.3
+    "count_pct":54.3
   },
   {
     "constituency":"Nuwakot-2",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":40177,
+    "votes":40685,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":15279,
-    "margin":24898,
+    "runner_up_votes":16015,
+    "margin":24670,
     "status":"Leading",
-    "count_pct":53.4
+    "count_pct":54.7
   },
   {
     "constituency":"Taplejung-1",
