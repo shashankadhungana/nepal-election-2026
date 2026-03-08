@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":23750,
+    "votes":24101,
     "runner_up":"Madhav Prasad Dhungel",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":17060,
-    "margin":6690,
+    "runner_up_votes":17187,
+    "margin":6914,
     "status":"Leading",
-    "count_pct":41.9
+    "count_pct":42.5
   },
   {
     "constituency":"Rasuwa-1",
@@ -1181,13 +1181,13 @@
     "district":"Sunsari",
     "candidate":"Lal Bikram Thapa",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":54749,
+    "votes":56165,
     "runner_up":"Rajib Koirala",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":15367,
-    "margin":39382,
+    "runner_up_votes":15746,
+    "margin":40419,
     "status":"Leading",
-    "count_pct":56.9
+    "count_pct":58.6
   },
   {
     "constituency":"Sunsari-3",
@@ -1349,13 +1349,13 @@
     "district":"Bardiya",
     "candidate":"Shridhara Pokhrel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":25786,
-    "runner_up":"Suresh Pantha",
-    "runner_up_party":"नेपाली कम्युनिष्ट पार्टी",
-    "runner_up_votes":15955,
-    "margin":9831,
+    "votes":27192,
+    "runner_up":"Kishor Singh Rathore",
+    "runner_up_party":"नेपाली काँग्रेस",
+    "runner_up_votes":17679,
+    "margin":9513,
     "status":"Leading",
-    "count_pct":46.9
+    "count_pct":50.8
   },
   {
     "constituency":"Dang-1",
@@ -2105,13 +2105,13 @@
     "district":"Achham",
     "candidate":"Yagya Bahadur Bogati",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":8346,
+    "votes":8473,
     "runner_up":"Pushpa Bahadur Shah",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":8060,
-    "margin":286,
+    "runner_up_votes":8105,
+    "margin":368,
     "status":"Leading",
-    "count_pct":30.5
+    "count_pct":32.0
   },
   {
     "constituency":"Baitadi-1",
