@@ -495,13 +495,13 @@
     "district":"Gorkha",
     "candidate":"Sudhan Gurung",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":9662,
+    "votes":12171,
     "runner_up":"Prem Kumar Khatri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":8245,
-    "margin":1417,
+    "runner_up_votes":9153,
+    "margin":3018,
     "status":"Leading",
-    "count_pct":20.0
+    "count_pct":23.9
   },
   {
     "constituency":"Gorkha-2",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":7088,
+    "votes":7183,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":6600,
-    "margin":488,
+    "runner_up_votes":6735,
+    "margin":448,
     "status":"Leading",
-    "count_pct":19.5
+    "count_pct":20.0
   },
   {
     "constituency":"Solukhumbu-1",
@@ -2105,13 +2105,13 @@
     "district":"Achham",
     "candidate":"Yagya Bahadur Bogati",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":9332,
+    "votes":9431,
     "runner_up":"Pushpa Bahadur Shah",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":8836,
-    "margin":496,
+    "runner_up_votes":8972,
+    "margin":459,
     "status":"Leading",
-    "count_pct":35.7
+    "count_pct":36.4
   },
   {
     "constituency":"Baitadi-1",
