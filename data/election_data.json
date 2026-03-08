@@ -915,13 +915,13 @@
     "district":"Ilam",
     "candidate":"Nishkala Raee",
     "party":"नेपाली काँग्रेस",
-    "votes":9074,
+    "votes":9544,
     "runner_up":"Kaji Mana Kagate",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":9013,
-    "margin":61,
+    "runner_up_votes":9092,
+    "margin":452,
     "status":"Leading",
-    "count_pct":33.4
+    "count_pct":34.5
   },
   {
     "constituency":"Ilam-2",
