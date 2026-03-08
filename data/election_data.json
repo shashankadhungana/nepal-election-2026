@@ -355,13 +355,13 @@
     "district":"Nuwakot",
     "candidate":"Bikram Timilsina",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":18144,
+    "votes":20020,
     "runner_up":"Prakash Sharan Mahat",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":15111,
-    "margin":3033,
+    "runner_up_votes":16145,
+    "margin":3875,
     "status":"Leading",
-    "count_pct":44.4
+    "count_pct":47.9
   },
   {
     "constituency":"Nuwakot-2",
@@ -509,13 +509,13 @@
     "district":"Gorkha",
     "candidate":"Kabindra Burlakoti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":22703,
+    "votes":24101,
     "runner_up":"Prakash Chandra Dawadi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":10870,
-    "margin":11833,
+    "runner_up_votes":11128,
+    "margin":12973,
     "status":"Leading",
-    "count_pct":43.8
+    "count_pct":45.9
   },
   {
     "constituency":"Kaski-1",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":5615,
+    "votes":6149,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":5023,
-    "margin":592,
+    "runner_up_votes":5387,
+    "margin":762,
     "status":"Leading",
-    "count_pct":14.8
+    "count_pct":16.2
   },
   {
     "constituency":"Solukhumbu-1",
@@ -1186,7 +1186,7 @@
     "runner_up_party":"नेपाली काँग्रेस",
     "runner_up_votes":16071,
     "margin":41277,
-    "status":"Leading",
+    "status":"Won",
     "count_pct":60.1
   },
   {
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":32596,
+    "votes":34414,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":12572,
-    "margin":20024,
+    "runner_up_votes":12831,
+    "margin":21583,
     "status":"Leading",
-    "count_pct":43.9
+    "count_pct":45.6
   },
   {
     "constituency":"Taplejung-1",
@@ -2105,13 +2105,13 @@
     "district":"Achham",
     "candidate":"Yagya Bahadur Bogati",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":8473,
+    "votes":8899,
     "runner_up":"Pushpa Bahadur Shah",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":8105,
-    "margin":368,
+    "runner_up_votes":8397,
+    "margin":502,
     "status":"Leading",
-    "count_pct":32.0
+    "count_pct":33.6
   },
   {
     "constituency":"Baitadi-1",
