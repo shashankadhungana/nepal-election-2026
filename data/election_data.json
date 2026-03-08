@@ -495,13 +495,13 @@
     "district":"Gorkha",
     "candidate":"Sudhan Gurung",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":12171,
+    "votes":14546,
     "runner_up":"Prem Kumar Khatri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":9153,
-    "margin":3018,
+    "runner_up_votes":9586,
+    "margin":4960,
     "status":"Leading",
-    "count_pct":23.9
+    "count_pct":27.2
   },
   {
     "constituency":"Gorkha-2",
@@ -915,13 +915,13 @@
     "district":"Ilam",
     "candidate":"Nishkala Raee",
     "party":"नेपाली काँग्रेस",
-    "votes":9544,
-    "runner_up":"Kaji Mana Kagate",
-    "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":9092,
-    "margin":452,
+    "votes":9827,
+    "runner_up":"Vinoda Nembangga Limbu",
+    "runner_up_party":"श्रम संस्कृति पार्टी",
+    "runner_up_votes":9328,
+    "margin":499,
     "status":"Leading",
-    "count_pct":34.5
+    "count_pct":35.6
   },
   {
     "constituency":"Ilam-2",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":7642,
+    "votes":8042,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":7070,
-    "margin":572,
+    "runner_up_votes":7456,
+    "margin":586,
     "status":"Leading",
-    "count_pct":22.6
+    "count_pct":23.9
   },
   {
     "constituency":"Solukhumbu-1",
