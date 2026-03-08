@@ -495,13 +495,13 @@
     "district":"Gorkha",
     "candidate":"Sudhan Gurung",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":7068,
+    "votes":9662,
     "runner_up":"Prem Kumar Khatri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":6296,
-    "margin":772,
+    "runner_up_votes":8245,
+    "margin":1417,
     "status":"Leading",
-    "count_pct":15.0
+    "count_pct":20.0
   },
   {
     "constituency":"Gorkha-2",
@@ -509,13 +509,13 @@
     "district":"Gorkha",
     "candidate":"Kabindra Burlakoti",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":24101,
+    "votes":24892,
     "runner_up":"Prakash Chandra Dawadi",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":11128,
-    "margin":12973,
+    "runner_up_votes":11297,
+    "margin":13595,
     "status":"Leading",
-    "count_pct":45.9
+    "count_pct":47.2
   },
   {
     "constituency":"Kaski-1",
@@ -1209,13 +1209,13 @@
     "district":"Sunsari",
     "candidate":"Dipaka Kumara Sah",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":34414,
+    "votes":35398,
     "runner_up":"Gyanendra Bahadur Karki",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":12831,
-    "margin":21583,
+    "runner_up_votes":13378,
+    "margin":22020,
     "status":"Leading",
-    "count_pct":45.6
+    "count_pct":47.4
   },
   {
     "constituency":"Taplejung-1",
@@ -1349,13 +1349,13 @@
     "district":"Bardiya",
     "candidate":"Shridhara Pokhrel",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":27192,
+    "votes":28000,
     "runner_up":"Kishor Singh Rathore",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":17679,
-    "margin":9513,
+    "runner_up_votes":18714,
+    "margin":9286,
     "status":"Leading",
-    "count_pct":50.8
+    "count_pct":53.5
   },
   {
     "constituency":"Dang-1",
