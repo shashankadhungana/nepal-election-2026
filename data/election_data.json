@@ -495,13 +495,13 @@
     "district":"Gorkha",
     "candidate":"Sudhan Gurung",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":16551,
+    "votes":19297,
     "runner_up":"Prem Kumar Khatri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":10117,
-    "margin":6434,
+    "runner_up_votes":11167,
+    "margin":8130,
     "status":"Leading",
-    "count_pct":30.3
+    "count_pct":34.1
   },
   {
     "constituency":"Gorkha-2",
