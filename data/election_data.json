@@ -495,13 +495,13 @@
     "district":"Gorkha",
     "candidate":"Sudhan Gurung",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":14546,
+    "votes":16551,
     "runner_up":"Prem Kumar Khatri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":9586,
-    "margin":4960,
+    "runner_up_votes":10117,
+    "margin":6434,
     "status":"Leading",
-    "count_pct":27.2
+    "count_pct":30.3
   },
   {
     "constituency":"Gorkha-2",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":8284,
+    "votes":8754,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":7708,
-    "margin":576,
+    "runner_up_votes":7965,
+    "margin":789,
     "status":"Leading",
-    "count_pct":25.1
+    "count_pct":26.2
   },
   {
     "constituency":"Solukhumbu-1",
