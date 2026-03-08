@@ -355,13 +355,13 @@
     "district":"Nuwakot",
     "candidate":"Bikram Timilsina",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":16923,
+    "votes":17322,
     "runner_up":"Prakash Sharan Mahat",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":14178,
-    "margin":2745,
+    "runner_up_votes":14439,
+    "margin":2883,
     "status":"Leading",
-    "count_pct":41.3
+    "count_pct":42.1
   },
   {
     "constituency":"Nuwakot-2",
@@ -383,13 +383,13 @@
     "district":"Ramechhap",
     "candidate":"Krishna Hari Budhathoki",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":21059,
+    "votes":21998,
     "runner_up":"Madhav Prasad Dhungel",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":15293,
-    "margin":5766,
+    "runner_up_votes":16221,
+    "margin":5777,
     "status":"Leading",
-    "count_pct":37.9
+    "count_pct":39.6
   },
   {
     "constituency":"Rasuwa-1",
@@ -817,13 +817,13 @@
     "district":"Mugu",
     "candidate":"Khadga Shahi",
     "party":"नेपाली काँग्रेस",
-    "votes":7371,
+    "votes":7822,
     "runner_up":"Purna Bahadur Rokaya",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":6302,
-    "margin":1069,
+    "runner_up_votes":6657,
+    "margin":1165,
     "status":"Leading",
-    "count_pct":54.0
+    "count_pct":57.9
   },
   {
     "constituency":"Rukum West-1",
@@ -1797,13 +1797,13 @@
     "district":"Mahottari",
     "candidate":"Gauri Kumari",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":27965,
+    "votes":28348,
     "runner_up":"Surendra Kumar Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":7707,
-    "margin":20258,
+    "runner_up_votes":7870,
+    "margin":20478,
     "status":"Leading",
-    "count_pct":50.6
+    "count_pct":51.2
   },
   {
     "constituency":"Parsa-1",
@@ -1937,13 +1937,13 @@
     "district":"Saptari",
     "candidate":"Ramji Yadav",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":27049,
+    "votes":28404,
     "runner_up":"Umesh Kumar Yadav",
     "runner_up_party":"जनता समाजवादी पार्टी, नेपाल",
-    "runner_up_votes":13658,
-    "margin":13391,
+    "runner_up_votes":14263,
+    "margin":14141,
     "status":"Leading",
-    "count_pct":56.8
+    "count_pct":59.3
   },
   {
     "constituency":"Saptari-3",
