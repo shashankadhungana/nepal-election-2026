@@ -550,15 +550,15 @@ def hero(df):
                         <div class="stat-value">{party_symbol(largest_party)} {largest_party}</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label">Current leads</div>
+                        <div class="stat-label">Current leads (FPTP)</div>
                         <div class="stat-value">{largest_leads}</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label">Declared wins</div>
+                        <div class="stat-label">Declared wins (FPTP)</div>
                         <div class="stat-value">{declared}</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-label">Gap to 138</div>
+                        <div class="stat-label">Gap to 138 (largest bloc)</div>
                         <div class="stat-value">{gap}</div>
                     </div>
                 </div>
@@ -569,81 +569,168 @@ def hero(df):
     )
 
 
+def fptp_pr_summary(df):
+    st.markdown('<div class="soft-card">', unsafe_allow_html=True)
+    st.markdown('<div class="section-title">FPTP vs PR Overview</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="section-subtitle">Shows current FPTP leads and wins alongside a PR projection from visible vote share. PR here is modeled, not the official allocation.</div>',
+        unsafe_allow_html=True,
+    )
+
+    total_visible_votes = df["votes"].sum()
+
+    party_summary = (
+        df.groupby("party", as_index=False)
+        .agg(
+            fptp_leads=("party", "size"),
+            fptp_wins=("status", lambda s: int((s == "Won").sum())),
+            visible_votes=("votes", "sum"),
+        )
+        .sort_values(["visible_votes"], ascending=False)
+    )
+
+    if total_visible_votes > 0:
+        party_summary["vote_share"] = party_summary["visible_votes"] / total_visible_votes
+        party_summary["projected_pr"] = (party_summary["vote_share"] * PR_SEATS).round().astype(int)
+    else:
+        party_summary["vote_share"] = 0.0
+        party_summary["projected_pr"] = 0
+
+    party_summary["projected_total"] = party_summary["fptp_wins"] + party_summary["projected_pr"]
+
+    total_fptp_leads = int(df.shape[0])
+    total_fptp_wins = int((df["status"] == "Won").sum())
+    total_pr_proj = int(party_summary["projected_pr"].sum())
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("FPTP seats (leads)", f"{total_fptp_leads} / {FPTP_SEATS}")
+    c2.metric("FPTP seats (wins)", f"{total_fptp_wins} / {FPTP_SEATS}")
+    c3.metric("Projected PR seats", f"{total_pr_proj} / {PR_SEATS}")
+    c4.metric("Projected house size", f"{total_fptp_wins + total_pr_proj} / {TOTAL_HOUSE_SEATS}")
+
+    top_parties = party_summary.head(7).copy()
+
+    fig = px.bar(
+        top_parties,
+        x="party",
+        y=["fptp_wins", "projected_pr"],
+        barmode="stack",
+        text_auto=True,
+        labels={"party": "Party", "value": "Seats", "variable": "Type"},
+        color_discrete_sequence=["#22C55E", "#F59E0B"],
+    )
+    fig.for_each_trace(
+        lambda t: t.update(
+            name={"fptp_wins": "FPTP wins", "projected_pr": "Projected PR"}.get(t.name, t.name)
+        )
+    )
+    fig.update_layout(
+        height=320,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(255,255,255,0.25)",
+        font=dict(color="#0f172a"),
+        margin=dict(l=10, r=10, t=20, b=10),
+        legend=dict(orientation="h", y=1.02, x=1, xanchor="right"),
+        transition={"duration": 450},
+    )
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(gridcolor="rgba(15,23,42,0.08)")
+    st.plotly_chart(fig, width="stretch")
+
+    st.caption("PR seats here are distributed by simple proportional vote share from the workflow mirror; the Election Commission's final PR allocation may differ.")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
 def majority_tracker(df):
     party_summary = (
         df.groupby("party", as_index=False)
         .agg(
-            current_leads=("party", "size"),
-            declared_wins=("status", lambda s: int((s == "Won").sum())),
+            fptp_leads=("party", "size"),
+            fptp_wins=("status", lambda s: int((s == "Won").sum())),
             visible_votes=("votes", "sum"),
         )
-        .sort_values(["declared_wins", "current_leads", "visible_votes"], ascending=False)
+        .sort_values(["fptp_wins", "fptp_leads", "visible_votes"], ascending=False)
     )
+
+    total_visible_votes = df["votes"].sum()
+    if total_visible_votes > 0:
+        party_summary["vote_share"] = party_summary["visible_votes"] / total_visible_votes
+        party_summary["projected_pr"] = (party_summary["vote_share"] * PR_SEATS).round().astype(int)
+    else:
+        party_summary["vote_share"] = 0.0
+        party_summary["projected_pr"] = 0
+
+    party_summary["projected_total"] = party_summary["fptp_wins"] + party_summary["projected_pr"]
 
     if party_summary.empty:
         top_party = "N/A"
         top_leads = 0
         top_wins = 0
+        top_total = 0
     else:
-        top_party = party_summary.iloc[0]["party"]
-        top_leads = int(party_summary.iloc[0]["current_leads"])
-        top_wins = int(party_summary.iloc[0]["declared_wins"])
+        top = party_summary.iloc[0]
+        top_party = top["party"]
+        top_leads = int(top["fptp_leads"])
+        top_wins = int(top["fptp_wins"])
+        top_total = int(top["projected_total"])
 
-    lead_pct = min((top_leads / MAJORITY_NEEDED) * 100, 100)
-    win_pct = min((top_wins / MAJORITY_NEEDED) * 100, 100)
+    fptp_majority_pct = min((top_wins / MAJORITY_NEEDED) * 100, 100) if MAJORITY_NEEDED > 0 else 0
+    blended_majority_pct = min((top_total / MAJORITY_NEEDED) * 100, 100) if MAJORITY_NEEDED > 0 else 0
 
     st.markdown('<div class="soft-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Majority Tracker</div>', unsafe_allow_html=True)
     st.markdown(
-        '<div class="section-subtitle">Tracks the largest visible bloc against the 138-seat majority threshold.</div>',
+        '<div class="section-subtitle">Shows the strongest bloc by FPTP results alone and with an added proportional PR projection.</div>',
         unsafe_allow_html=True,
     )
 
     st.markdown(
         f"""
         <div class="majority-bar-label">
-            <span>Largest visible bloc · {party_symbol(top_party)} {top_party}</span>
-            <span>{top_leads} / {MAJORITY_NEEDED}</span>
+            <span>FPTP wins · {party_symbol(top_party)} {top_party}</span>
+            <span>{top_wins} / {MAJORITY_NEEDED} (FPTP)</span>
         </div>
         """,
         unsafe_allow_html=True,
     )
     st.markdown(
-        f'<div class="majority-track"><div class="majority-fill" style="width:{lead_pct}%;"></div></div>',
+        f'<div class="majority-track"><div class="majority-fill-win" style="width:{fptp_majority_pct}%;"></div></div>',
         unsafe_allow_html=True,
     )
 
     st.markdown(
         f"""
         <div class="majority-bar-label">
-            <span>Declared wins for that bloc</span>
-            <span>{top_wins} / {MAJORITY_NEEDED}</span>
+            <span>FPTP wins + projected PR</span>
+            <span>{top_total} / {MAJORITY_NEEDED} (House)</span>
         </div>
         """,
         unsafe_allow_html=True,
     )
     st.markdown(
-        f'<div class="majority-track"><div class="majority-fill-win" style="width:{win_pct}%;"></div></div>',
+        f'<div class="majority-track"><div class="majority-fill" style="width:{blended_majority_pct}%;"></div></div>',
         unsafe_allow_html=True,
     )
 
     c1, c2, c3 = st.columns(3)
-    c1.metric("Largest bloc leads", top_leads)
-    c2.metric("Largest bloc wins", top_wins)
-    c3.metric("Short of majority", max(MAJORITY_NEEDED - top_leads, 0))
+    c1.metric("Largest bloc FPTP wins", top_wins)
+    c2.metric("Largest bloc projected PR", max(top_total - top_wins, 0))
+    c3.metric("Short of majority (blended)", max(MAJORITY_NEEDED - top_total, 0))
+
+    top_chart = party_summary.head(10).copy()
 
     fig = px.bar(
-        party_summary.head(10),
+        top_chart,
         x="party",
-        y=["current_leads", "declared_wins"],
-        barmode="group",
+        y=["fptp_wins", "projected_pr"],
+        barmode="stack",
         text_auto=True,
-        color_discrete_sequence=["#4F46E5", "#22C55E"],
-        labels={"party": "Party", "value": "Seats", "variable": "Metric"},
+        color_discrete_sequence=["#22C55E", "#F59E0B"],
+        labels={"party": "Party", "value": "Seats", "variable": "Type"},
     )
     fig.for_each_trace(
         lambda t: t.update(
-            name={"current_leads": "Current leads", "declared_wins": "Declared wins"}.get(t.name, t.name)
+            name={"fptp_wins": "FPTP wins", "projected_pr": "Projected PR"}.get(t.name, t.name)
         )
     )
     fig.update_layout(
@@ -658,6 +745,7 @@ def majority_tracker(df):
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(gridcolor="rgba(15,23,42,0.08)")
     st.plotly_chart(fig, width="stretch")
+    st.caption("Blended bar combines FPTP wins and a simple PR projection from visible vote share.")
     st.markdown("</div>", unsafe_allow_html=True)
 
     return party_summary
@@ -688,10 +776,10 @@ def coalition_builder(df, party_summary):
     selected_votes = coalition_df["votes"].sum()
 
     fptp_leads = int(len(coalition_df))
-    declared_wins = int((coalition_df["status"] == "Won").sum())
+    fptp_wins = int((coalition_df["status"] == "Won").sum())
     visible_vote_share = round((selected_votes / total_visible_votes) * 100, 1) if total_visible_votes > 0 else 0.0
     projected_pr = int(round((selected_votes / total_visible_votes) * PR_SEATS)) if total_visible_votes > 0 else 0
-    projected_total = fptp_leads + projected_pr
+    projected_total = fptp_wins + projected_pr
     gap = max(MAJORITY_NEEDED - projected_total, 0)
 
     status_class = "status-good" if projected_total >= MAJORITY_NEEDED else "status-warn"
@@ -704,7 +792,7 @@ def coalition_builder(df, party_summary):
     st.markdown('<div class="soft-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-title">Coalition Builder</div>', unsafe_allow_html=True)
     st.markdown(
-        '<div class="section-subtitle">Combines current FPTP leads with a PR projection based on visible vote share. PR is modeled here as a projection only.</div>',
+        '<div class="section-subtitle">Combines FPTP wins with a PR projection from visible vote share for the selected parties. PR here is modeled only.</div>',
         unsafe_allow_html=True,
     )
 
@@ -717,17 +805,15 @@ def coalition_builder(df, party_summary):
     st.markdown(f'<span class="coalition-pill {status_class}">{status_text}</span>', unsafe_allow_html=True)
 
     m1, m2, m3, m4 = st.columns(4)
-    m1.metric("FPTP leads", fptp_leads)
-    m2.metric("Declared wins", declared_wins)
-    m3.metric("Projected PR", projected_pr)
-    m4.metric("Projected total", projected_total)
+    m1.metric("FPTP leads (165)", fptp_leads)
+    m2.metric("FPTP wins (165)", fptp_wins)
+    m3.metric("Projected PR (110)", projected_pr)
+    m4.metric("Projected total (275)", projected_total)
 
     chart_df = pd.DataFrame(
         [
-            {"Metric": "FPTP leads", "Seats": fptp_leads},
-            {"Metric": "Declared wins", "Seats": declared_wins},
+            {"Metric": "FPTP wins", "Seats": fptp_wins},
             {"Metric": "Projected PR", "Seats": projected_pr},
-            {"Metric": "Projected total", "Seats": projected_total},
             {"Metric": "Majority line", "Seats": MAJORITY_NEEDED},
         ]
     )
@@ -738,7 +824,7 @@ def coalition_builder(df, party_summary):
         y="Seats",
         text_auto=True,
         color="Metric",
-        color_discrete_sequence=["#5AC8FA", "#22C55E", "#F59E0B", "#4F46E5", "#EF4444"],
+        color_discrete_sequence=["#22C55E", "#F59E0B", "#EF4444"],
     )
     fig.update_layout(
         height=340,
@@ -752,8 +838,11 @@ def coalition_builder(df, party_summary):
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(gridcolor="rgba(15,23,42,0.08)")
     st.plotly_chart(fig, width="stretch")
-    st.caption(f"Visible vote share used for PR projection: {visible_vote_share}%")
+    st.caption(f"Visible vote share for selected parties: {visible_vote_share}% · PR projection uses simple proportional allocation over {PR_SEATS} seats.")
     st.markdown("</div>", unsafe_allow_html=True)
+
+
+# hot_seats, featured_candidates, results_table, empty_state stay the same as before
 
 
 def hot_seats(df):
@@ -914,6 +1003,7 @@ def main():
         return
 
     hero(df)
+    fptp_pr_summary(df)
 
     col1, col2 = st.columns([1.25, 1])
     with col1:
