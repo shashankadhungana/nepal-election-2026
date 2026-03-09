@@ -206,7 +206,7 @@
     "runner_up_party":"नेपाली काँग्रेस",
     "runner_up_votes":6751,
     "margin":21165,
-    "status":"Won",
+    "status":"Leading",
     "count_pct":64.1
   },
   {
@@ -1142,10 +1142,10 @@
     "votes":11769,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":10703,
-    "margin":1066,
+    "runner_up_votes":10766,
+    "margin":1003,
     "status":"Leading",
-    "count_pct":35.2
+    "count_pct":35.8
   },
   {
     "constituency":"Solukhumbu-1",
