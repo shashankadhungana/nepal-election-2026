@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":14615,
+    "votes":15252,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":13574,
-    "margin":1041,
+    "runner_up_votes":14265,
+    "margin":987,
     "status":"Leading",
-    "count_pct":45.2
+    "count_pct":47.3
   },
   {
     "constituency":"Solukhumbu-1",
