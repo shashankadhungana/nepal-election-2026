@@ -206,7 +206,7 @@
     "runner_up_party":"नेपाली काँग्रेस",
     "runner_up_votes":6751,
     "margin":21165,
-    "status":"Leading",
+    "status":"Won",
     "count_pct":64.1
   },
   {
@@ -915,13 +915,13 @@
     "district":"Ilam",
     "candidate":"Nishkala Raee",
     "party":"नेपाली काँग्रेस",
-    "votes":12130,
+    "votes":12761,
     "runner_up":"Vinoda Nembangga Limbu",
     "runner_up_party":"श्रम संस्कृति पार्टी",
-    "runner_up_votes":11591,
-    "margin":539,
+    "runner_up_votes":12005,
+    "margin":756,
     "status":"Leading",
-    "count_pct":45.5
+    "count_pct":47.5
   },
   {
     "constituency":"Ilam-2",
@@ -1139,13 +1139,13 @@
     "district":"Sankhuwasabha",
     "candidate":"Arjun Kumar Karki",
     "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":11769,
+    "votes":12396,
     "runner_up":"Mingma Sherpa",
     "runner_up_party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "runner_up_votes":10766,
-    "margin":1003,
+    "runner_up_votes":11135,
+    "margin":1261,
     "status":"Leading",
-    "count_pct":35.8
+    "count_pct":37.9
   },
   {
     "constituency":"Solukhumbu-1",
