@@ -1697,15 +1697,15 @@
     "constituency":"Dhanusha-1",
     "province":"Madhesh",
     "district":"Dhanusha",
-    "candidate":"Ramachandra Mandal",
-    "party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "votes":318,
-    "runner_up":"Matrika Prasada Yadav",
-    "runner_up_party":"नेपाली कम्युनिष्ट पार्टी",
-    "runner_up_votes":244,
-    "margin":74,
+    "candidate":"Matrika Prasada Yadav",
+    "party":"नेपाली कम्युनिष्ट पार्टी",
+    "votes":10430,
+    "runner_up":"Rama Palatana Sah",
+    "runner_up_party":"नेपाली काँग्रेस",
+    "runner_up_votes":9502,
+    "margin":928,
     "status":"Leading",
-    "count_pct":0.7
+    "count_pct":32.8
   },
   {
     "constituency":"Dhanusha-2",
