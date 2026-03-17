@@ -1,3 +1,4 @@
+
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -8,7 +9,7 @@ from data import load_election_data, load_fetch_status
 
 
 st.set_page_config(
-    page_title="Nepal Election Intelligence Dashboard 2026",
+    page_title="Nepal Election Results 2082 - Final Dashboard",
     page_icon="🇳🇵",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -30,15 +31,15 @@ PARTY_NAME_NORMALIZATION = {
 }
 
 PARTY_COLOR_MAP = {
-    "Rastriya Swatantra Party": "#4F46E5",
-    "Nepali Congress": "#2563EB",
+    "Rastriya Swatantra Party": "#6366F1",
+    "Nepali Congress": "#3B82F6", 
     "CPN-UML": "#F59E0B",
     "Maoist Centre": "#EF4444",
     "Rastriya Prajatantra Party": "#8B5CF6",
     "Janata Samajbadi Party": "#22C55E",
     "Janamat Party": "#EAB308",
     "Nagarik Unmukti Party": "#F97316",
-    "Independent": "#64748B",
+    "Independent": "#6B7280",
 }
 
 PARTY_SYMBOLS = {
@@ -53,285 +54,252 @@ PARTY_SYMBOLS = {
     "Independent": "👤",
 }
 
-FAMOUS_CANDIDATES = [
-    "KP Sharma Oli",
-    "Balendra Shah",
-    "Balen Shah",
-    "Gagan Thapa",
-    "Bishnu Prasad Paudel",
-    "Prakashman Singh",
-    "Rabi Lamichhane",
-    "Sher Bahadur Deuba",
-    "Pushpa Kamal Dahal",
-    "Prachanda",
-    "Chandra Kanta Raut",
-    "CK Raut",
-    "Rajendra Lingden",
-    "Swarnim Wagle",
-    "Svarnima Wagle",
-]
 
-
-def inject_css():
-    st.markdown(
-        """
+def inject_premium_css():
+    st.markdown("""
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
         :root {
-            --bg1: #f8fafc;
-            --bg2: #eef2ff;
-            --text: #0f172a;
-            --muted: #64748b;
-            --line: rgba(15,23,42,0.07);
-            --card: rgba(255,255,255,0.72);
-            --card-strong: rgba(255,255,255,0.86);
-            --shadow: 0 16px 40px rgba(15,23,42,0.08);
-            --radius: 24px;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass-bg: rgba(255,255,255,0.25);
+            --glass-border: rgba(255,255,255,0.18);
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-xl: 0 35px 60px -12px rgba(0,0,0,0.3);
+            --radius-xl: 24px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .stApp {
-            background:
-                radial-gradient(circle at 0% 0%, rgba(79,70,229,0.10), transparent 22%),
-                radial-gradient(circle at 100% 0%, rgba(56,189,248,0.10), transparent 18%),
-                linear-gradient(180deg, var(--bg1) 0%, #f8fafc 50%, var(--bg2) 100%);
-            color: var(--text);
+            background: 
+                radial-gradient(ellipse at top left, rgba(79,70,229,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(239,68,68,0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
         }
 
-        [data-testid="stHeader"] {
-            background: rgba(255,255,255,0);
-        }
-
-        .block-container {
-            max-width: 1380px;
-            padding-top: 1rem;
-            padding-bottom: 2rem;
-        }
-
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 0.9rem;
-            animation: fadeUp .45s ease-out;
-        }
-
-        .brand {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #0f172a;
-            letter-spacing: -0.03em;
-        }
-
-        .subbrand {
-            color: #64748b;
-            font-size: 0.93rem;
-            margin-top: 0.16rem;
-        }
-
-        .live-pills {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .pill {
-            background: rgba(255,255,255,0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(15,23,42,0.07);
-            border-radius: 999px;
-            padding: 0.42rem 0.74rem;
-            font-size: 0.82rem;
-            color: #334155;
-            box-shadow: 0 8px 18px rgba(15,23,42,0.04);
-            font-weight: 600;
-        }
-
-        .hero {
-            background: rgba(255,255,255,0.68);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255,255,255,0.60);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            padding: 1.15rem 1.2rem;
-            margin-bottom: 1rem;
-            animation: fadeUp .55s ease-out;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.35fr 1fr;
-            gap: 14px;
-            align-items: center;
+        /* Header & Topbar */
+        [data-testid="stHeader"] { background: transparent !important; }
+        .top-hero {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            animation: slideDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .hero-title {
-            font-size: 2.05rem;
-            font-weight: 900;
-            color: #0f172a;
-            line-height: 1.04;
-            letter-spacing: -0.04em;
-            margin-bottom: 0.35rem;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
         }
 
         .hero-subtitle {
-            color: #475569;
-            font-size: 0.98rem;
-            line-height: 1.5;
-            max-width: 880px;
-        }
-
-        .metric-strip {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.72);
-            border: 1px solid rgba(15,23,42,0.07);
-            border-radius: 20px;
-            padding: 0.86rem 0.92rem;
-            box-shadow: 0 10px 28px rgba(15,23,42,0.05);
-            transition: transform .18s ease, box-shadow .18s ease;
-        }
-
-        .stat-card:hover, .soft-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 36px rgba(15,23,42,0.10);
-        }
-
-        .stat-label {
+            font-size: 1.15rem;
             color: #64748b;
-            font-size: 0.76rem;
+            font-weight: 400;
+            max-width: 90%;
+            line-height: 1.6;
         }
 
-        .stat-value {
-            color: #0f172a;
-            font-size: 1.2rem;
-            font-weight: 900;
-            margin-top: 0.12rem;
-        }
-
-        .soft-card {
-            background: rgba(255,255,255,0.72);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(15,23,42,0.07);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: transform .18s ease, box-shadow .18s ease;
-            animation: fadeUp .5s ease-out;
-        }
-
-        .section-title {
-            font-size: 1.02rem;
-            font-weight: 900;
-            color: #0f172a;
-            margin-bottom: 0.16rem;
-        }
-
-        .section-subtitle {
-            color: #64748b;
-            font-size: 0.86rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .majority-bar-label {
+        .status-pills {
             display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            color: #475569;
-            font-size: 0.84rem;
-            margin-bottom: 0.35rem;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
         }
 
-        .majority-track {
-            width: 100%;
-            height: 16px;
-            border-radius: 999px;
+        .pill-premium {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pill-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Cards */
+        .glass-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
             overflow: hidden;
-            background: rgba(148,163,184,0.22);
-            margin-bottom: 0.85rem;
         }
 
-        .majority-fill {
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .glass-card.majority::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
             height: 100%;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #4F46E5, #38BDF8);
-            animation: growBar 1.0s ease-out;
+            background: linear-gradient(180deg, #10b981, #059669);
         }
 
-        .majority-fill-win {
+        .glass-card.vs-builder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
             height: 100%;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #10B981, #22C55E);
-            animation: growBar 1.0s ease-out;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
         }
 
-        .tiny-note {
-            color: #64748b;
-            font-size: 0.82rem;
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
 
-        .hot-card {
-            background: linear-gradient(135deg, rgba(255,247,237,0.92), rgba(255,255,255,0.82));
-            border: 1px solid rgba(251,146,60,0.24);
+        .section-icon {
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 0.5rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .vs-card {
-            background: linear-gradient(135deg, rgba(239,246,255,0.95), rgba(255,255,255,0.92));
-            border: 1px solid rgba(59,130,246,0.16);
+        .section-title-premium {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            letter-spacing: -0.02em;
         }
 
-        .fire {
-            font-size: 1.2rem;
-            filter: drop-shadow(0 4px 10px rgba(249,115,22,0.36));
-            animation: pulseFire 1.7s ease-in-out infinite;
-        }
-
+        /* Metrics */
         div[data-testid="metric-container"] {
-            background: rgba(255,255,255,0.55);
-            border: 1px solid rgba(15,23,42,0.07);
-            border-radius: 18px;
-            box-shadow: none;
-            padding: 12px 12px;
+            background: rgba(255,255,255,0.2) !important;
+            backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(255,255,255,0.3) !important;
+            border-radius: var(--radius-lg) !important;
+            padding: 1.5rem !important;
+            margin: 0.5rem 0 !important;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
         }
 
-        div[data-testid="metric-container"] label {
-            color: #64748b !important;
+        /* Majority Bar */
+        .premium-majority-bar {
+            background: rgba(148,163,184,0.15);
+            border-radius: 12px;
+            height: 20px;
+            overflow: hidden;
+            margin: 1rem 0;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        div[data-testid="metric-container"] [data-testid="stMetricValue"] {
-            color: #0f172a;
+        .premium-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(10px); }
+        .premium-fill-win {
+            background: linear-gradient(90deg, #10b981, #059669);
+            box-shadow: 0 0 20px rgba(16,185,129,0.4);
+        }
+
+        /* PR Inputs */
+        .pr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .party-row {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .party-row:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Dataframes */
+        .stDataFrame > div > div {
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes growBar {
-            from { width: 0; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulseFire {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
+        .glass-card {
+            animation: fadeInUp 0.6s ease-out;
         }
 
-        @media (max-width: 980px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .metric-strip { grid-template-columns: repeat(2, 1fr); }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pr-grid { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
         }
         </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    """, unsafe_allow_html=True)
 
 
 def normalize_party_name(value):
@@ -359,34 +327,10 @@ def format_status_time(fetch_status):
 
 def clean_df(df):
     if df is None or df.empty:
-        return pd.DataFrame(
-            columns=[
-                "constituency",
-                "province",
-                "district",
-                "candidate",
-                "party",
-                "votes",
-                "runner_up",
-                "runner_up_party",
-                "runner_up_votes",
-                "margin",
-                "status",
-                "count_pct",
-            ]
-        )
+        return pd.DataFrame(columns=["constituency", "province", "district", "candidate", "party", "votes", "runner_up", "runner_up_party", "runner_up_votes", "margin", "status", "count_pct", "Remarks"])
 
     out = df.copy()
-    for col in [
-        "constituency",
-        "province",
-        "district",
-        "candidate",
-        "party",
-        "runner_up",
-        "runner_up_party",
-        "status",
-    ]:
+    for col in ["constituency", "province", "district", "candidate", "party", "runner_up", "runner_up_party", "status"]:
         out[col] = out[col].fillna("").astype(str)
 
     for col in ["votes", "runner_up_votes", "margin"]:
@@ -397,24 +341,30 @@ def clean_df(df):
     out["runner_up_party"] = out["runner_up_party"].apply(normalize_party_name)
     out["status"] = out["status"].replace({"Counting": "Leading"}).fillna("Leading")
 
+    # Map official EC "Elected" to "Won" for final-results logic
+    if "Remarks" in out.columns:
+        out.loc[out["Remarks"] == "Elected", "status"] = "Won"
+
     return out
 
 
-def topbar(fetch_status):
+def top_hero(fetch_status):
     updated_text = format_status_time(fetch_status)
     row_count = fetch_status.get("row_count", 0) if isinstance(fetch_status, dict) else 0
 
     st.markdown(
         f"""
-        <div class="topbar">
-            <div>
-                <div class="brand">🇳🇵 Nepal Election Results 2082</div>
-                <div class="subbrand">Final results • Party totals • Tightest races • Search any constituency</div>
+        <div class="top-hero">
+            <div class="hero-title">🇳🇵 Nepal Election Results 2082</div>
+            <div class="hero-subtitle">
+                Final official results from Election Commission • FPTP + PR seat analysis • 
+                Interactive party comparisons and majority tracker
             </div>
-            <div class="live-pills">
-                <span class="pill">FINAL</span>
-                <span class="pill">Updated {updated_text}</span>
-                <span class="pill">{row_count:,} races</span>
+            <div class="status-pills">
+                <span class="pill-premium">FINAL RESULTS</span>
+                <span class="pill-premium">Updated {updated_text}</span>
+                <span class="pill-premium">{row_count:,} constituencies</span>
+                <span class="pill-premium">Data: result.election.gov.np</span>
             </div>
         </div>
         """,
@@ -422,14 +372,17 @@ def topbar(fetch_status):
     )
 
 
-def hero(df):
-    if df.empty:
-        return
-
+def hero_metrics(df):
     declared = df[df["status"] == "Won"]
     total_races = len(df)
     won_races = len(declared)
+
     if declared.empty:
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Constituencies", total_races, "0 declared")
+        with col2:
+            st.metric("Declared seats", 0, "Waiting...")
         return
 
     party_counts = declared["party"].value_counts()
@@ -439,99 +392,95 @@ def hero(df):
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric("Constituencies total", total_races)
+        st.metric("🏛️ Constituencies", total_races)
     with col2:
-        st.metric("Seats declared (FPTP)", won_races)
+        st.metric("✅ Declared (FPTP)", won_races)
     with col3:
-        st.metric("Largest party (FPTP)", f"{party_symbol(top_party)} {top_party}", f"{top_count:,} seats")
+        st.metric("👑 Largest party", f"{party_symbol(top_party)} {top_party}", f"{top_count:,}")
     with col4:
-        st.metric("Seats to majority (275)", gap_to_majority)
+        st.metric("🎯 Seats to majority", gap_to_majority)
 
 
 def majority_and_pr_section(df):
-    st.markdown('<div class="soft-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">House Majority (275 seats)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="glass-card majority">', unsafe_allow_html=True)
+
     st.markdown(
-        '<div class="section-subtitle">Final FPTP seats from data + manually entered PR seats per party when official list is available.</div>',
+        """
+        <div class="section-header">
+            <div class="section-icon">🏛️</div>
+            <h3 class="section-title-premium">House of Representatives (275 seats)</h3>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
     declared = df[df["status"] == "Won"].copy()
     if declared.empty:
-        st.info("No declared FPTP seats yet.")
+        st.info("📊 No declared FPTP seats yet. Check back soon.")
         st.markdown("</div>", unsafe_allow_html=True)
         return
 
-    # FPTP seats per party
     fptp_counts = declared["party"].value_counts().sort_values(ascending=False)
 
-    st.write("### Enter PR seats per party")
+    st.markdown(
+        """
+        <div class="pr-grid">
+        """,
+        unsafe_allow_html=True,
+    )
+
     pr_inputs = {}
     total_pr_entered = 0
-
-    for party in fptp_counts.index:
-        col1, col2, col3 = st.columns([3, 1, 1])
+    for i, party in enumerate(fptp_counts.head(10).index):
+        col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown(
-                f"{party_symbol(party)} <strong>{party}</strong> &nbsp;·&nbsp; {int(fptp_counts[party])} FPTP seats",
+                f'<div class="party-row"><strong>{party_symbol(party)} {party}</strong><br>'
+                f'<small style="color: #64748b;">{int(fptp_counts[party])} FPTP seats</small></div>',
                 unsafe_allow_html=True,
             )
         with col2:
             pr_val = st.number_input(
-                f"PR ({party})",
+                f"PR {party[:15]}...",
                 min_value=0,
                 max_value=PR_SEATS,
                 value=0,
                 step=1,
-                key=f"pr_{party}",
+                key=f"pr_{party}_{i}",
+                format="%d",
             )
-        with col3:
-            st.markdown("&nbsp;", unsafe_allow_html=True)
         pr_inputs[party] = pr_val
         total_pr_entered += pr_val
 
-    # Combined seats per party
-    combined = []
-    for party, fptp_seats in fptp_counts.items():
-        pr_seats = pr_inputs.get(party, 0)
-        combined.append(
-            {
-                "party": party,
-                "FPTP": int(fptp_seats),
-                "PR": int(pr_seats),
-                "Total": int(fptp_seats) + int(pr_seats),
-            }
-        )
-    combined_df = pd.DataFrame(combined).sort_values("Total", ascending=False)
-
-    # Majority bar uses top party
-    if not combined_df.empty:
-        top_row = combined_df.iloc[0]
-        top_party = top_row["party"]
-        top_total = int(top_row["Total"])
-        majority_pct = min(top_total / MAJORITY_NEEDED, 1.0)
-    else:
-        top_party, top_total, majority_pct = "N/A", 0, 0.0
-
-    st.markdown('<div class="majority-bar-label">', unsafe_allow_html=True)
-    st.markdown(
-        f"<span>Largest party: {party_symbol(top_party)} <strong>{top_party}</strong> – {top_total} seats (FPTP + PR)</span>"
-        f"<span>Majority threshold: {MAJORITY_NEEDED} seats</span>",
-        unsafe_allow_html=True,
-    )
     st.markdown("</div>", unsafe_allow_html=True)
 
-    bar_class = "majority-fill-win" if top_total >= MAJORITY_NEEDED else "majority-fill"
-    st.markdown('<div class="majority-track">', unsafe_allow_html=True)
+    # Combined totals & majority bar
+    combined_df = pd.DataFrame([
+        {"party": p, "FPTP": int(fptp_counts[p]), "PR": pr_inputs.get(p, 0), "Total": int(fptp_counts[p]) + pr_inputs.get(p, 0)}
+        for p in fptp_counts.head(8).index
+    ]).sort_values("Total", ascending=False)
+
+    top_total = int(combined_df.iloc[0]["Total"]) if not combined_df.empty else 0
+    majority_pct = min(top_total / MAJORITY_NEEDED, 1.0)
+
+    st.markdown('<div class="premium-majority-bar">', unsafe_allow_html=True)
+    fill_class = "premium-fill-win" if top_total >= MAJORITY_NEEDED else "premium-fill"
     st.markdown(
-        f'<div class="{bar_class}" style="width: {majority_pct*100:.1f}%"></div>',
+        f'<div class="{fill_class}" style="width: {majority_pct*100:.1f}%"></div>',
         unsafe_allow_html=True,
     )
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown(
-        f'<div class="tiny-note">PR seats entered: {total_pr_entered} / {PR_SEATS} • '
-        f'Total House seats represented here: {int(combined_df["Total"].sum())} / {TOTAL_HOUSE_SEATS}</div>',
+        f"""
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.95rem;">
+            <span><strong>{party_symbol(combined_df.iloc[0]["party"])}</strong> leads with {top_total} seats</span>
+            <span>Majority: {MAJORITY_NEEDED} seats</span>
+        </div>
+        <div style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;">
+            PR entered: {total_pr_entered}/{PR_SEATS} • Total tracked: {int(combined_df["Total"].sum())}/{TOTAL_HOUSE_SEATS}
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -539,249 +488,252 @@ def majority_and_pr_section(df):
 
 
 def vs_builder_section(df):
-    st.markdown('<div class="soft-card vs-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">VS Builder: Party vs Party</div>', unsafe_allow_html=True)
+    st.markdown('<div class="glass-card vs-builder">', unsafe_allow_html=True)
+
     st.markdown(
-        '<div class="section-subtitle">Pick any two parties to compare their total seats (FPTP + PR) against each other and the 138-seat majority line.</div>',
+        """
+        <div class="section-header">
+            <div class="section-icon">⚔️</div>
+            <h3 class="section-title-premium">Party vs Party Builder</h3>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
     declared = df[df["status"] == "Won"].copy()
     if declared.empty:
-        st.info("No declared FPTP seats yet.")
+        st.info("⚔️ Select parties once FPTP results are available.")
         st.markdown("</div>", unsafe_allow_html=True)
         return
 
-    # Base: FPTP seats
     fptp_counts = declared["party"].value_counts().sort_values(ascending=False)
-    parties = list(fptp_counts.index)
+    parties = list(fptp_counts.index[:12])  # Top 12 only
 
-    if len(parties) < 2:
-        st.info("Need at least two parties with seats for VS view.")
-        st.markdown("</div>", unsafe_allow_html=True)
-        return
-
-    col_a, col_b = st.columns(2)
+    col_a, spacer, col_b = st.columns([1, 0.2, 1])
     with col_a:
-        party_a = st.selectbox("Party A", parties, index=0, key="vs_party_a")
+        party_a = st.selectbox("🥇 Party A", parties, index=0, key="vs_a")
     with col_b:
-        default_b = 1 if len(parties) > 1 else 0
-        party_b = st.selectbox("Party B", parties, index=default_b, key="vs_party_b")
+        party_b = st.selectbox("🥈 Party B", parties, index=1, key="vs_b")
 
     if party_a == party_b:
-        st.warning("Pick two different parties to compare.")
+        st.warning("⚠️ Please select two different parties.")
         st.markdown("</div>", unsafe_allow_html=True)
         return
 
     def get_pr(party):
-        return st.session_state.get(f"pr_{party}", 0)
+        return st.session_state.get(f"pr_{party}_0", 0)  # Match key pattern from PR inputs
 
-    data_rows = []
-    for party in [party_a, party_b]:
-        fptp = int(fptp_counts.get(party, 0))
-        pr = int(get_pr(party))
-        total = fptp + pr
-        data_rows.append(
-            {
-                "Party": party,
-                "FPTP seats": fptp,
-                "PR seats": pr,
-                "Total seats": total,
-            }
-        )
+    a_fptp = int(fptp_counts.get(party_a, 0))
+    a_pr = int(get_pr(party_a))
+    a_total = a_fptp + a_pr
 
-    vs_df = pd.DataFrame(data_rows)
+    b_fptp = int(fptp_counts.get(party_b, 0))
+    b_pr = int(get_pr(party_b))
+    b_total = b_fptp + b_pr
 
-    # Horizontal bar chart: Party A vs Party B
+    combined = a_total + b_total
+
+    # VS Chart
+    vs_data = [
+        {"Party": f"{party_symbol(party_a)} {party_a}", "Seats": a_total},
+        {"Party": f"{party_symbol(party_b)} {party_b}", "Seats": b_total},
+    ]
     fig = px.bar(
-        vs_df,
-        x="Total seats",
+        pd.DataFrame(vs_data),
+        x="Seats",
         y="Party",
         orientation="h",
         color="Party",
-        text="Total seats",
-        color_discrete_map={p: PARTY_COLOR_MAP.get(p, "#64748B") for p in vs_df["Party"]},
+        color_discrete_map={
+            party_a: PARTY_COLOR_MAP.get(party_a, "#6B7280"),
+            party_b: PARTY_COLOR_MAP.get(party_b, "#6B7280"),
+        },
+        text="Seats",
     )
     fig.update_layout(
-        height=260,
+        height=240,
         showlegend=False,
-        title="Total seats (FPTP + PR) – head to head",
-        xaxis_title="Seats",
+        title="Seats head-to-head (FPTP + PR)",
+        margin=dict(l=120, r=20, t=50, b=20),
         yaxis_title="",
-        margin=dict(l=10, r=10, t=40, b=10),
     )
     st.plotly_chart(fig, use_container_width=True)
 
-    # Text summary vs majority
-    a_row = vs_df.iloc[0]
-    b_row = vs_df.iloc[1]
+    # Status summaries
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(f"**{party_symbol(party_a)} {party_a}:** {a_total} seats")
+        st.markdown(f"**{party_symbol(party_b)} {party_b}:** {b_total} seats")
 
-    def status_line(row):
-        seats = int(row["Total seats"])
-        if seats >= MAJORITY_NEEDED:
-            return f"✅ {row['Party']} clears the majority line with {seats} seats."
-        else:
-            need = MAJORITY_NEEDED - seats
-            return f"ℹ️ {row['Party']} is {need} seats short of the majority (has {seats})."
-
-    st.markdown(status_line(a_row))
-    st.markdown(status_line(b_row))
-
-    # A + B combined vs majority
-    combined_ab = int(a_row["Total seats"] + b_row["Total seats"])
-    if combined_ab >= MAJORITY_NEEDED:
-        combined_msg = (
-            f"🔥 Together, <strong>{a_row['Party']} + {b_row['Party']}</strong> reach {combined_ab} seats "
-            f"and clear the {MAJORITY_NEEDED}-seat majority line."
-        )
-    else:
-        need_ab = MAJORITY_NEEDED - combined_ab
-        combined_msg = (
-            f"➕ Together, <strong>{a_row['Party']} + {b_row['Party']}</strong> have {combined_ab} seats, "
-            f"{need_ab} short of the {MAJORITY_NEEDED}-seat majority."
-        )
-
-    st.markdown(combined_msg, unsafe_allow_html=True)
+    with col2:
+        color_ab = "🟢" if combined >= MAJORITY_NEEDED else "🟡"
+        st.markdown(f"**{color_ab} Combined:** {combined} seats")
+        need = max(MAJORITY_NEEDED - combined, 0)
+        st.markdown(f"**vs majority:** {'✅ Majority secured' if combined >= MAJORITY_NEEDED else f'{need} seats short'}")
 
     st.markdown("</div>", unsafe_allow_html=True)
 
 
 def simple_party_totals(df):
-    st.markdown('<div class="soft-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">Final FPTP Seats by Party</div>', unsafe_allow_html=True)
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+
+    st.markdown(
+        """
+        <div class="section-header">
+            <div class="section-icon">📊</div>
+            <h3 class="section-title-premium">Declared FPTP Seats by Party</h3>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     declared = df[df["status"] == "Won"]
     if declared.empty:
-        st.info("No declared seats yet.")
+        st.info("📈 No declared seats yet.")
         st.markdown("</div>", unsafe_allow_html=True)
         return
 
-    won_series = declared["party"].value_counts().sort_values(ascending=False)
+    won_series = declared["party"].value_counts().sort_values(ascending=False).head(12)
 
     fig = px.bar(
-        won_series,
-        text_auto=True,
-        color=won_series.index,
-        color_discrete_map={p: PARTY_COLOR_MAP.get(p, "#64748B") for p in won_series.index},
+        won_series.reset_index(),
+        x="count",
+        y="index",
+        orientation="h",
+        text="count",
+        color="index",
+        color_discrete_map={p: PARTY_COLOR_MAP.get(p, "#6B7280") for p in won_series.index},
+        title="Final FPTP seats won",
     )
     fig.update_layout(
-        height=350,
+        height=400,
         showlegend=False,
-        title="Seats won (FPTP, declared constituencies)",
+        margin=dict(l=140, r=20, t=50, b=20),
+        yaxis_title="Party",
+        xaxis_title="Seats won",
     )
     st.plotly_chart(fig, use_container_width=True)
+
     st.markdown("</div>", unsafe_allow_html=True)
 
 
 def hot_races(df):
-    st.markdown('<div class="soft-card hot-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">Tightest Final Margins 🔥</div>', unsafe_allow_html=True)
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
+
     st.markdown(
-        '<div class="section-subtitle">Declared constituencies ordered by winning margin.</div>',
+        """
+        <div class="section-header">
+            <div class="section-icon">🔥</div>
+            <h3 class="section-title-premium">Closest Races</h3>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
     declared = df[df["status"] == "Won"].copy()
     if declared.empty:
-        st.info("No declared seats yet.")
+        st.info("⚡ No declared seats yet.")
         st.markdown("</div>", unsafe_allow_html=True)
         return
 
     close = (
         declared.sort_values("margin")
-        .head(10)[
-            [
-                "constituency",
-                "district",
-                "candidate",
-                "party",
-                "votes",
-                "runner_up",
-                "runner_up_party",
-                "runner_up_votes",
-                "margin",
-            ]
+        .head(12)[
+            ["constituency", "district", "candidate", "party", "votes", "runner_up", "runner_up_party", "runner_up_votes", "margin"]
         ]
+        .rename(columns={
+            "candidate": "Winner", 
+            "party": "Winner Party",
+            "runner_up": "Runner-up", 
+            "runner_up_party": "Runner-up Party",
+            "runner_up_votes": "RU Votes",
+            "margin": "Margin"
+        })
     )
 
-    close = close.rename(
-        columns={
-            "candidate": "Winner",
-            "party": "Winner party",
-            "runner_up": "Runner‑up",
-            "runner_up_party": "Runner‑up party",
-            "runner_up_votes": "Runner‑up votes",
-            "margin": "Win margin",
-        }
-    )
-
-    st.dataframe(close, use_container_width=True, height=400)
+    st.dataframe(close, use_container_width=True, height=420, hide_index=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
 
 def search_table(df):
-    st.markdown('<div class="soft-card">', unsafe_allow_html=True)
-    st.markdown('<div class="section-title">Final Constituency Results</div>', unsafe_allow_html=True)
+    st.markdown('<div class="glass-card">', unsafe_allow_html=True)
 
-    mode = st.radio(
-        "View",
-        ["Declared seats only", "All records"],
-        horizontal=True,
-        index=0,
+    st.markdown(
+        """
+        <div class="section-header">
+            <div class="section-icon">🔍</div>
+            <h3 class="section-title-premium">All Constituency Results</h3>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
-    if mode == "Declared seats only":
-        data = df[df["status"] == "Won"].copy()
-    else:
-        data = df.copy()
+    mode = st.radio("Show", ["Declared only", "All records"], horizontal=True, index=0)
 
-    q = st.text_input("🔍 Search constituencies, candidates, districts, parties...")
+    data = df[df["status"] == "Won"].copy() if mode == "Declared only" else df.copy()
+
+    q = st.text_input("🔍 Search by constituency, candidate, district or party...", placeholder="e.g. Kathmandu, Oli, RSP...")
 
     if q:
         q_lower = q.lower()
         mask = (
-            data["constituency"].str.lower().str.contains(q_lower, na=False)
-            | data["district"].str.lower().str.contains(q_lower, na=False)
-            | data["candidate"].str.lower().str.contains(q_lower, na=False)
-            | data["party"].str.lower().str.contains(q_lower, na=False)
+            data["constituency"].str.contains(q_lower, case=False, na=False) |
+            data["district"].str.contains(q_lower, case=False, na=False) |
+            data["candidate"].str.contains(q_lower, case=False, na=False) |
+            data["party"].str.contains(q_lower, case=False, na=False)
         )
         data = data[mask]
 
-    cols = [
-        "constituency",
-        "district",
-        "province",
-        "candidate",
-        "party",
-        "votes",
-        "runner_up",
-        "runner_up_party",
-        "runner_up_votes",
-        "margin",
-    ]
-    existing = [c for c in cols if c in data.columns]
-    st.dataframe(data[existing], use_container_width=True, height=500)
+    cols = ["constituency", "district", "province", "candidate", "party", "votes", "runner_up", "runner_up_party", "runner_up_votes", "margin", "status"]
+    st.dataframe(data[cols], use_container_width=True, height=500, hide_index=True)
+
     st.markdown("</div>", unsafe_allow_html=True)
 
 
 def main():
-    inject_css()
+    inject_premium_css()
 
     df = clean_df(load_election_data())
     fetch_status = load_fetch_status()
 
-    topbar(fetch_status)
+    top_hero(fetch_status)
 
     if df.empty:
-        st.error("No election results loaded. Check data source or try again.")
+        st.markdown(
+            """
+            <div class="glass-card" style="text-align: center; padding: 4rem;">
+                <h2 style="color: #64748b;">📊 No results yet</h2>
+                <p style="color: #94a3b8; font-size: 1.1rem;">Waiting for election data from <strong>result.election.gov.np</strong></p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         return
 
-    hero(df)
-    majority_and_pr_section(df)
-    vs_builder_section(df)
+    # Main dashboard sections
+    hero_metrics(df)
+
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        majority_and_pr_section(df)
+    with col2:
+        vs_builder_section(df)
+
     simple_party_totals(df)
     hot_races(df)
     search_table(df)
+
+    # Footer
+    st.markdown(
+        """
+        <div style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.9rem;">
+            <strong>Nepal Election Results 2082</strong> • 
+            Official data from Election Commission • 
+            Built with ❤️ for election nerds
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 if __name__ == "__main__":
