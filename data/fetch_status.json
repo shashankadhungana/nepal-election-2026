@@ -1,7 +1,7 @@
 {
-  "last_attempt_utc": "2026-03-27T19:26:31.708313+00:00",
-  "success": false,
-  "row_count": 0,
-  "source_url": null,
-  "error": "HTTPSConnectionPool(host='pub-4173e04d0b78426caa8cfa525f827daa.r2.dev', port=443): Read timed out."
+  "last_attempt_utc": "2026-03-27T20:00:40.530332+00:00",
+  "success": true,
+  "row_count": 165,
+  "source_url": "https://pub-4173e04d0b78426caa8cfa525f827daa.r2.dev/constituencies.json",
+  "error": null
 }
