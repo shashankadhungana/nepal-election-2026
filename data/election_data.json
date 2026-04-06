@@ -204,10 +204,10 @@
     "votes":27916,
     "runner_up":"Krish‍na Vaniyan Kshetri",
     "runner_up_party":"नेपाली काँग्रेस",
-    "runner_up_votes":6751,
-    "margin":21165,
+    "runner_up_votes":6667,
+    "margin":21249,
     "status":"Won",
-    "count_pct":64.1
+    "count_pct":64.0
   },
   {
     "constituency":"Kathmandu-7",
@@ -1377,13 +1377,13 @@
     "district":"Dang",
     "candidate":"Bipin Kumar Acharya",
     "party":"राष्ट्रिय स्वतन्त्र पार्टी",
-    "votes":43822,
+    "votes":43559,
     "runner_up":"Shankar Pokhrael",
     "runner_up_party":"नेपाल कम्युनिष्ट पार्टी (एकीकृत मार्क्सवादी लेनिनवादी)",
-    "runner_up_votes":15558,
-    "margin":28264,
+    "runner_up_votes":15287,
+    "margin":28272,
     "status":"Won",
-    "count_pct":56.9
+    "count_pct":56.4
   },
   {
     "constituency":"Dang-3",
